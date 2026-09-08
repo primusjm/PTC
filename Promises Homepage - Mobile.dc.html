@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; background: #E7DFD3; }
+  a { color: #8C4A32; text-decoration: none; }
+  a:hover { color: #6E3823; }
+</style>
+</helmet>
+
+<div style="min-height:100vh;background:#E7DFD3;font-family:Karla,system-ui,sans-serif;padding:36px clamp(16px,4vw,48px);display:flex;flex-direction:column;gap:26px;align-items:center">
+
+  <div style="display:flex;flex-direction:column;gap:8px;align-items:center;text-align:center;max-width:52ch">
+    <div style="font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:0.2em;text-transform:uppercase;color:#8C4A32">Mobile view</div>
+    <p style="margin:0;font-size:15px;line-height:1.6;color:#4A463E">All four pages at phone width. Scroll inside the frame — the self-check, FAQ and links all still respond to taps.</p>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:12px;align-items:center">
+    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:center">
+      <sc-for list="{{ pages }}" as="p" hint-placeholder-count="4">
+        <span onClick="{{ p.onPick }}" style="{{ p.style }}">{{ p.label }}</span>
+      </sc-for>
+    </div>
+    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:center">
+      <sc-for list="{{ widths }}" as="w" hint-placeholder-count="3">
+        <span onClick="{{ w.onPick }}" style="{{ w.style }}">{{ w.label }}</span>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="{{ frameStyle }}">
+    <div style="position:relative;flex:1 1 auto;background:#0D0D0B;border-radius:38px;overflow:hidden;display:flex;flex-direction:column">
+      <div style="flex:0 0 auto;height:44px;background:#0D0D0B;display:flex;align-items:center;justify-content:space-between;padding:0 24px;color:#F7F2EA;font-size:13px;font-weight:600">
+        <span>9:41</span>
+        <span style="width:104px;height:26px;background:#0D0D0B;border-radius:14px;flex:0 0 auto"></span>
+        <span style="font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:0.06em">100%</span>
+      </div>
+      <iframe src="{{ pageSrc }}" title="Promises Treatment Centre, mobile width" style="{{ iframeStyle }}"></iframe>
+    </div>
+  </div>
+
+  <div style="font-size:13.5px;color:#7C7367;text-align:center">Live render of <a href="{{ pageSrc }}">{{ pageName }}</a> at {{ sizeLabel }} — edits to the page show up here.</div>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  state = { w: 390, page: 0 };
+
+  sizes() {
+    return [
+      { label: '390 — iPhone', w: 390, h: 844 },
+      { label: '430 — Pro Max', w: 430, h: 932 },
+      { label: '360 — Android', w: 360, h: 800 }
+    ];
+  }
+
+  pageList() {
+    return [
+      { label: 'Home', name: 'Promises Homepage v2', src: 'Promises Homepage v2.dc.html' },
+      { label: 'Treatment', name: 'Treatment', src: 'Treatment.dc.html' },
+      { label: 'Addiction explained', name: 'Addiction Explained', src: 'Addiction-Explained.dc.html' },
+      { label: 'Aftercare', name: 'Aftercare', src: 'Aftercare.dc.html' }
+    ];
+  }
+
+  pill(on) {
+    return 'padding:9px 15px;font-size:13.5px;font-weight:600;cursor:pointer;user-select:none;'
+      + (on ? 'background:#23231F;color:#F7F2EA;' : 'background:#F7F2EA;color:#3C382F;border:1px solid #CFC3B1;');
+  }
+
+  renderVals() {
+    const active = this.sizes().find(s => s.w === this.state.w) || this.sizes()[0];
+    const page = this.pageList()[this.state.page] || this.pageList()[0];
+    return {
+      pageSrc: page.src,
+      pageName: page.name,
+      sizeLabel: active.w + ' × ' + active.h,
+      pages: this.pageList().map((p, i) => ({
+        label: p.label,
+        onPick: () => this.setState({ page: i }),
+        style: this.pill(i === this.state.page)
+      })),
+      widths: this.sizes().map(s => ({
+        label: s.label,
+        onPick: () => this.setState({ w: s.w }),
+        style: this.pill(s.w === this.state.w)
+      })),
+      frameStyle: 'width:' + (active.w + 24) + 'px;max-width:100%;height:' + (active.h + 68) + 'px;'
+        + 'background:#0D0D0B;border-radius:52px;padding:12px;box-sizing:border-box;display:flex;'
+        + 'box-shadow:0 30px 60px -20px rgba(30,24,16,0.55),0 0 0 1px rgba(255,255,255,0.08) inset;',
+      iframeStyle: 'width:100%;flex:1 1 auto;border:0;display:block;background:#F7F2EA;'
+    };
+  }
+}
+
+</script>
+</body>
+</html>

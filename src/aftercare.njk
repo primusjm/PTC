@@ -1,0 +1,78 @@
+---
+layout: base.njk
+title: Aftercare
+nav: aftercare
+permalink: /aftercare/
+description: "Aftercare and relapse support at Promises Treatment Centre — support groups, the first year timeline, and what to do if you relapse."
+---
+<div class="quote-band" style="min-height:clamp(320px,42vw,480px)">
+  <img class="bg-img" style="opacity:0.4" src="{{ aftercare.heroImage }}" alt="A group of people standing together in the open air">
+  <div class="content">
+    <div class="breadcrumb" style="color:var(--accent-light)"><a href="/" style="color:var(--accent-light)">Home</a><span class="sep" style="color:var(--dark-muted)">/</span><span style="color:var(--dark-text-soft)">Aftercare</span></div>
+    <h1 class="h1" style="font-style:normal;font-weight:400;font-size:clamp(34px,4.6vw,54px);color:#FFFDF9">{{ aftercare.heroTitle }}</h1>
+    <p style="margin:0;font-size:18px;line-height:1.62;color:#E4DBCD;max-width:52ch;text-wrap:pretty">{{ aftercare.heroBody }}</p>
+  </div>
+</div>
+
+<div class="section-tight bg-alt">
+  <div class="grid grid-2" style="align-items:start">
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div class="kicker">Support groups</div>
+      <h2 class="h2">{{ aftercare.groupsTitle }}</h2>
+      {% for p in aftercare.groupsParas %}<p class="p-body" style="margin:0">{{ p }}</p>{% endfor %}
+    </div>
+    <div style="display:flex;flex-direction:column;gap:1px;background:#DFD4C2;border:1px solid #DFD4C2">
+      {% for g in aftercare.groupBenefits %}
+      <div style="background:var(--bg-card);padding:24px 26px;display:flex;flex-direction:column;gap:7px">
+        <span class="serif" style="font-size:21px;line-height:1.22;color:var(--ink)">{{ g.title }}</span>
+        <span style="font-size:15.5px;line-height:1.6;color:var(--ink-soft)">{{ g.body }}</span>
+      </div>
+      {% endfor %}
+      <div style="background:var(--dark-bg);padding:24px 26px;display:flex;flex-direction:column;gap:7px">
+        <span class="serif" style="font-size:21px;line-height:1.22;color:#FFFDF9">{{ aftercare.ourAftercareTitle }}</span>
+        <span style="font-size:15.5px;line-height:1.6;color:var(--dark-text-soft)">{{ aftercare.ourAftercareBody }}</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="timeline" class="section-tight">
+  <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:32px;flex-wrap:wrap;padding-bottom:40px">
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div class="kicker">The first year</div>
+      <h2 class="h2">{{ aftercare.timelineTitle }}</h2>
+    </div>
+    <p style="margin:0;font-size:16px;line-height:1.6;color:#5A554B;max-width:36ch">{{ aftercare.timelineIntro }}</p>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:0">
+    {% for t in aftercare.timeline %}
+    <div class="timeline-col">
+      <div class="timeline-dot-row"><span class="line"></span><span class="dot"></span></div>
+      <div class="timeline-body">
+        <span class="timeline-range">{{ t.range }}</span>
+        <span class="timeline-title">{{ t.title }}</span>
+        <div style="display:flex;flex-direction:column;gap:9px;padding-top:2px">
+          {% for s in t.steps %}<div class="timeline-step"><span class="mark">&mdash;</span><span>{{ s }}</span></div>{% endfor %}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<div id="relapse" class="section-tight bg-dark">
+  <div class="grid grid-2" style="align-items:center">
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <div class="kicker" style="color:var(--accent-light)">If you relapse</div>
+      <h2 class="h2" style="color:#FFFDF9;font-size:clamp(28px,3.5vw,38px)">{{ aftercare.relapseTitle }}</h2>
+      <p style="margin:0;font-size:17px;line-height:1.68;color:var(--dark-text-soft);text-wrap:pretty">{{ aftercare.relapseBody }}</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;padding-top:4px">
+        <a href="tel:{{ site.phoneHref }}" class="btn btn-primary">Call us now &middot; {{ site.phone }}</a>
+        <a href="/treatment/" class="btn btn-outline-dark">How treatment works</a>
+      </div>
+    </div>
+    <div style="min-height:clamp(260px,32vw,380px);overflow:hidden;background:#2A2723">
+      <img src="{{ aftercare.relapseImage }}" alt="A father carrying his child on his back" style="width:100%;height:100%;object-fit:cover">
+    </div>
+  </div>
+</div>

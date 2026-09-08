@@ -1,0 +1,52 @@
+{
+  "heroTitle": "What treatment actually looks like, day by day.",
+  "heroBody": "Nobody arrives knowing what to expect. This page walks through the whole of it — detox, residential care and the shape of an ordinary week — so you can picture it before you commit to anything.",
+  "heroImage": "https://images.unsplash.com/photo-1655720358097-673f2a952cb7?fm=jpg&q=70&w=1600&auto=format&fit=crop",
+  "jumps": [
+    { "label": "Detox", "href": "#detox" },
+    { "label": "Residential care", "href": "#residential" },
+    { "label": "A week here", "href": "#week" },
+    { "label": "Why residential", "href": "#benefits" }
+  ],
+  "philosophyTitle": "We treat you as someone with the capacity to recover.",
+  "philosophyParas": [
+    "The basis of our treatment is a belief about you: that a chemically dependent person has the capacity to abstain from mood-altering drugs, and the capacity to become who they were meant to be. Everything we do proceeds from that.",
+    "Our programmes focus on personal and spiritual growth in recovery. Success is not only abstinence — it is self-esteem returning, relationships and family life improving, a workable relationship with a power greater than yourself, productive work, and realistic life goals set and then actually reached."
+  ],
+  "detoxTitle": "Getting the substance out, safely.",
+  "detoxIntro": "A few days to a few weeks, depending on the substance, the severity of dependence and the support around you.",
+  "detoxSteps": [
+    { "num": "01", "title": "Evaluation", "body": "We screen for physical and mental health issues and use blood tests to measure what is in your system, which sets the level of treatment medication needed. A full review of drug, medical and psychiatric history becomes the basis of your long-term plan." },
+    { "num": "02", "title": "Stabilisation", "body": "Medical and psychological therapy to bring you to a stable place, with one goal: preventing harm to you. Where it helps, doctors prescribe addiction treatment medication to reduce withdrawal symptoms and head off complications." },
+    { "num": "03", "title": "Preparing entry to treatment", "body": "Before detox ends we walk you through the treatment programme itself and what to expect from it, so the step into residential care is a known thing rather than another unknown." }
+  ],
+  "detoxWarning": "Detox on its own is not treatment. It addresses the physical dependence and nothing more. Without counselling, group work and a residential programme to follow, the psychological side of the addiction is left untouched — and that is the side that causes relapse.",
+  "residentialTitle": "You live here while you recover. That is the point.",
+  "residentialBody": "Taking you out of your daily environment removes the stress and the triggers that keep the cycle turning, and gives you whole blocks of time to work on the causes rather than the symptoms.",
+  "features": [
+    { "title": "Residential setting", "body": "A safe, supportive environment away from the triggers and temptations of your normal daily life." },
+    { "title": "Structured schedule", "body": "A daily routine that offers stability, builds healthy habits and lowers the risk of relapse." },
+    { "title": "Intensive therapy", "body": "Living here full-time creates large blocks of time for frequent sessions that reach the root causes." },
+    { "title": "Medical supervision", "body": "Professionals on hand to monitor withdrawal, manage medication and deal with any medical concern." },
+    { "title": "Peer support", "body": "Immersion in a community of peers, which does more than anything to reduce isolation and shame." },
+    { "title": "Holistic care", "body": "Wellbeing practices alongside clinical work, addressing the emotional and spiritual sides of addiction." }
+  ],
+  "weekTitle": "Therapy, education and time of your own.",
+  "weekIntro": "Individual therapy usually one to three times a week; group therapy most days. The routine is deliberate — structure is itself part of the treatment.",
+  "weekImage": "https://images.unsplash.com/photo-1655720359248-eeace8c709c5?fm=jpg&q=70&w=1400&auto=format&fit=crop",
+  "weekParts": [
+    { "title": "Group therapy", "cadence": "Most days", "body": "A space to share experience, feeling and struggle with people who can genuinely relate. Sessions are led and mediated by qualified professionals, and different group types — psychotherapeutic and educational — build different skills." },
+    { "title": "Individual therapy", "cadence": "1–3 × weekly", "body": "One-to-one work exploring the root causes of your addiction, commonly using cognitive-behavioural therapy and motivational enhancement therapy to show how your thoughts and actions are driving each other." },
+    { "title": "Family therapy", "cadence": "By arrangement", "body": "Counselling that helps family members improve communication, resolve conflict and strengthen relationships by treating the issues affecting the family as a whole. Family usually visit for these sessions." },
+    { "title": "Support groups", "cadence": "Ongoing", "body": "Participation in 12-step and other support groups for peer support, encouragement and accountability — a sense of community with people who understand what recovery costs." }
+  ],
+  "benefitsTitle": "Six things living here gives you that visiting cannot.",
+  "benefits": [
+    { "num": "01", "title": "Removal from triggers", "body": "Triggers are people, places and things that make you want to use. If you always drank with certain friends at a particular bar, seeing them or passing it can start a craving. Living here removes that contact while you build other ways to cope." },
+    { "num": "02", "title": "A structured environment", "body": "Set times for meals, therapy, meetings, medication and free time; clear rules and boundaries; and habits that support body and mind — regular mealtimes, exercise, enough sleep." },
+    { "num": "03", "title": "Intensive therapy", "body": "Ample time to understand the underlying causes, address unresolved trauma and develop coping mechanisms that hold up under pressure." },
+    { "num": "04", "title": "24/7 support", "body": "Round-the-clock access to medical professionals, therapists and trained staff — which matters most at the hours when cravings arrive." },
+    { "num": "05", "title": "Peer support", "body": "Communal living and group therapy build the same thing: mutual interest, care and community. Receiving understanding and empathy is how people begin to forgive themselves." },
+    { "num": "06", "title": "Focus on self-care", "body": "Proper nutrition, exercise, sleep hygiene and stress management. These habits raise resilience and measurably reduce the risk of relapse." }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "heroTitle": "Understanding it takes the shame out of it.",
+  "heroBody": "Families spend years asking why someone will not simply stop. The answer is in how the brain has changed — and once you see that clearly, you can stop fighting the person and start treating the disease.",
+  "jumps": [
+    { "num": "01", "label": "What addiction is", "href": "#definition" },
+    { "num": "02", "label": "Substances and behaviours", "href": "#types" },
+    { "num": "03", "label": "Dependency vs addiction", "href": "#dependency" },
+    { "num": "04", "label": "What causes it", "href": "#causes" }
+  ],
+  "definitionTitle": "A chronic, treatable medical condition.",
+  "definitionNote": "Classified as a chronic brain disorder by the American Society of Addiction Medicine and the National Institute on Drug Abuse.",
+  "definitionParas": [
+    "Addiction is compulsive substance use or behaviour that continues despite harmful consequences. It takes hold when repeated engagement with a drug or an activity alters the brain's reward and self-control circuits, producing intense cravings and a real loss of control.",
+    "Tolerance builds with repeated misuse: larger amounts, or more frequent use, are needed for the same effect — which escalates the addiction on its own. Long-term use then becomes a cycle in which the substance is needed simply to avoid withdrawal, until it is prioritised above everything that once mattered."
+  ],
+  "marks": [
+    { "num": "01", "title": "Impaired control", "body": "Using more, or longer, than intended — and being unable to cut down or stop." },
+    { "num": "02", "title": "Compulsive use", "body": "Intense preoccupation with obtaining or using, making it the primary focus of daily life." },
+    { "num": "03", "title": "Continued use despite harm", "body": "Persisting through physical, psychological, social and financial consequences." },
+    { "num": "04", "title": "Risky use", "body": "Using in hazardous situations, or ignoring a high risk of personal harm." }
+  ],
+  "typesTitle": "Substances, and behaviours.",
+  "typesIntro": "Both work on the same reward circuitry, and both can dominate a life. We treat substance use disorders here; where a behavioural addiction is present alongside one, it is addressed in therapy.",
+  "substancesIntro": "Compulsive use of chemical substances despite the damage to physical health, mental wellbeing and relationships.",
+  "substances": [
+    { "name": "Alcohol", "body": "One of the most widespread and socially accepted addictions, heavily affecting physical health and cognitive function." },
+    { "name": "Nicotine and tobacco", "body": "A highly addictive chemical reliance, driven by how fast nicotine acts." },
+    { "name": "Opioids", "body": "Prescription painkillers such as OxyContin and morphine, and illicit drugs including heroin and fentanyl — highly addictive, with severe overdose risk." },
+    { "name": "Stimulants", "body": "Cocaine, methamphetamine and prescription ADHD medications." },
+    { "name": "Cannabis", "body": "Can lead to cannabis use disorder: compulsive daily use despite the disruption it causes." },
+    { "name": "Sedatives and hallucinogens", "body": "Misuse of prescription tranquillisers, sleeping pills or hallucinogenic substances." }
+  ],
+  "behavioursIntro": "A compulsive urge to perform an activity for short-term pleasure or relief, continuing even as it does long-term harm.",
+  "behaviours": [
+    { "name": "Gambling", "body": "The only behavioural addiction officially recognised as a mental health disorder in the DSM-5." },
+    { "name": "Internet and social media", "body": "A growing compulsion to stay online, driven by the engagement triggers built into digital platforms." },
+    { "name": "Video gaming", "body": "Excessive, all-consuming gaming that damages work, relationships or personal wellbeing." },
+    { "name": "Shopping", "body": "Compulsive purchasing and overspending driven by the thrill of buying rather than any need." },
+    { "name": "Food", "body": "A compulsive relationship with highly palatable or sugary food, marked by intense cravings and overeating." },
+    { "name": "Sex and pornography", "body": "Uncontrollable urges, thoughts or behaviours around sexual activity or explicit material that interfere with daily functioning." },
+    { "name": "Work", "body": "An unhealthy obsession with working that leads to neglecting relationships, health and wellbeing." }
+  ],
+  "dependencyTitle": "Not the same thing — and the difference matters.",
+  "dependencyParas": [
+    "A person can be dependent and never develop an addiction. A person can be addicted without being dependent on a substance. But once dependence sets in, the risk of addiction rises dramatically.",
+    "The distinction is control. Tolerance and withdrawal appear in both. In addiction, control over the substance is lost completely and it takes priority over everything else in the person's life."
+  ],
+  "whoThreshold": "Symptoms present for at least 12 months — or continuous, daily use across the previous three months.",
+  "whoSigns": [
+    "Impaired control over substance use or unhealthy behaviour",
+    "Placing more importance on use than on essential daily responsibilities",
+    "Continuing to use even as consequences begin to appear",
+    "Increasing tolerance — needing more to feel the same effects",
+    "Withdrawal symptoms during a period without the substance"
+  ],
+  "depSymptoms": ["Anxiety", "Depression", "Panic", "Obsessive thoughts", "Intense cravings", "Restlessness", "Agitation", "Insomnia", "Body aches", "Chills or sweats", "Fever", "Digestive issues"],
+  "causesTitle": "There is no single cause. There is a combination.",
+  "causesIntro": "Genetic, environmental and developmental factors together make some people far more vulnerable to the brain-altering effects of substances. None of them is a moral failing.",
+  "causes": [
+    { "title": "Biological and genetic", "items": [
+      { "name": "Genetics", "body": "Hereditary traits account for roughly half of a person's risk. A blood relative with a substance use disorder significantly raises your susceptibility." },
+      { "name": "Brain chemistry", "body": "Addictive substances hijack the reward system with massive dopamine surges. The brain desensitises, so more is needed for the same pleasure." },
+      { "name": "Mental health", "body": "Co-occurring depression, anxiety, ADHD or PTSD raise the risk — substances become a way to manage painful symptoms." }
+    ] },
+    { "title": "Environmental and social", "items": [
+      { "name": "Trauma and stress", "body": "Physical, emotional or sexual abuse, especially in childhood, severely increases risk. So does chronic stress from financial instability or unstable housing." },
+      { "name": "Social surroundings", "body": "Growing up where substance use is normalised, or facing strong peer pressure, raises the likelihood of early experimentation." },
+      { "name": "Early exposure", "body": "Using highly addictive substances young changes the developing brain and greatly increases the chance of progressing to severe addiction." }
+    ] },
+    { "title": "Brain development", "items": [
+      { "name": "The prefrontal cortex", "body": "The areas governing decision-making, judgement and self-control are still developing through adolescence, which makes young people especially prone to the risky, impulsive choices that lead to addiction." }
+    ] }
+  ]
+}

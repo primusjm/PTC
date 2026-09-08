@@ -1,0 +1,222 @@
+---
+layout: base.njk
+title: Home
+nav: home
+description: "Promises Treatment Centre — residential recovery from alcohol and drug addiction in Webuye, Kenya. NACADA accredited."
+---
+<div class="grid-hero">
+  <div class="hero-copy">
+    <div class="kicker">{{ home.kicker }}</div>
+    <h1 class="h1">{{ home.heroTitle }}</h1>
+    <p class="p-lead">{{ home.heroBody }}</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:14px;padding-top:4px;max-width:600px">
+      <a href="tel:{{ site.phoneHref }}" class="btn btn-primary">Call us now · {{ site.phone }}</a>
+      <a href="#family" class="btn btn-outline">Worried about someone I love</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px;font-size:14.5px;color:var(--muted)">
+      <span style="width:7px;height:7px;border-radius:50%;background:#5C6B57;display:inline-block;flex:0 0 auto"></span>
+      <span>Lines open daily. Every conversation stays between us.</span>
+    </div>
+  </div>
+  <div class="hero-media">
+    <img src="{{ home.heroImage }}" alt="A close-up of two people holding each other's hands">
+    <span class="hero-caption">{{ home.heroQuote }}</span>
+  </div>
+</div>
+
+<div class="grid-trust">
+  {% for t in home.trust %}
+  <div class="trust-item">
+    <div class="title">{{ t.title }}</div>
+    <div class="body">{{ t.body }}</div>
+  </div>
+  {% endfor %}
+</div>
+
+<div id="about" class="section grid grid-2">
+  <div style="display:flex;flex-direction:column;gap:24px">
+    <div class="kicker">{{ home.aboutKicker }}</div>
+    <h2 class="h2">{{ home.aboutTitle }}</h2>
+    <div style="flex:1 1 auto;min-height:clamp(240px,45vw,300px);overflow:hidden;background:#E4DACB">
+      <img src="{{ home.aboutImage }}" alt="A group of hands holding one another" style="width:100%;height:100%;object-fit:cover">
+    </div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:20px">
+    {% for p in home.aboutParas %}<p class="p-body" style="margin:0">{{ p }}</p>{% endfor %}
+    <div style="display:flex;flex-direction:column;gap:18px;padding-top:8px">
+      <div class="stat-block"><span class="stat-label">Our vision</span><span class="stat-value">{{ home.vision }}</span></div>
+      <div class="stat-block"><span class="stat-label">Our mission</span><span class="stat-value">{{ home.mission }}</span></div>
+      <div class="stat-block"><span class="stat-label">What we believe</span><span class="stat-value">{{ home.belief }}</span></div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;padding-top:2px">
+        {% for v in home.values %}<span class="value-chip">{{ v }}</span>{% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="treatment" class="section-tight bg-alt">
+  <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:32px;flex-wrap:wrap;padding-bottom:38px">
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div class="kicker">Treatment services</div>
+      <h2 class="h2">{{ home.treatmentTitle }}</h2>
+    </div>
+    <p style="margin:0;font-size:16px;line-height:1.6;color:#5A554B;max-width:34ch">{{ home.treatmentIntro }}</p>
+  </div>
+  <div class="grid-cards">
+    {% for s in home.services %}
+    <div class="service-card">
+      <div style="display:flex;align-items:baseline;gap:12px">
+        <span class="num">{{ s.num }}</span>
+        <h3 class="h3">{{ s.title }}</h3>
+      </div>
+      <p style="margin:0;font-size:15.5px;line-height:1.62;color:var(--ink-soft)">{{ s.body }}</p>
+    </div>
+    {% endfor %}
+  </div>
+  <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:26px">
+    <a href="/treatment/" class="btn btn-primary">See what treatment looks like &#8594;</a>
+    <a href="/aftercare/" class="btn btn-outline">Aftercare &amp; support</a>
+  </div>
+  <div style="margin-top:20px;height:clamp(340px,40vw,520px);overflow:hidden">
+    <img src="{{ home.treatmentImage }}" alt="A group of people holding hands together" style="width:100%;height:100%;object-fit:cover;object-position:center 35%">
+  </div>
+</div>
+
+<div id="programmes" class="section grid grid-2" style="align-items:start">
+  <div style="display:flex;flex-direction:column;gap:18px">
+    <div class="kicker">Programmes</div>
+    <h2 class="h2">{{ home.programmesTitle }}</h2>
+    <p class="p-body" style="margin:0">{{ home.programmesIntro }}</p>
+    <a href="tel:{{ site.phoneHref }}" style="font-weight:600;font-size:16px;border-bottom:1px solid #C9A08C;align-self:flex-start;padding-bottom:2px">Ask which programme fits &#8594;</a>
+  </div>
+  <div style="display:flex;flex-direction:column">
+    {% for p in home.programmes %}
+    <div class="programme-row">
+      <div style="display:flex;flex-direction:column;gap:3px">
+        <span class="serif" style="font-size:23px;color:var(--ink)">{{ p.title }}</span>
+        <span style="font-size:14.5px;color:var(--muted)">{{ p.note }}</span>
+      </div>
+      <span class="programme-length">{{ p.length }}</span>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<div id="family" class="grid grid-2 bg-card border-top border-bottom" style="gap:0">
+  <div style="min-height:clamp(260px,50vw,380px);overflow:hidden;background:#E4DACB">
+    <img src="{{ home.familyImage }}" alt="A father carrying his child on his back" style="width:100%;height:100%;object-fit:cover">
+  </div>
+  <div class="hero-copy">
+    <div class="kicker">Family therapy</div>
+    <h2 class="h2" style="font-size:clamp(28px,3.4vw,36px)">{{ home.familyTitle }}</h2>
+    <p class="p-body" style="margin:0">{{ home.familyBody }}</p>
+    <div style="display:flex;flex-direction:column;gap:10px;padding-top:4px">
+      {% for b in home.familyBenefits %}
+      <div style="display:flex;gap:12px;align-items:baseline;font-size:16px;color:#3C382F">
+        <span style="color:var(--accent);flex:0 0 auto">&mdash;</span><span>{{ b }}</span>
+      </div>
+      {% endfor %}
+    </div>
+    <a href="tel:{{ site.phoneHref }}" class="btn btn-primary" style="align-self:flex-start;margin-top:6px">Ask about family therapy</a>
+  </div>
+</div>
+
+<div class="grid grid-2 bg-dark" style="gap:0">
+  <div class="hero-copy">
+    <div class="kicker" style="color:var(--accent-light)">Is addiction a disease?</div>
+    <h2 class="h2" style="color:#FFFDF9;font-size:clamp(28px,3.5vw,38px)">{{ home.diseaseTitle }}</h2>
+    <p style="margin:0;font-size:17px;line-height:1.68;color:var(--dark-text-soft);text-wrap:pretty">{{ home.diseaseBody }}</p>
+    <p style="margin:0;font-size:15px;line-height:1.6;color:var(--dark-muted)">{{ home.diseaseNote }}</p>
+    <a href="/addiction-explained/" style="align-self:flex-start;color:var(--accent-light);font-weight:600;font-size:16px;border-bottom:1px solid #6E6455;padding-bottom:2px;margin-top:4px">Read the full explanation — types, dependency, causes &#8594;</a>
+  </div>
+  <div class="hero-copy" style="border-left:1px solid var(--dark-border)">
+    <div style="font-size:14.5px;color:var(--dark-muted);padding-bottom:6px">The four marks of addictive behaviour (DSM-5)</div>
+    {% for m in home.marks %}
+    <div class="mark-row">
+      <span class="n">{{ m.num }}</span>
+      <div style="display:flex;flex-direction:column;gap:5px">
+        <span class="serif" style="font-size:20px;color:#FFFDF9">{{ m.title }}</span>
+        <span style="font-size:15px;line-height:1.58;color:var(--dark-text-soft)">{{ m.body }}</span>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<div id="selfcheck" class="section">
+  <div style="display:flex;flex-direction:column;gap:14px;padding-bottom:34px;max-width:62ch">
+    <div class="kicker">A quiet self-check</div>
+    <h2 class="h2">Tick anything that feels familiar — for you, or for someone you love.</h2>
+    <p class="p-body" style="margin:0">Nothing is recorded and nothing is sent. This is only for you to see clearly.</p>
+  </div>
+  <div class="signs-grid">
+    {% for s in home.signs %}
+    <div class="sign-box">
+      <span class="sign-tick">&#10003;</span>
+      <div style="display:flex;flex-direction:column;gap:3px">
+        <span class="sign-label">{{ s.label }}</span>
+        <span class="sign-hint">{{ s.hint }}</span>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="check-result">
+    <div style="display:flex;flex-direction:column;gap:6px;max-width:62ch">
+      <span class="serif" data-check-headline style="font-size:24px;line-height:1.25;color:var(--ink)">Nothing ticked yet.</span>
+      <span data-check-body style="font-size:15.5px;line-height:1.6;color:var(--ink-soft)">Read through the list slowly. Recognising a pattern is the first honest step, and it is the hardest one.</span>
+    </div>
+    <a href="tel:{{ site.phoneHref }}" class="btn btn-primary" style="white-space:nowrap">Call {{ site.phone }}</a>
+  </div>
+</div>
+
+<div class="quote-band">
+  <img class="bg-img" src="{{ home.quoteImage }}" alt="A group of people standing together in the open air">
+  <div class="content">
+    <p>&#8220;{{ home.quote }}&#8221;</p>
+    <span class="attribution">{{ home.quoteAttribution }}</span>
+  </div>
+</div>
+
+<div class="section bg-alt">
+  <div class="kicker" style="padding-bottom:30px">In our clients' words</div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px">
+    {% for t in home.testimonials %}
+    <div class="testimonial-card">
+      <p>{{ t.quote }}</p>
+      <span class="who">{{ t.who }}</span>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<div id="find-us" class="section grid grid-2" style="align-items:start">
+  <div style="display:flex;flex-direction:column;gap:18px">
+    <div class="kicker">Find us</div>
+    <h2 class="h2">{{ site.locationTitle }}</h2>
+    <p class="p-body" style="margin:0">{{ site.locationLine }}</p>
+    <div style="display:flex;flex-direction:column;gap:10px;padding-top:8px;font-size:16px;color:#3C382F">
+      <div class="contact-row"><span class="k">Phone</span><span>{{ site.phone }} &middot; {{ site.phone2 }}</span></div>
+      <div class="contact-row"><span class="k">Email</span><span style="min-width:0;overflow-wrap:anywhere">{{ site.email }}</span></div>
+      <div class="contact-row"><span class="k">Post</span><span>{{ site.address }}</span></div>
+    </div>
+  </div>
+  <div class="map-block"><span>map — embed of the Webuye location</span></div>
+</div>
+
+<div class="section bg-card border-top">
+  <div class="grid grid-2" style="align-items:start">
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div class="kicker">Questions families ask</div>
+      <h2 class="h2" style="font-size:clamp(28px,3.4vw,36px)">Before you call.</h2>
+      <p style="margin:0;font-size:16px;line-height:1.65;color:var(--ink-soft)">If your question isn't here, ask it on the phone. Nothing you say obliges you to anything.</p>
+    </div>
+    <div style="display:flex;flex-direction:column">
+      {% for f in home.faqs %}
+      <details class="faq-item">
+        <summary>{{ f.q }}</summary>
+        <p>{{ f.a }}</p>
+      </details>
+      {% endfor %}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,122 @@
+---
+layout: base.njk
+title: Treatment
+nav: treatment
+permalink: /treatment/
+description: "What treatment actually looks like at Promises Treatment Centre — detox, residential care and a typical week."
+---
+<div class="grid-hero">
+  <div class="hero-copy">
+    <div class="breadcrumb"><a href="/" style="color:var(--accent)">Home</a><span class="sep">/</span><span style="color:var(--muted)">Treatment</span></div>
+    <h1 class="h1" style="font-size:clamp(34px,4.6vw,54px)">{{ treatment.heroTitle }}</h1>
+    <p class="p-lead">{{ treatment.heroBody }}</p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;padding-top:4px">
+      {% for j in treatment.jumps %}<a href="{{ j.href }}" class="jump-chip">{{ j.label }}</a>{% endfor %}
+    </div>
+  </div>
+  <div class="hero-media">
+    <img src="{{ treatment.heroImage }}" alt="Two people holding each other's hands">
+  </div>
+</div>
+
+<div class="section-tight bg-alt">
+  <div class="grid grid-2" style="align-items:start">
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div class="kicker">Our philosophy</div>
+      <h2 class="h2">{{ treatment.philosophyTitle }}</h2>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:18px">
+      {% for p in treatment.philosophyParas %}<p class="p-body" style="margin:0">{{ p }}</p>{% endfor %}
+    </div>
+  </div>
+</div>
+
+<div id="detox" class="section-tight">
+  <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:32px;flex-wrap:wrap;padding-bottom:34px">
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div class="kicker">Stage one &middot; Detoxification</div>
+      <h2 class="h2">{{ treatment.detoxTitle }}</h2>
+    </div>
+    <p style="margin:0;font-size:16px;line-height:1.6;color:#5A554B;max-width:36ch">{{ treatment.detoxIntro }}</p>
+  </div>
+  <div class="grid-2-tight" style="display:grid">
+    {% for d in treatment.detoxSteps %}
+    <div class="service-card">
+      <span class="num">{{ d.num }}</span>
+      <h3 class="h3">{{ d.title }}</h3>
+      <p style="margin:0;font-size:15.5px;line-height:1.62;color:var(--ink-soft)">{{ d.body }}</p>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="callout-dark">
+    <span class="tag">Important</span>
+    <p>{{ treatment.detoxWarning }}</p>
+  </div>
+</div>
+
+<div id="residential" class="section-tight bg-card border-top border-bottom">
+  <div style="display:flex;flex-direction:column;gap:14px;max-width:64ch;padding-bottom:36px">
+    <div class="kicker">Stage two &middot; Residential treatment</div>
+    <h2 class="h2">{{ treatment.residentialTitle }}</h2>
+    <p class="p-body" style="margin:0">{{ treatment.residentialBody }}</p>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:1px;background:var(--border);border:1px solid var(--border)">
+    {% for f in treatment.features %}
+    <div style="background:var(--bg-card);padding:26px 26px;display:flex;flex-direction:column;gap:9px">
+      <h3 class="h3" style="font-size:21px;line-height:1.22">{{ f.title }}</h3>
+      <p style="margin:0;font-size:15.5px;line-height:1.6;color:var(--ink-soft)">{{ f.body }}</p>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<div id="week" class="section-tight bg-alt">
+  <div class="grid grid-2" style="align-items:start">
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div class="kicker">A week here</div>
+      <h2 class="h2" style="font-size:clamp(28px,3.4vw,36px)">{{ treatment.weekTitle }}</h2>
+      <p class="p-body" style="margin:0">{{ treatment.weekIntro }}</p>
+      <div style="height:clamp(220px,26vw,300px);overflow:hidden;background:#E4DACB;margin-top:6px">
+        <img src="{{ treatment.weekImage }}" alt="A group of hands holding one another" style="width:100%;height:100%;object-fit:cover">
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column">
+      {% for w in treatment.weekParts %}
+      <div style="display:flex;flex-direction:column;gap:6px;padding:22px 0;border-bottom:1px solid #DFD4C2">
+        <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap">
+          <span class="serif" style="font-size:23px;color:var(--ink)">{{ w.title }}</span>
+          <span style="font-family:ui-monospace,Menlo,monospace;font-size:11.5px;letter-spacing:0.08em;color:var(--accent)">{{ w.cadence }}</span>
+        </div>
+        <p style="margin:0;font-size:15.5px;line-height:1.62;color:var(--ink-soft)">{{ w.body }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<div id="benefits" class="section-tight bg-dark">
+  <div style="display:flex;flex-direction:column;gap:14px;max-width:60ch;padding-bottom:36px">
+    <div class="kicker" style="color:var(--accent-light)">Why residential, not outpatient</div>
+    <h2 class="h2" style="color:#FFFDF9;font-size:clamp(28px,3.5vw,38px)">{{ treatment.benefitsTitle }}</h2>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:26px 34px">
+    {% for b in treatment.benefits %}
+    <div style="display:flex;gap:16px;align-items:flex-start">
+      <span style="font-family:ui-monospace,Menlo,monospace;font-size:11.5px;color:var(--accent-light);padding-top:6px;flex:0 0 auto">{{ b.num }}</span>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <span class="serif" style="font-size:21px;color:#FFFDF9">{{ b.title }}</span>
+        <span style="font-size:15.5px;line-height:1.6;color:var(--dark-text-soft)">{{ b.body }}</span>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<div class="section" style="display:flex;flex-direction:column;gap:22px;align-items:flex-start;max-width:70ch">
+  <div class="kicker">Next</div>
+  <h2 class="h2" style="font-size:clamp(26px,3.2vw,34px)">Treatment does not end at discharge. Read what happens after.</h2>
+  <div style="display:flex;gap:12px;flex-wrap:wrap;padding-top:2px">
+    <a href="/aftercare/" class="btn btn-primary">Aftercare &amp; support &#8594;</a>
+    <a href="/addiction-explained/" class="btn btn-outline">Addiction explained</a>
+  </div>
+</div>

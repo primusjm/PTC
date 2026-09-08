@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; background: #F7F2EA; }
+  a { color: #8C4A32; text-decoration: none; }
+  a:hover { color: #6E3823; }
+  img { display: block; }
+</style>
+</helmet>
+
+<div style="background:#F7F2EA;color:#23231F;font-family:Karla,system-ui,sans-serif">
+
+  <div style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;padding:11px clamp(20px,4vw,40px);background:#8C4A32;color:#FFF8F1;font-size:14px;font-weight:600">
+    <span>In crisis right now? Someone answers every call.</span>
+    <a href="tel:+254725871040" style="color:#FFF8F1;border-bottom:1px solid rgba(255,248,241,0.55);padding-bottom:1px">0725 871 040</a>
+  </div>
+
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:clamp(12px,1.6vw,24px);flex-wrap:nowrap;padding:18px clamp(20px,5vw,56px);border-bottom:1px solid #E2D9CB">
+    <a href="Promises%20Homepage%20v2.dc.html" style="display:flex;align-items:center;gap:13px;color:#23231F;min-width:0;flex:0 1 auto">
+      <span style="width:46px;height:46px;flex:0 0 auto;background:#1A1A17;overflow:hidden">
+        <img src="uploads/Logo.jpg" alt="Promises Treatment Centre — dove in flight" style="width:100%;height:100%;object-fit:cover;object-position:52% 42%">
+      </span>
+      <span style="display:flex;flex-direction:column;line-height:1.12">
+        <span style="font-family:Newsreader,Georgia,serif;font-size:24px;font-weight:500;letter-spacing:-0.012em">Promises</span>
+        <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}"><span style="font-family:ui-monospace,Menlo,monospace;font-size:9.5px;letter-spacing:0.22em;text-transform:uppercase;color:#7C7367;white-space:nowrap">Treatment Centre</span></sc-if>
+      </span>
+    </a>
+    <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+    <div style="display:flex;align-items:center;gap:clamp(12px,2vw,26px);flex-wrap:wrap;font-size:15px;color:#3C382F">
+      <a href="Promises%20Homepage%20v2.dc.html#about" style="color:#3C382F">About</a>
+      <a href="Treatment.dc.html" style="color:#3C382F">Treatment</a>
+      <a href="Addiction-Explained.dc.html" style="color:#23231F;font-weight:700;border-bottom:2px solid #8C4A32;padding-bottom:2px">Addiction explained</a>
+      <a href="Aftercare.dc.html" style="color:#3C382F">Aftercare</a>
+      <a href="Promises%20Homepage%20v2.dc.html#selfcheck" style="color:#3C382F">Self-check</a>
+      <a href="tel:+254725871040" style="display:inline-flex;align-items:center;padding:12px 20px;background:#23231F;color:#F7F2EA;font-weight:600;font-size:14.5px">Call 0725 871 040</a>
+    </div></sc-if>
+    <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex;align-items:center;gap:10px;flex:0 0 auto">
+        <a href="tel:+254725871040" aria-label="Call Promises Treatment Centre" style="display:inline-flex;align-items:center;justify-content:center;min-width:46px;height:46px;padding:0 15px;background:#23231F;color:#F7F2EA;font-weight:700;font-size:14.5px">Call</a>
+        <span onClick="{{ toggleMenu }}" role="button" aria-label="Menu" style="display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border:1px solid #C9BCA8;color:#23231F;font-size:19px;line-height:1;cursor:pointer;user-select:none">{{ menuGlyph }}</span>
+      </div>
+    </sc-if>
+  </div>
+  <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="display:flex;flex-direction:column;padding:14px clamp(20px,5vw,56px) 26px;background:#FFFDF9;border-bottom:1px solid #E2D9CB">
+      <a href="Promises%20Homepage%20v2.dc.html" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;padding:6px 0;border-bottom:1px solid #EDE5D8;font-family:Newsreader,Georgia,serif;font-size:21px;color:#23231F">Home</a>
+      <a href="Promises%20Homepage%20v2.dc.html#about" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;padding:6px 0;border-bottom:1px solid #EDE5D8;font-family:Newsreader,Georgia,serif;font-size:21px;color:#23231F">About</a>
+      <a href="Treatment.dc.html" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;padding:6px 0;border-bottom:1px solid #EDE5D8;font-family:Newsreader,Georgia,serif;font-size:21px;color:#23231F">Treatment</a>
+      <a href="Addiction-Explained.dc.html" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;padding:6px 0;border-bottom:1px solid #EDE5D8;font-family:Newsreader,Georgia,serif;font-size:21px;color:#23231F">Addiction explained</a>
+      <a href="Aftercare.dc.html" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;padding:6px 0;border-bottom:1px solid #EDE5D8;font-family:Newsreader,Georgia,serif;font-size:21px;color:#23231F">Aftercare</a>
+      <a href="Promises%20Homepage%20v2.dc.html#selfcheck" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;padding:6px 0;border-bottom:1px solid #EDE5D8;font-family:Newsreader,Georgia,serif;font-size:21px;color:#23231F">Self-check</a>
+      <a href="Promises%20Homepage%20v2.dc.html#find-us" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;padding:6px 0;border-bottom:1px solid #EDE5D8;font-family:Newsreader,Georgia,serif;font-size:21px;color:#23231F">Find us</a>
+      <a href="tel:+254725871040" style="display:inline-flex;align-items:center;justify-content:center;min-height:54px;margin-top:20px;background:#8C4A32;color:#FFF8F1;font-weight:700;font-size:16px">Call us now · 0725 871 040</a>
+      <span style="padding-top:12px;font-size:14px;color:#7C7367">Lines open daily. Every conversation stays between us.</span>
+    </div>
+  </sc-if>
+
+  <div style="padding:clamp(44px,6vw,74px) clamp(20px,5vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:clamp(28px,5vw,56px);align-items:end;border-bottom:1px solid #E2D9CB">
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <div style="display:flex;gap:10px;align-items:center;font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#8C4A32">
+        <a href="Promises%20Homepage%20v2.dc.html" style="color:#8C4A32">Home</a><span style="color:#C0B4A2">/</span><span style="color:#7C7367">Addiction explained</span>
+      </div>
+      <h1 style="margin:0;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(34px,4.6vw,54px);line-height:1.06;letter-spacing:-0.022em;text-wrap:pretty">Understanding it takes the shame out of it.</h1>
+      <p style="margin:0;font-size:18px;line-height:1.62;color:#4A463E;max-width:52ch;text-wrap:pretty">Families spend years asking why someone will not simply stop. The answer is in how the brain has changed — and once you see that clearly, you can stop fighting the person and start treating the disease.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;padding-bottom:6px">
+      <sc-for list="{{ jumps }}" as="j" hint-placeholder-count="4">
+        <a href="{{ j.href }}" style="display:flex;align-items:baseline;gap:14px;padding:14px 0;border-bottom:1px solid #E2D9CB;color:#23231F">
+          <span style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#A89880;flex:0 0 auto">{{ j.num }}</span>
+          <span style="font-family:Newsreader,Georgia,serif;font-size:20px">{{ j.label }}</span>
+        </a>
+      </sc-for>
+    </div>
+  </div>
+
+  <div id="definition" style="padding:clamp(52px,7vw,84px) clamp(20px,5vw,56px);background:#EFE7DA">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(32px,5vw,60px);align-items:start">
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#8C4A32">What addiction is</div>
+        <h2 style="margin:0;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(28px,3.4vw,36px);line-height:1.14;letter-spacing:-0.018em;text-wrap:pretty">A chronic, treatable medical condition.</h2>
+        <p style="margin:0;font-size:15px;line-height:1.6;color:#6B6559;max-width:38ch">Classified as a chronic brain disorder by the American Society of Addiction Medicine and the National Institute on Drug Abuse.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:18px;font-size:17px;line-height:1.68;color:#4A463E">
+        <p style="margin:0;text-wrap:pretty">Addiction is compulsive substance use or behaviour that continues despite harmful consequences. It takes hold when repeated engagement with a drug or an activity alters the brain's reward and self-control circuits, producing intense cravings and a real loss of control.</p>
+        <p style="margin:0;text-wrap:pretty">Tolerance builds with repeated misuse: larger amounts, or more frequent use, are needed for the same effect — which escalates the addiction on its own. Long-term use then becomes a cycle in which the substance is needed simply to avoid withdrawal, until it is prioritised above everything that once mattered.</p>
+      </div>
+    </div>
+    <div style="margin-top:38px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:1px;background:#DFD4C2;border:1px solid #DFD4C2">
+      <sc-for list="{{ marks }}" as="m" hint-placeholder-count="4">
+        <div style="background:#FFFDF9;padding:24px 24px;display:flex;flex-direction:column;gap:8px">
+          <span style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#A89880">{{ m.num }}</span>
+          <span style="font-family:Newsreader,Georgia,serif;font-size:20px;line-height:1.24;color:#23231F">{{ m.title }}</span>
+          <span style="font-size:15px;line-height:1.58;color:#4A463E">{{ m.body }}</span>
+        </div>
+      </sc-for>
+    </div>
+    <p style="margin:14px 0 0;font-size:14px;color:#6B6559">The four categories of addictive behaviour identified in the DSM-5.</p>
+  </div>
+
+  <div id="types" style="padding:clamp(52px,7vw,84px) clamp(20px,5vw,56px)">
+    <div style="display:flex;flex-direction:column;gap:14px;max-width:62ch;padding-bottom:36px">
+      <div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#8C4A32">Two categories</div>
+      <h2 style="margin:0;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(28px,3.5vw,38px);line-height:1.14;letter-spacing:-0.018em;text-wrap:pretty">Substances, and behaviours.</h2>
+      <p style="margin:0;font-size:17px;line-height:1.68;color:#4A463E;text-wrap:pretty">Both work on the same reward circuitry, and both can dominate a life. We treat substance use disorders here; where a behavioural addiction is present alongside one, it is addressed in therapy.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:clamp(24px,3vw,36px)">
+      <div style="display:flex;flex-direction:column;gap:18px">
+        <div style="display:flex;flex-direction:column;gap:8px;padding-bottom:6px;border-bottom:2px solid #8C4A32">
+          <span style="font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#8C4A32">Category one</span>
+          <h3 style="margin:0;font-family:Newsreader,Georgia,serif;font-weight:500;font-size:25px;line-height:1.2">Substance use disorders</h3>
+        </div>
+        <p style="margin:0;font-size:16px;line-height:1.64;color:#4A463E;text-wrap:pretty">Compulsive use of chemical substances despite the damage to physical health, mental wellbeing and relationships.</p>
+        <div style="display:flex;flex-direction:column">
+          <sc-for list="{{ substances }}" as="s" hint-placeholder-count="6">
+            <div style="display:flex;flex-direction:column;gap:4px;padding:16px 0;border-bottom:1px solid #E2D9CB">
+              <span style="font-size:16.5px;font-weight:700;color:#23231F">{{ s.name }}</span>
+              <span style="font-size:15px;line-height:1.58;color:#5A554B">{{ s.body }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:18px">
+        <div style="display:flex;flex-direction:column;gap:8px;padding-bottom:6px;border-bottom:2px solid #A89880">
+          <span style="font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#8C4A32">Category two</span>
+          <h3 style="margin:0;font-family:Newsreader,Georgia,serif;font-weight:500;font-size:25px;line-height:1.2">Behavioural addictions</h3>
+        </div>
+        <p style="margin:0;font-size:16px;line-height:1.64;color:#4A463E;text-wrap:pretty">A compulsive urge to perform an activity for short-term pleasure or relief, continuing even as it does long-term harm.</p>
+        <div style="display:flex;flex-direction:column">
+          <sc-for list="{{ behaviours }}" as="b" hint-placeholder-count="7">
+            <div style="display:flex;flex-direction:column;gap:4px;padding:16px 0;border-bottom:1px solid #E2D9CB">
+              <span style="font-size:16.5px;font-weight:700;color:#23231F">{{ b.name }}</span>
+              <span style="font-size:15px;line-height:1.58;color:#5A554B">{{ b.body }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="dependency" style="padding:clamp(52px,7vw,84px) clamp(20px,5vw,56px);background:#23231F;color:#F2EBE0">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(32px,5vw,56px);align-items:start">
+      <div style="display:flex;flex-direction:column;gap:18px">
+        <div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#D89E7F">Dependency vs addiction</div>
+        <h2 style="margin:0;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(28px,3.5vw,38px);line-height:1.14;letter-spacing:-0.018em;color:#FFFDF9;text-wrap:pretty">Not the same thing — and the difference matters.</h2>
+        <p style="margin:0;font-size:16.5px;line-height:1.66;color:#CFC6B8;text-wrap:pretty">A person can be dependent and never develop an addiction. A person can be addicted without being dependent on a substance. But once dependence sets in, the risk of addiction rises dramatically.</p>
+        <p style="margin:0;font-size:16.5px;line-height:1.66;color:#CFC6B8;text-wrap:pretty">The distinction is control. Tolerance and withdrawal appear in both. In addiction, control over the substance is lost completely and it takes priority over everything else in the person's life.</p>
+        <div style="display:flex;flex-direction:column;gap:8px;padding:20px 22px;background:#2C2A24;margin-top:6px">
+          <span style="font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;color:#8A8074">WHO threshold</span>
+          <span style="font-size:16px;line-height:1.6;color:#E4DBCD">Symptoms present for at least 12 months — or continuous, daily use across the previous three months.</span>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:26px">
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div style="font-size:14.5px;color:#9E958A">The WHO describes dependence as continuous use with impaired regulation, shown in at least two of:</div>
+          <sc-for list="{{ whoSigns }}" as="w" hint-placeholder-count="5">
+            <div style="display:flex;gap:14px;padding:13px 0;border-bottom:1px solid #38362F;font-size:16px;line-height:1.55;color:#E4DBCD">
+              <span style="color:#D89E7F;flex:0 0 auto">—</span>
+              <span>{{ w }}</span>
+            </div>
+          </sc-for>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div style="font-size:14.5px;color:#9E958A">Symptoms of dependence, physical and psychological:</div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <sc-for list="{{ depSymptoms }}" as="d" hint-placeholder-count="12">
+              <span style="padding:8px 14px;background:#2C2A24;font-size:14.5px;color:#E4DBCD">{{ d }}</span>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="causes" style="padding:clamp(52px,7vw,84px) clamp(20px,5vw,56px);background:#FFFDF9;border-bottom:1px solid #E2D9CB">
+    <div style="display:flex;flex-direction:column;gap:14px;max-width:64ch;padding-bottom:36px">
+      <div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#8C4A32">Causes</div>
+      <h2 style="margin:0;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(28px,3.5vw,38px);line-height:1.14;letter-spacing:-0.018em;text-wrap:pretty">There is no single cause. There is a combination.</h2>
+      <p style="margin:0;font-size:17px;line-height:1.68;color:#4A463E;text-wrap:pretty">Genetic, environmental and developmental factors together make some people far more vulnerable to the brain-altering effects of substances. None of them is a moral failing.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(24px,3vw,32px)">
+      <sc-for list="{{ causes }}" as="c" hint-placeholder-count="3">
+        <div style="display:flex;flex-direction:column;gap:16px;padding-top:20px;border-top:3px solid #8C4A32">
+          <h3 style="margin:0;font-family:Newsreader,Georgia,serif;font-weight:500;font-size:23px;line-height:1.2">{{ c.title }}</h3>
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <sc-for list="{{ c.items }}" as="i" hint-placeholder-count="3">
+              <div style="display:flex;flex-direction:column;gap:4px">
+                <span style="font-size:16px;font-weight:700;color:#23231F">{{ i.name }}</span>
+                <span style="font-size:15.5px;line-height:1.6;color:#4A463E">{{ i.body }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="padding:clamp(48px,6vw,76px) clamp(20px,5vw,56px);display:flex;flex-direction:column;gap:22px;align-items:flex-start;max-width:70ch">
+    <div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#8C4A32">Next</div>
+    <h2 style="margin:0;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(26px,3.2vw,34px);line-height:1.16;letter-spacing:-0.018em;text-wrap:pretty">It is treatable, and the cycle can be broken. Here is how we do it.</h2>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;padding-top:2px">
+      <a href="Treatment.dc.html" style="display:inline-flex;align-items:center;padding:15px 24px;background:#8C4A32;color:#FFF8F1;font-weight:700;font-size:15.5px">See how treatment works →</a>
+      <a href="Promises%20Homepage%20v2.dc.html#selfcheck" style="display:inline-flex;box-sizing:border-box;align-items:center;padding:14px 23px;border:1px solid #C9BCA8;color:#3C382F;font-weight:600;font-size:15.5px">Take the self-check</a>
+    </div>
+  </div>
+
+  <div style="padding:clamp(52px,6vw,70px) clamp(20px,5vw,56px) 40px;background:#23231F;color:#CFC6B8">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:clamp(32px,4vw,48px);padding-bottom:44px">
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div style="display:flex;align-items:center;gap:13px">
+          <span style="width:52px;height:52px;flex:0 0 auto;background:#131311;overflow:hidden">
+            <img src="uploads/Logo.jpg" alt="Promises Treatment Centre — dove in flight" style="width:100%;height:100%;object-fit:cover;object-position:52% 42%">
+          </span>
+          <span style="display:flex;flex-direction:column;line-height:1.12">
+            <span style="font-family:Newsreader,Georgia,serif;font-size:26px;color:#FFFDF9">Promises</span>
+            <span style="font-family:ui-monospace,Menlo,monospace;font-size:9.5px;letter-spacing:0.22em;text-transform:uppercase;color:#8A8074">Treatment Centre</span>
+          </span>
+        </div>
+        <p style="margin:0;font-size:15.5px;line-height:1.65;max-width:40ch">We are committed to eradicating the stigma of addiction and fostering a sustainable culture of recovery.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;font-size:15px">
+        <span style="font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;color:#8A8074;padding-bottom:4px">Contact</span>
+        <span>0725 871 040</span>
+        <span>0700 883 257</span>
+        <span>info@promisestreatmentcentre.com</span>
+        <span>P.O. Box 526-50205, Webuye</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;font-size:15px">
+        <span style="font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;color:#8A8074;padding-bottom:4px">Explore</span>
+        <a href="Promises%20Homepage%20v2.dc.html" style="color:#CFC6B8">Home</a>
+        <a href="Treatment.dc.html" style="color:#CFC6B8">Treatment</a>
+        <a href="Addiction-Explained.dc.html" style="color:#CFC6B8">Addiction explained</a>
+        <a href="Aftercare.dc.html" style="color:#CFC6B8">Aftercare</a>
+        <a href="Promises%20Homepage%20v2.dc.html#find-us" style="color:#CFC6B8">Find us</a>
+      </div>
+    </div>
+    <div style="border-top:1px solid #38362F;padding-top:20px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:13.5px;color:#8A8074">
+      <span>Fully registered · NACADA accredited</span>
+      <span style="max-width:70ch">Admission is open to all suitable clients, irrespective of race, ethnicity, gender, culture, ideology, beliefs, sexual orientation, language or HIV status.</span>
+    </div>
+  </div>
+
+
+  <sc-if value="{{ showTop }}" hint-placeholder-val="{{ false }}">
+    <span onClick="{{ scrollTop }}" role="button" aria-label="Back to top" style="position:fixed;right:clamp(16px,3vw,28px);bottom:clamp(16px,3vw,28px);z-index:40;display:flex;align-items:center;justify-content:center;width:50px;height:50px;background:#23231F;color:#F7F2EA;font-size:20px;line-height:1;cursor:pointer;user-select:none;box-shadow:0 8px 24px -8px rgba(20,16,10,0.5)">↑</span>
+  </sc-if>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  state = { vw: 1200, scrolled: false, menuOpen: false };
+
+  componentDidMount() {
+    this._sync = () => this.setState({ vw: window.innerWidth, scrolled: ((document.scrollingElement || document.documentElement).scrollTop || window.scrollY || 0) > 420 });
+    window.addEventListener('resize', this._sync);
+    window.addEventListener('scroll', this._sync, { passive: true });
+    this._sync();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this._sync);
+    window.removeEventListener('scroll', this._sync);
+  }
+
+  chrome() {
+    const mob = (this.state.vw || 1200) <= 760;
+    return {
+      isMobile: mob,
+      isDesktop: !mob,
+      menuOpen: mob && !!this.state.menuOpen,
+      menuGlyph: this.state.menuOpen ? '\u2715' : '\u2630',
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      showTop: !!this.state.scrolled,
+      scrollTop: () => {
+        const el = document.scrollingElement || document.documentElement;
+        if (el && el.scrollTo) { el.scrollTo({ top: 0, behavior: 'smooth' }); } else if (el) { el.scrollTop = 0; }
+        if (document.body) { document.body.scrollTop = 0; }
+        const w = document.defaultView;
+        if (w && w.scrollTo) { w.scrollTo(0, 0); }
+      }
+    };
+  }
+
+  renderVals() {
+    return Object.assign({}, this.chrome(), {
+      jumps: [
+        { num: '01', label: 'What addiction is', href: '#definition' },
+        { num: '02', label: 'Substances and behaviours', href: '#types' },
+        { num: '03', label: 'Dependency vs addiction', href: '#dependency' },
+        { num: '04', label: 'What causes it', href: '#causes' }
+      ],
+      marks: [
+        { num: '01', title: 'Impaired control', body: 'Using more, or longer, than intended — and being unable to cut down or stop.' },
+        { num: '02', title: 'Compulsive use', body: 'Intense preoccupation with obtaining or using, making it the primary focus of daily life.' },
+        { num: '03', title: 'Continued use despite harm', body: 'Persisting through physical, psychological, social and financial consequences.' },
+        { num: '04', title: 'Risky use', body: 'Using in hazardous situations, or ignoring a high risk of personal harm.' }
+      ],
+      substances: [
+        { name: 'Alcohol', body: 'One of the most widespread and socially accepted addictions, heavily affecting physical health and cognitive function.' },
+        { name: 'Nicotine and tobacco', body: 'A highly addictive chemical reliance, driven by how fast nicotine acts.' },
+        { name: 'Opioids', body: 'Prescription painkillers such as OxyContin and morphine, and illicit drugs including heroin and fentanyl — highly addictive, with severe overdose risk.' },
+        { name: 'Stimulants', body: 'Cocaine, methamphetamine and prescription ADHD medications.' },
+        { name: 'Cannabis', body: 'Can lead to cannabis use disorder: compulsive daily use despite the disruption it causes.' },
+        { name: 'Sedatives and hallucinogens', body: 'Misuse of prescription tranquillisers, sleeping pills or hallucinogenic substances.' }
+      ],
+      behaviours: [
+        { name: 'Gambling', body: 'The only behavioural addiction officially recognised as a mental health disorder in the DSM-5.' },
+        { name: 'Internet and social media', body: 'A growing compulsion to stay online, driven by the engagement triggers built into digital platforms.' },
+        { name: 'Video gaming', body: 'Excessive, all-consuming gaming that damages work, relationships or personal wellbeing.' },
+        { name: 'Shopping', body: 'Compulsive purchasing and overspending driven by the thrill of buying rather than any need.' },
+        { name: 'Food', body: 'A compulsive relationship with highly palatable or sugary food, marked by intense cravings and overeating.' },
+        { name: 'Sex and pornography', body: 'Uncontrollable urges, thoughts or behaviours around sexual activity or explicit material that interfere with daily functioning.' },
+        { name: 'Work', body: 'An unhealthy obsession with working that leads to neglecting relationships, health and wellbeing.' }
+      ],
+      whoSigns: [
+        'Impaired control over substance use or unhealthy behaviour',
+        'Placing more importance on use than on essential daily responsibilities',
+        'Continuing to use even as consequences begin to appear',
+        'Increasing tolerance — needing more to feel the same effects',
+        'Withdrawal symptoms during a period without the substance'
+      ],
+      depSymptoms: ['Anxiety', 'Depression', 'Panic', 'Obsessive thoughts', 'Intense cravings', 'Restlessness', 'Agitation', 'Insomnia', 'Body aches', 'Chills or sweats', 'Fever', 'Digestive issues'],
+      causes: [
+        { title: 'Biological and genetic', items: [
+          { name: 'Genetics', body: 'Hereditary traits account for roughly half of a person\u2019s risk. A blood relative with a substance use disorder significantly raises your susceptibility.' },
+          { name: 'Brain chemistry', body: 'Addictive substances hijack the reward system with massive dopamine surges. The brain desensitises, so more is needed for the same pleasure.' },
+          { name: 'Mental health', body: 'Co-occurring depression, anxiety, ADHD or PTSD raise the risk — substances become a way to manage painful symptoms.' }
+        ] },
+        { title: 'Environmental and social', items: [
+          { name: 'Trauma and stress', body: 'Physical, emotional or sexual abuse, especially in childhood, severely increases risk. So does chronic stress from financial instability or unstable housing.' },
+          { name: 'Social surroundings', body: 'Growing up where substance use is normalised, or facing strong peer pressure, raises the likelihood of early experimentation.' },
+          { name: 'Early exposure', body: 'Using highly addictive substances young changes the developing brain and greatly increases the chance of progressing to severe addiction.' }
+        ] },
+        { title: 'Brain development', items: [
+          { name: 'The prefrontal cortex', body: 'The areas governing decision-making, judgement and self-control are still developing through adolescence, which makes young people especially prone to the risky, impulsive choices that lead to addiction.' }
+        ] }
+      ]
+    });
+  }
+}
+
+</script>
+</body>
+</html>

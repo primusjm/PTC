@@ -1,0 +1,92 @@
+{
+  "kicker": "Webuye, Kenya · NACADA accredited",
+  "heroTitle": "You have not lost yourself. You have only lost your way.",
+  "heroBody": "Promises is a residential home for recovery from alcohol and drug addiction. Safe, confidential and affordable — and many of the people who will care for you have walked this road themselves.",
+  "heroImage": "https://images.unsplash.com/photo-1655720358097-673f2a952cb7?fm=jpg&q=70&w=1600&auto=format&fit=crop",
+  "heroQuote": "Where hope in life is rekindled.",
+  "trust": [
+    { "title": "NACADA accredited", "body": "A fully registered residential treatment and rehabilitation facility." },
+    { "title": "Residential, 24/7", "body": "Away from triggers, with medical staff and support at every hour." },
+    { "title": "Family therapy included", "body": "A three-day programme for the people who love you." },
+    { "title": "Aftercare that follows up", "body": "We stay in touch after discharge — recovery does not end at the gate." }
+  ],
+  "aboutKicker": "Who we are",
+  "aboutTitle": "A therapeutic community, not an institution.",
+  "aboutImage": "https://images.unsplash.com/photo-1655720359248-eeace8c709c5?fm=jpg&q=70&w=1400&auto=format&fit=crop",
+  "aboutParas": [
+    "We are a fully registered, NACADA-accredited addiction recovery centre, known for breaking the cycle of addiction and restoring health to individuals, families and whole communities.",
+    "Every member of staff shares one belief: addiction is a treatable disease, and recovery heals the mind, body and spirit together. So treatment here is medical, psychological, spiritual and holistic — because we are treating a person, not a habit.",
+    "Your culture, your family and your values sit at the centre of your recovery. Our whole structure — the facility, the wholesome food, the loving staff — exists to make it safe for you to speak honestly."
+  ],
+  "vision": "A healthy society free from addictions.",
+  "mission": "Professional treatment and rehabilitation of persons with substance use disorders.",
+  "belief": "Addiction is a treatable disease and the cycle can be broken — and our clients can be empowered to take responsibility for their own ongoing recovery.",
+  "values": ["Confidentiality", "Accountability", "Empowerment", "Participation"],
+  "treatmentTitle": "Four stages of care, one continuous hand.",
+  "treatmentIntro": "Detox alone is not treatment. Each stage hands you to the next, and none of it ends at discharge.",
+  "treatmentImage": "https://images.unsplash.com/photo-1655720358066-2aab2a903ef8?fm=jpg&q=70&w=2000&auto=format&fit=crop",
+  "services": [
+    { "num": "01", "title": "Detoxification", "body": "A medically supervised process to clear the substance while withdrawal is managed. Days to a few weeks, depending on the substance and the severity of dependence." },
+    { "num": "02", "title": "Alcohol & drug treatment", "body": "Residential care combining medication-assisted treatment, daily group therapy, one-to-one counselling and a structured routine that rebuilds healthy habits." },
+    { "num": "03", "title": "Family therapy", "body": "A three-day programme for family and friends. It replaces negative patterns with positive ones, sets healthy boundaries and repairs what addiction damaged." },
+    { "num": "04", "title": "Aftercare & outreach", "body": "Follow-up on discharged clients, support-group placement and continued therapy to prevent relapse — plus community outreach on substance misuse." }
+  ],
+  "programmesTitle": "How long does it take?",
+  "programmesIntro": "Long enough to build a life that holds. Every case is assessed on admission and the plan is tailored — these are the programmes we run.",
+  "programmes": [
+    { "title": "Hard drugs & narcotics", "note": "Full residential programme with detox", "length": "6 months" },
+    { "title": "Alcohol dependence", "note": "Residential recovery programme", "length": "3 months" },
+    { "title": "Relapse", "note": "For clients returning to treatment", "length": "2 months" },
+    { "title": "Expelled students", "note": "Structured intervention and counselling", "length": "1 month" },
+    { "title": "Suspended students", "note": "Short intensive intervention", "length": "2 weeks" }
+  ],
+  "familyImage": "https://images.unsplash.com/photo-1655720362145-2d8bc6718239?fm=jpg&q=70&w=1600&auto=format&fit=crop",
+  "familyTitle": "The disease affects the whole family. So does the healing.",
+  "familyBody": "We run a comprehensive three-day programme for family and friends. It teaches you how to stop taking part in unhealthy patterns, how to set boundaries that hold, and how to support recovery without losing yourself.",
+  "familyBenefits": [
+    "Restore relationships addiction has broken",
+    "Replace negative interactions with positive ones",
+    "Improve communication and set healthy boundaries",
+    "Understand the disease, so you can stop fighting the person"
+  ],
+  "diseaseTitle": "Yes. And that changes everything about how we treat you.",
+  "diseaseBody": "Repeated use floods the brain with dopamine. In time the brain stops making normal amounts on its own, so the substance is prioritised over everything that once mattered — and going without brings real physical pain. This is a chronic, treatable medical condition, not a failure of character.",
+  "diseaseNote": "Classified as a chronic brain disorder by the American Society of Addiction Medicine and the National Institute on Drug Abuse.",
+  "marks": [
+    { "num": "01", "title": "Impaired control", "body": "Using more, or for longer, than intended — and being unable to cut down." },
+    { "num": "02", "title": "Compulsive use", "body": "Obtaining or using becomes the primary focus of the day." },
+    { "num": "03", "title": "Continued use despite harm", "body": "Persisting through physical, psychological, social and financial damage." },
+    { "num": "04", "title": "Risky use", "body": "Using in hazardous situations, ignoring a high risk of personal harm." }
+  ],
+  "signs": [
+    { "label": "Loss of control", "hint": "Cannot stop or limit use, even after trying" },
+    { "label": "Preoccupation", "hint": "Constant focus on getting, using or recovering" },
+    { "label": "Neglected duties", "hint": "Work, school or home obligations slipping" },
+    { "label": "Secrecy", "hint": "Withdrawing, defensive, lying about whereabouts" },
+    { "label": "Mood swings", "hint": "Unexplained irritability, agitation, hostility" },
+    { "label": "Loss of interest", "hint": "Hobbies, sport and friends given up" },
+    { "label": "Tolerance", "hint": "Needing more, or more often, for the same effect" },
+    { "label": "Withdrawal", "hint": "Shaking, sweating, nausea or anxiety when stopping" },
+    { "label": "Sleep and appetite", "hint": "Sudden weight change, insomnia, odd hours" },
+    { "label": "Appearance", "hint": "Noticeable decline in hygiene and grooming" },
+    { "label": "Money trouble", "hint": "Unexplained shortages, borrowing, stealing" },
+    { "label": "Risky behaviour", "hint": "Driving impaired or using in unsafe places" },
+    { "label": "Physical clues", "hint": "Bloodshot or glassy eyes, unusual pupils, slurred speech, poor coordination" }
+  ],
+  "quote": "Rarely have we seen a person fail who has thoroughly followed our path.",
+  "quoteAttribution": "Alcoholics Anonymous, p. 58",
+  "quoteImage": "https://images.unsplash.com/photo-1655721991918-ee80a3291219?fm=jpg&q=70&w=2000&auto=format&fit=crop",
+  "testimonials": [
+    { "quote": "The attitude of the staff is warm and welcoming. I can share openly here, and everyone is willing to give me feedback.", "who": "Client, residential programme" },
+    { "quote": "The programme has saved my life. My sessions brought out things I truly believed I would never tell a soul.", "who": "Client, alcohol programme" },
+    { "quote": "I was very happy with the openness and honesty I felt in the group. It made it safe to talk about our struggles.", "who": "Client, group therapy" }
+  ],
+  "faqs": [
+    { "q": "How long will treatment take?", "a": "Alcohol dependence is a three-month residential programme and hard drugs or narcotics is six months. Relapse is two months, expelled students one month, and suspended students two weeks. Every case is assessed on admission and matched to the right programme." },
+    { "q": "What does it cost?", "a": "Our costs are deliberately reasonable and treatment services are tailor-made for each case, so the figure depends on the programme. Call us and we will be straight with you about what your situation would involve." },
+    { "q": "Who can be admitted?", "a": "Admission is available to all suitable clients irrespective of race, ethnicity, gender, culture, ideology, political or religious beliefs, sexual orientation, language and HIV status." },
+    { "q": "Can family be involved?", "a": "Yes, and we encourage it. We run a comprehensive three-day family therapy programme for family and friends of our clients — it restores broken relationships, teaches healthy boundaries, and makes long-term recovery far more likely." },
+    { "q": "Is detox enough on its own?", "a": "No. Detox manages withdrawal and addresses physical dependence, but detox with no follow-up is not treatment. The psychological side has to be treated too, through counselling, group work and a residential programme." },
+    { "q": "What if I relapse?", "a": "Relapse happens, even to the most dedicated people in recovery, and it is not the end of anything. Do not wait for it to get worse — contact us immediately and we will pick up where we left off." }
+  ]
+}

@@ -1,0 +1,290 @@
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: true
+
+media_folder: "src/assets/images"
+public_folder: "/assets/images"
+
+collections:
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - name: "site"
+        label: "Contact & footer details"
+        file: "src/_data/site.json"
+        fields:
+          - { label: "Organisation name", name: "name", widget: "string" }
+          - { label: "Tagline", name: "tagline", widget: "string" }
+          - { label: "Crisis bar message", name: "crisisLine", widget: "string" }
+          - { label: "Phone (display)", name: "phone", widget: "string" }
+          - { label: "Second phone (display)", name: "phone2", widget: "string" }
+          - { label: "Phone (for tel: links, e.g. +254725871040)", name: "phoneHref", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Postal address", name: "address", widget: "string" }
+          - { label: "Location description", name: "locationLine", widget: "text" }
+          - { label: "Location heading", name: "locationTitle", widget: "string" }
+          - { label: "Footer blurb", name: "footerBlurb", widget: "text" }
+          - { label: "Footer registration line", name: "footerRegistered", widget: "string" }
+          - { label: "Admissions / non-discrimination note", name: "admissionsNote", widget: "text" }
+
+  - name: "home"
+    label: "Home Page"
+    files:
+      - name: "home"
+        label: "Home page content"
+        file: "src/_data/home.json"
+        fields:
+          - { label: "Hero kicker", name: "kicker", widget: "string" }
+          - { label: "Hero title", name: "heroTitle", widget: "string" }
+          - { label: "Hero body", name: "heroBody", widget: "text" }
+          - { label: "Hero image URL", name: "heroImage", widget: "string" }
+          - { label: "Hero image caption quote", name: "heroQuote", widget: "string" }
+          - label: "Trust bar items"
+            name: "trust"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Body", name: "body", widget: "text" }
+          - { label: "About kicker", name: "aboutKicker", widget: "string" }
+          - { label: "About title", name: "aboutTitle", widget: "string" }
+          - { label: "About image URL", name: "aboutImage", widget: "string" }
+          - label: "About paragraphs"
+            name: "aboutParas"
+            widget: "list"
+            field: { label: "Paragraph", name: "paragraph", widget: "text" }
+          - { label: "Vision statement", name: "vision", widget: "string" }
+          - { label: "Mission statement", name: "mission", widget: "string" }
+          - { label: "Belief statement", name: "belief", widget: "text" }
+          - label: "Values (chips)"
+            name: "values"
+            widget: "list"
+            field: { label: "Value", name: "value", widget: "string" }
+          - { label: "Treatment section title", name: "treatmentTitle", widget: "string" }
+          - { label: "Treatment section intro", name: "treatmentIntro", widget: "text" }
+          - { label: "Treatment section image URL", name: "treatmentImage", widget: "string" }
+          - label: "Services"
+            name: "services"
+            widget: "list"
+            fields:
+              - { label: "Number", name: "num", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Body", name: "body", widget: "text" }
+          - { label: "Programmes section title", name: "programmesTitle", widget: "string" }
+          - { label: "Programmes section intro", name: "programmesIntro", widget: "text" }
+          - label: "Programmes"
+            name: "programmes"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Note", name: "note", widget: "string" }
+              - { label: "Length", name: "length", widget: "string" }
+          - { label: "Family therapy image URL", name: "familyImage", widget: "string" }
+          - { label: "Family therapy title", name: "familyTitle", widget: "string" }
+          - { label: "Family therapy body", name: "familyBody", widget: "text" }
+          - label: "Family therapy benefits"
+            name: "familyBenefits"
+            widget: "list"
+            field: { label: "Benefit", name: "benefit", widget: "string" }
+          - { label: "\"Is addiction a disease\" title", name: "diseaseTitle", widget: "string" }
+          - { label: "\"Is addiction a disease\" body", name: "diseaseBody", widget: "text" }
+          - { label: "\"Is addiction a disease\" note", name: "diseaseNote", widget: "text" }
+          - label: "The four marks of addiction (DSM-5)"
+            name: "marks"
+            widget: "list"
+            fields:
+              - { label: "Number", name: "num", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Body", name: "body", widget: "text" }
+          - label: "Self-check signs"
+            name: "signs"
+            widget: "list"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Hint", name: "hint", widget: "string" }
+          - { label: "Quote", name: "quote", widget: "text" }
+          - { label: "Quote attribution", name: "quoteAttribution", widget: "string" }
+          - { label: "Quote background image URL", name: "quoteImage", widget: "string" }
+          - label: "Testimonials"
+            name: "testimonials"
+            widget: "list"
+            fields:
+              - { label: "Quote", name: "quote", widget: "text" }
+              - { label: "Who", name: "who", widget: "string" }
+          - label: "FAQs"
+            name: "faqs"
+            widget: "list"
+            fields:
+              - { label: "Question", name: "q", widget: "string" }
+              - { label: "Answer", name: "a", widget: "text" }
+
+  - name: "treatment"
+    label: "Treatment Page"
+    files:
+      - name: "treatment"
+        label: "Treatment page content"
+        file: "src/_data/treatment.json"
+        fields:
+          - { label: "Hero title", name: "heroTitle", widget: "string" }
+          - { label: "Hero body", name: "heroBody", widget: "text" }
+          - { label: "Hero image URL", name: "heroImage", widget: "string" }
+          - label: "Jump links"
+            name: "jumps"
+            widget: "list"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Link target (e.g. #detox)", name: "href", widget: "string" }
+          - { label: "Philosophy title", name: "philosophyTitle", widget: "string" }
+          - label: "Philosophy paragraphs"
+            name: "philosophyParas"
+            widget: "list"
+            field: { label: "Paragraph", name: "paragraph", widget: "text" }
+          - { label: "Detox section title", name: "detoxTitle", widget: "string" }
+          - { label: "Detox section intro", name: "detoxIntro", widget: "text" }
+          - label: "Detox steps"
+            name: "detoxSteps"
+            widget: "list"
+            fields:
+              - { label: "Number", name: "num", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Body", name: "body", widget: "text" }
+          - { label: "Detox warning callout", name: "detoxWarning", widget: "text" }
+          - { label: "Residential section title", name: "residentialTitle", widget: "string" }
+          - { label: "Residential section body", name: "residentialBody", widget: "text" }
+          - label: "Residential features"
+            name: "features"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Body", name: "body", widget: "text" }
+          - { label: "Week section title", name: "weekTitle", widget: "string" }
+          - { label: "Week section intro", name: "weekIntro", widget: "text" }
+          - { label: "Week section image URL", name: "weekImage", widget: "string" }
+          - label: "A week here — parts"
+            name: "weekParts"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Cadence", name: "cadence", widget: "string" }
+              - { label: "Body", name: "body", widget: "text" }
+          - { label: "Benefits section title", name: "benefitsTitle", widget: "string" }
+          - label: "Why residential — benefits"
+            name: "benefits"
+            widget: "list"
+            fields:
+              - { label: "Number", name: "num", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Body", name: "body", widget: "text" }
+
+  - name: "addiction_explained"
+    label: "Addiction Explained Page"
+    files:
+      - name: "addiction_explained"
+        label: "Addiction explained page content"
+        file: "src/_data/addictionExplained.json"
+        fields:
+          - { label: "Hero title", name: "heroTitle", widget: "string" }
+          - { label: "Hero body", name: "heroBody", widget: "text" }
+          - label: "Jump links"
+            name: "jumps"
+            widget: "list"
+            fields:
+              - { label: "Number", name: "num", widget: "string" }
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Link target (e.g. #definition)", name: "href", widget: "string" }
+          - { label: "Definition title", name: "definitionTitle", widget: "string" }
+          - { label: "Definition note", name: "definitionNote", widget: "text" }
+          - label: "Definition paragraphs"
+            name: "definitionParas"
+            widget: "list"
+            field: { label: "Paragraph", name: "paragraph", widget: "text" }
+          - label: "The four marks of addiction (DSM-5)"
+            name: "marks"
+            widget: "list"
+            fields:
+              - { label: "Number", name: "num", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Body", name: "body", widget: "text" }
+          - { label: "Types section title", name: "typesTitle", widget: "string" }
+          - { label: "Types section intro", name: "typesIntro", widget: "text" }
+          - { label: "Substances intro", name: "substancesIntro", widget: "text" }
+          - label: "Substances"
+            name: "substances"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Body", name: "body", widget: "text" }
+          - { label: "Behaviours intro", name: "behavioursIntro", widget: "text" }
+          - label: "Behavioural addictions"
+            name: "behaviours"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Body", name: "body", widget: "text" }
+          - { label: "Dependency section title", name: "dependencyTitle", widget: "string" }
+          - label: "Dependency paragraphs"
+            name: "dependencyParas"
+            widget: "list"
+            field: { label: "Paragraph", name: "paragraph", widget: "text" }
+          - { label: "WHO threshold text", name: "whoThreshold", widget: "text" }
+          - label: "WHO dependence signs"
+            name: "whoSigns"
+            widget: "list"
+            field: { label: "Sign", name: "sign", widget: "string" }
+          - label: "Dependence symptoms (chips)"
+            name: "depSymptoms"
+            widget: "list"
+            field: { label: "Symptom", name: "symptom", widget: "string" }
+          - { label: "Causes section title", name: "causesTitle", widget: "string" }
+          - { label: "Causes section intro", name: "causesIntro", widget: "text" }
+          - label: "Causes"
+            name: "causes"
+            widget: "list"
+            fields:
+              - { label: "Category title", name: "title", widget: "string" }
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Name", name: "name", widget: "string" }
+                  - { label: "Body", name: "body", widget: "text" }
+
+  - name: "aftercare"
+    label: "Aftercare Page"
+    files:
+      - name: "aftercare"
+        label: "Aftercare page content"
+        file: "src/_data/aftercare.json"
+        fields:
+          - { label: "Hero title", name: "heroTitle", widget: "string" }
+          - { label: "Hero body", name: "heroBody", widget: "text" }
+          - { label: "Hero image URL", name: "heroImage", widget: "string" }
+          - { label: "Support groups title", name: "groupsTitle", widget: "string" }
+          - label: "Support groups paragraphs"
+            name: "groupsParas"
+            widget: "list"
+            field: { label: "Paragraph", name: "paragraph", widget: "text" }
+          - label: "Support group benefits"
+            name: "groupBenefits"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Body", name: "body", widget: "text" }
+          - { label: "\"Aftercare from us\" title", name: "ourAftercareTitle", widget: "string" }
+          - { label: "\"Aftercare from us\" body", name: "ourAftercareBody", widget: "text" }
+          - { label: "Timeline section title", name: "timelineTitle", widget: "string" }
+          - { label: "Timeline section intro", name: "timelineIntro", widget: "text" }
+          - label: "First-year timeline"
+            name: "timeline"
+            widget: "list"
+            fields:
+              - { label: "Range (e.g. 1–30 days)", name: "range", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - label: "Steps"
+                name: "steps"
+                widget: "list"
+                field: { label: "Step", name: "step", widget: "string" }
+          - { label: "Relapse section title", name: "relapseTitle", widget: "string" }
+          - { label: "Relapse section body", name: "relapseBody", widget: "text" }
+          - { label: "Relapse section image URL", name: "relapseImage", widget: "string" }

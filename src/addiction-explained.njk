@@ -1,0 +1,145 @@
+---
+layout: base.njk
+title: Addiction Explained
+nav: addiction
+permalink: /addiction-explained/
+description: "What addiction is, the difference between dependency and addiction, and what causes it — explained by Promises Treatment Centre."
+---
+<div class="section grid grid-2" style="align-items:end;border-bottom:1px solid var(--border)">
+  <div style="display:flex;flex-direction:column;gap:20px">
+    <div class="breadcrumb"><a href="/" style="color:var(--accent)">Home</a><span class="sep">/</span><span style="color:var(--muted)">Addiction explained</span></div>
+    <h1 class="h1" style="font-size:clamp(34px,4.6vw,54px)">{{ addictionExplained.heroTitle }}</h1>
+    <p class="p-lead">{{ addictionExplained.heroBody }}</p>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:12px;padding-bottom:6px">
+    {% for j in addictionExplained.jumps %}
+    <a href="{{ j.href }}" class="jump-row">
+      <span class="n">{{ j.num }}</span>
+      <span class="label">{{ j.label }}</span>
+    </a>
+    {% endfor %}
+  </div>
+</div>
+
+<div id="definition" class="section-tight bg-alt">
+  <div class="grid grid-2" style="align-items:start">
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div class="kicker">What addiction is</div>
+      <h2 class="h2" style="font-size:clamp(28px,3.4vw,36px)">{{ addictionExplained.definitionTitle }}</h2>
+      <p style="margin:0;font-size:15px;line-height:1.6;color:var(--muted2);max-width:38ch">{{ addictionExplained.definitionNote }}</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:18px">
+      {% for p in addictionExplained.definitionParas %}<p class="p-body" style="margin:0">{{ p }}</p>{% endfor %}
+    </div>
+  </div>
+  <div style="margin-top:38px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:1px;background:#DFD4C2;border:1px solid #DFD4C2">
+    {% for m in addictionExplained.marks %}
+    <div style="background:var(--bg-card);padding:24px 24px;display:flex;flex-direction:column;gap:8px">
+      <span class="num">{{ m.num }}</span>
+      <span class="serif" style="font-size:20px;line-height:1.24;color:var(--ink)">{{ m.title }}</span>
+      <span style="font-size:15px;line-height:1.58;color:var(--ink-soft)">{{ m.body }}</span>
+    </div>
+    {% endfor %}
+  </div>
+  <p style="margin:14px 0 0;font-size:14px;color:var(--muted2)">The four categories of addictive behaviour identified in the DSM-5.</p>
+</div>
+
+<div id="types" class="section-tight">
+  <div style="display:flex;flex-direction:column;gap:14px;max-width:62ch;padding-bottom:36px">
+    <div class="kicker">Two categories</div>
+    <h2 class="h2">{{ addictionExplained.typesTitle }}</h2>
+    <p class="p-body" style="margin:0">{{ addictionExplained.typesIntro }}</p>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:clamp(24px,3vw,36px)">
+    <div style="display:flex;flex-direction:column;gap:18px">
+      <div style="display:flex;flex-direction:column;gap:8px;padding-bottom:6px;border-bottom:2px solid var(--accent)">
+        <span style="font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent)">Category one</span>
+        <h3 class="h3" style="font-size:25px">Substance use disorders</h3>
+      </div>
+      <p style="margin:0;font-size:16px;line-height:1.64;color:var(--ink-soft)">{{ addictionExplained.substancesIntro }}</p>
+      <div style="display:flex;flex-direction:column">
+        {% for s in addictionExplained.substances %}
+        <div style="display:flex;flex-direction:column;gap:4px;padding:16px 0;border-bottom:1px solid var(--border)">
+          <span style="font-size:16.5px;font-weight:700;color:var(--ink)">{{ s.name }}</span>
+          <span style="font-size:15px;line-height:1.58;color:#5A554B">{{ s.body }}</span>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:18px">
+      <div style="display:flex;flex-direction:column;gap:8px;padding-bottom:6px;border-bottom:2px solid #A89880">
+        <span style="font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent)">Category two</span>
+        <h3 class="h3" style="font-size:25px">Behavioural addictions</h3>
+      </div>
+      <p style="margin:0;font-size:16px;line-height:1.64;color:var(--ink-soft)">{{ addictionExplained.behavioursIntro }}</p>
+      <div style="display:flex;flex-direction:column">
+        {% for b in addictionExplained.behaviours %}
+        <div style="display:flex;flex-direction:column;gap:4px;padding:16px 0;border-bottom:1px solid var(--border)">
+          <span style="font-size:16.5px;font-weight:700;color:var(--ink)">{{ b.name }}</span>
+          <span style="font-size:15px;line-height:1.58;color:#5A554B">{{ b.body }}</span>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="dependency" class="section-tight bg-dark">
+  <div class="grid grid-2" style="align-items:start">
+    <div style="display:flex;flex-direction:column;gap:18px">
+      <div class="kicker" style="color:var(--accent-light)">Dependency vs addiction</div>
+      <h2 class="h2" style="color:#FFFDF9;font-size:clamp(28px,3.5vw,38px)">{{ addictionExplained.dependencyTitle }}</h2>
+      {% for p in addictionExplained.dependencyParas %}<p style="margin:0;font-size:16.5px;line-height:1.66;color:var(--dark-text-soft)">{{ p }}</p>{% endfor %}
+      <div style="display:flex;flex-direction:column;gap:8px;padding:20px 22px;background:var(--dark-chip);margin-top:6px">
+        <span style="font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--dark-muted)">WHO threshold</span>
+        <span style="font-size:16px;line-height:1.6;color:#E4DBCD">{{ addictionExplained.whoThreshold }}</span>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:26px">
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div style="font-size:14.5px;color:var(--dark-muted)">The WHO describes dependence as continuous use with impaired regulation, shown in at least two of:</div>
+        {% for w in addictionExplained.whoSigns %}
+        <div class="who-sign"><span class="mark">&mdash;</span><span>{{ w }}</span></div>
+        {% endfor %}
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div style="font-size:14.5px;color:var(--dark-muted)">Symptoms of dependence, physical and psychological:</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          {% for d in addictionExplained.depSymptoms %}<span class="dep-symptom">{{ d }}</span>{% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="causes" class="section-tight bg-card border-bottom">
+  <div style="display:flex;flex-direction:column;gap:14px;max-width:64ch;padding-bottom:36px">
+    <div class="kicker">Causes</div>
+    <h2 class="h2">{{ addictionExplained.causesTitle }}</h2>
+    <p class="p-body" style="margin:0">{{ addictionExplained.causesIntro }}</p>
+  </div>
+  <div class="grid-2-tight" style="display:grid">
+    {% for c in addictionExplained.causes %}
+    <div style="display:flex;flex-direction:column;gap:16px;padding-top:20px;border-top:3px solid var(--accent)">
+      <h3 class="h3">{{ c.title }}</h3>
+      <div style="display:flex;flex-direction:column;gap:14px">
+        {% for i in c.items %}
+        <div style="display:flex;flex-direction:column;gap:4px">
+          <span style="font-size:16px;font-weight:700;color:var(--ink)">{{ i.name }}</span>
+          <span style="font-size:15.5px;line-height:1.6;color:var(--ink-soft)">{{ i.body }}</span>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<div class="section" style="display:flex;flex-direction:column;gap:22px;align-items:flex-start;max-width:70ch">
+  <div class="kicker">Next</div>
+  <h2 class="h2" style="font-size:clamp(26px,3.2vw,34px)">It is treatable, and the cycle can be broken. Here is how we do it.</h2>
+  <div style="display:flex;gap:12px;flex-wrap:wrap;padding-top:2px">
+    <a href="/treatment/" class="btn btn-primary">See how treatment works &#8594;</a>
+    <a href="/#selfcheck" class="btn btn-outline">Take the self-check</a>
+  </div>
+</div>

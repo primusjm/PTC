@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; background: #F7F2EA; }
+  a { color: #8C4A32; text-decoration: none; }
+  a:hover { color: #6E3823; }
+  img { display: block; }
+</style>
+</helmet>
+
+<div style="background:#F7F2EA;color:#23231F;font-family:Karla,system-ui,sans-serif">
+
+  <div style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;padding:11px clamp(20px,4vw,40px);background:#8C4A32;color:#FFF8F1;font-size:14px;font-weight:600">
+    <span>In crisis right now? Someone answers every call.</span>
+    <a href="tel:+254725871040" style="color:#FFF8F1;border-bottom:1px solid rgba(255,248,241,0.55);padding-bottom:1px">0725 871 040</a>
+  </div>
+
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:clamp(12px,1.6vw,24px);flex-wrap:nowrap;padding:18px clamp(20px,5vw,56px);border-bottom:1px solid #E2D9CB">
+    <a href="Promises%20Homepage%20v2.dc.html" style="display:flex;align-items:center;gap:13px;color:#23231F;min-width:0;flex:0 1 auto">
+      <span style="width:46px;height:46px;flex:0 0 auto;background:#1A1A17;overflow:hidden">
+        <img src="uploads/Logo.jpg" alt="Promises Treatment Centre — dove in flight" style="width:100%;height:100%;object-fit:cover;object-position:52% 42%">
+      </span>
+      <span style="display:flex;flex-direction:column;line-height:1.12">
+        <span style="font-family:Newsreader,Georgia,serif;font-size:24px;font-weight:500;letter-spacing:-0.012em">Promises</span>
+        <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}"><span style="font-family:ui-monospace,Menlo,monospace;font-size:9.5px;letter-spacing:0.22em;text-transform:uppercase;color:#7C7367;white-space:nowrap">Treatment Centre</span></sc-if>
+      </span>
+    </a>
+    <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+    <div style="display:flex;align-items:center;gap:clamp(12px,2vw,26px);flex-wrap:wrap;font-size:15px;color:#3C382F">
+      <a href="Promises%20Homepage%20v2.dc.html#about" style="color:#3C382F">About</a>
+      <a href="Treatment.dc.html" style="color:#3C382F">Treatment</a>
+      <a href="Addiction-Explained.dc.html" style="color:#3C382F">Addiction explained</a>
+      <a href="Aftercare.dc.html" style="color:#23231F;font-weight:700;border-bottom:2px solid #8C4A32;padding-bottom:2px">Aftercare</a>
+      <a href="Promises%20Homepage%20v2.dc.html#selfcheck" style="color:#3C382F">Self-check</a>
+      <a href="tel:+254725871040" style="display:inline-flex;align-items:center;padding:12px 20px;background:#23231F;color:#F7F2EA;font-weight:600;font-size:14.5px">Call 0725 871 040</a>
+    </div></sc-if>
+    <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex;align-items:center;gap:10px;flex:0 0 auto">
+        <a href="tel:+254725871040" aria-label="Call Promises Treatment Centre" style="display:inline-flex;align-items:center;justify-content:center;min-width:46px;height:46px;padding:0 15px;background:#23231F;color:#F7F2EA;font-weight:700;font-size:14.5px">Call</a>
+        <span onClick="{{ toggleMenu }}" role="button" aria-label="Menu" style="display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border:1px solid #C9BCA8;color:#23231F;font-size:19px;line-height:1;cursor:pointer;user-select:none">{{ menuGlyph }}</span>
+      </div>
+    </sc-if>
+  </div>
+  <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="display:flex;flex-direction:column;padding:14px clamp(20px,5vw,56px) 26px;background:#FFFDF9;border-bottom:1px solid #E2D9CB">
+      <a href="Promises%20Homepage%20v2.dc.html" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;padding:6px 0;border-bottom:1px solid #EDE5D8;font-family:Newsreader,Georgia,serif;font-size:21px;color:#23231F">Home</a>
+      <a href="Promises%20Homepage%20v2.dc.html#about" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;padding:6px 0;border-bottom:1px solid #EDE5D8;font-family:Newsreader,Georgia,serif;font-size:21px;color:#23231F">About</a>
+      <a href="Treatment.dc.html" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;padding:6px 0;border-bottom:1px solid #EDE5D8;font-family:Newsreader,Georgia,serif;font-size:21px;color:#23231F">Treatment</a>
+      <a href="Addiction-Explained.dc.html" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;padding:6px 0;border-bottom:1px solid #EDE5D8;font-family:Newsreader,Georgia,serif;font-size:21px;color:#23231F">Addiction explained</a>
+      <a href="Aftercare.dc.html" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;padding:6px 0;border-bottom:1px solid #EDE5D8;font-family:Newsreader,Georgia,serif;font-size:21px;color:#23231F">Aftercare</a>
+      <a href="Promises%20Homepage%20v2.dc.html#selfcheck" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;padding:6px 0;border-bottom:1px solid #EDE5D8;font-family:Newsreader,Georgia,serif;font-size:21px;color:#23231F">Self-check</a>
+      <a href="Promises%20Homepage%20v2.dc.html#find-us" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;padding:6px 0;border-bottom:1px solid #EDE5D8;font-family:Newsreader,Georgia,serif;font-size:21px;color:#23231F">Find us</a>
+      <a href="tel:+254725871040" style="display:inline-flex;align-items:center;justify-content:center;min-height:54px;margin-top:20px;background:#8C4A32;color:#FFF8F1;font-weight:700;font-size:16px">Call us now · 0725 871 040</a>
+      <span style="padding-top:12px;font-size:14px;color:#7C7367">Lines open daily. Every conversation stays between us.</span>
+    </div>
+  </sc-if>
+
+  <div style="position:relative;display:flex;align-items:center;min-height:clamp(320px,42vw,480px);background:#2A2723">
+    <img src="https://images.unsplash.com/photo-1655721991918-ee80a3291219?fm=jpg&q=70&w=2000&auto=format&fit=crop" alt="A group of people standing together in the open air" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.4">
+    <div style="position:relative;padding:clamp(44px,6vw,74px) clamp(20px,5vw,56px);display:flex;flex-direction:column;gap:20px;max-width:60ch">
+      <div style="display:flex;gap:10px;align-items:center;font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#E7B79A">
+        <a href="Promises%20Homepage%20v2.dc.html" style="color:#E7B79A">Home</a><span style="color:#9E958A">/</span><span style="color:#CFC6B8">Aftercare</span>
+      </div>
+      <h1 style="margin:0;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(34px,4.6vw,54px);line-height:1.06;letter-spacing:-0.022em;color:#FFFDF9;text-wrap:pretty">Rehab is the first step. The years after it are the recovery.</h1>
+      <p style="margin:0;font-size:18px;line-height:1.62;color:#E4DBCD;max-width:52ch;text-wrap:pretty">The 90 to 180 days most people spend in a facility is a very short period next to the years that follow. For many, adjusting to life afterwards is the harder part — the routine is gone and the old influences are back.</p>
+    </div>
+  </div>
+
+  <div style="padding:clamp(52px,7vw,84px) clamp(20px,5vw,56px);background:#EFE7DA">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(32px,5vw,60px);align-items:start">
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#8C4A32">Support groups</div>
+        <h2 style="margin:0;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(28px,3.4vw,36px);line-height:1.14;letter-spacing:-0.018em;text-wrap:pretty">Go, especially early. Keep going.</h2>
+        <p style="margin:0;font-size:16.5px;line-height:1.66;color:#4A463E;text-wrap:pretty">We strongly recommend that everyone in recovery attends support groups regularly, particularly in early sobriety. A group is people in recovery — and sometimes their families — meeting to discuss what they share, from how they first realised they needed to get sober to how a particular medication is affecting them.</p>
+        <p style="margin:0;font-size:16.5px;line-height:1.66;color:#4A463E;text-wrap:pretty">The vast majority are 12-step programmes, which break recovery into steps all members follow. They are modelled on Alcoholics Anonymous — by research, the best known and most widely attended substance abuse group in the world.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:1px;background:#DFD4C2;border:1px solid #DFD4C2">
+        <sc-for list="{{ groupBenefits }}" as="g" hint-placeholder-count="3">
+          <div style="background:#FFFDF9;padding:24px 26px;display:flex;flex-direction:column;gap:7px">
+            <span style="font-family:Newsreader,Georgia,serif;font-size:21px;line-height:1.22;color:#23231F">{{ g.title }}</span>
+            <span style="font-size:15.5px;line-height:1.6;color:#4A463E">{{ g.body }}</span>
+          </div>
+        </sc-for>
+        <div style="background:#23231F;padding:24px 26px;display:flex;flex-direction:column;gap:7px">
+          <span style="font-family:Newsreader,Georgia,serif;font-size:21px;line-height:1.22;color:#FFFDF9">Aftercare from us</span>
+          <span style="font-size:15.5px;line-height:1.6;color:#CFC6B8">We follow up on discharged clients, place people in the right support group and continue therapy where it is needed — plus practical strategies for managing cravings and stress.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="timeline" style="padding:clamp(52px,7vw,84px) clamp(20px,5vw,56px)">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:32px;flex-wrap:wrap;padding-bottom:40px">
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#8C4A32">The first year</div>
+        <h2 style="margin:0;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(28px,3.5vw,38px);line-height:1.14;letter-spacing:-0.018em;text-wrap:pretty">A continuous chain of small decisions.</h2>
+      </div>
+      <p style="margin:0;font-size:16px;line-height:1.6;color:#5A554B;max-width:36ch">Sobriety is hardest to hold early on, and grows easier as new habits, relationships and routines form. This is roughly when to do what.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:0">
+      <sc-for list="{{ timeline }}" as="t" hint-placeholder-count="4">
+        <div style="display:flex;flex-direction:column;gap:0;padding-right:clamp(0px,2vw,26px)">
+          <div style="position:relative;height:26px;display:flex;align-items:center">
+            <span style="position:absolute;left:0;right:0;height:1px;background:#D6C9B6"></span>
+            <span style="position:relative;width:11px;height:11px;border-radius:50%;background:#8C4A32;flex:0 0 auto"></span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:12px;padding:18px 0 30px">
+            <span style="font-family:ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#8C4A32">{{ t.range }}</span>
+            <span style="font-family:Newsreader,Georgia,serif;font-size:22px;line-height:1.22;color:#23231F">{{ t.title }}</span>
+            <div style="display:flex;flex-direction:column;gap:9px;padding-top:2px">
+              <sc-for list="{{ t.steps }}" as="s" hint-placeholder-count="5">
+                <div style="display:flex;gap:10px;font-size:15.5px;line-height:1.55;color:#4A463E">
+                  <span style="color:#B09A80;flex:0 0 auto">—</span>
+                  <span>{{ s }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div id="relapse" style="padding:clamp(52px,7vw,84px) clamp(20px,5vw,56px);background:#23231F;color:#F2EBE0">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(32px,5vw,56px);align-items:center">
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#D89E7F">If you relapse</div>
+        <h2 style="margin:0;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(28px,3.5vw,38px);line-height:1.14;letter-spacing:-0.018em;color:#FFFDF9;text-wrap:pretty">It happens to the most dedicated people in recovery. It is not the end of anything.</h2>
+        <p style="margin:0;font-size:17px;line-height:1.68;color:#CFC6B8;text-wrap:pretty">Some studies suggest the majority of people in recovery relapse at least briefly. Help is still here. Do not wait for the problem to get worse before you make the call — our relapse programme is two months, and we pick up where we left off.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;padding-top:4px">
+          <a href="tel:+254725871040" style="display:inline-flex;align-items:center;padding:15px 24px;background:#8C4A32;color:#FFF8F1;font-weight:700;font-size:15.5px">Call us now · 0725 871 040</a>
+          <a href="Treatment.dc.html" style="display:inline-flex;box-sizing:border-box;align-items:center;padding:14px 23px;border:1px solid #575146;color:#E4DBCD;font-weight:600;font-size:15.5px">How treatment works</a>
+        </div>
+      </div>
+      <div style="min-height:clamp(260px,32vw,380px);overflow:hidden;background:#2A2723">
+        <img src="https://images.unsplash.com/photo-1655720362145-2d8bc6718239?fm=jpg&q=70&w=1600&auto=format&fit=crop" alt="A father carrying his child on his back" style="width:100%;height:100%;object-fit:cover">
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:clamp(52px,6vw,70px) clamp(20px,5vw,56px) 40px;background:#23231F;color:#CFC6B8;border-top:1px solid #38362F">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:clamp(32px,4vw,48px);padding-bottom:44px">
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div style="display:flex;align-items:center;gap:13px">
+          <span style="width:52px;height:52px;flex:0 0 auto;background:#131311;overflow:hidden">
+            <img src="uploads/Logo.jpg" alt="Promises Treatment Centre — dove in flight" style="width:100%;height:100%;object-fit:cover;object-position:52% 42%">
+          </span>
+          <span style="display:flex;flex-direction:column;line-height:1.12">
+            <span style="font-family:Newsreader,Georgia,serif;font-size:26px;color:#FFFDF9">Promises</span>
+            <span style="font-family:ui-monospace,Menlo,monospace;font-size:9.5px;letter-spacing:0.22em;text-transform:uppercase;color:#8A8074">Treatment Centre</span>
+          </span>
+        </div>
+        <p style="margin:0;font-size:15.5px;line-height:1.65;max-width:40ch">We are committed to eradicating the stigma of addiction and fostering a sustainable culture of recovery.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;font-size:15px">
+        <span style="font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;color:#8A8074;padding-bottom:4px">Contact</span>
+        <span>0725 871 040</span>
+        <span>0700 883 257</span>
+        <span>info@promisestreatmentcentre.com</span>
+        <span>P.O. Box 526-50205, Webuye</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;font-size:15px">
+        <span style="font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;color:#8A8074;padding-bottom:4px">Explore</span>
+        <a href="Promises%20Homepage%20v2.dc.html" style="color:#CFC6B8">Home</a>
+        <a href="Treatment.dc.html" style="color:#CFC6B8">Treatment</a>
+        <a href="Addiction-Explained.dc.html" style="color:#CFC6B8">Addiction explained</a>
+        <a href="Aftercare.dc.html" style="color:#CFC6B8">Aftercare</a>
+        <a href="Promises%20Homepage%20v2.dc.html#find-us" style="color:#CFC6B8">Find us</a>
+      </div>
+    </div>
+    <div style="border-top:1px solid #38362F;padding-top:20px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:13.5px;color:#8A8074">
+      <span>Fully registered · NACADA accredited</span>
+      <span style="max-width:70ch">Admission is open to all suitable clients, irrespective of race, ethnicity, gender, culture, ideology, beliefs, sexual orientation, language or HIV status.</span>
+    </div>
+  </div>
+
+
+  <sc-if value="{{ showTop }}" hint-placeholder-val="{{ false }}">
+    <span onClick="{{ scrollTop }}" role="button" aria-label="Back to top" style="position:fixed;right:clamp(16px,3vw,28px);bottom:clamp(16px,3vw,28px);z-index:40;display:flex;align-items:center;justify-content:center;width:50px;height:50px;background:#23231F;color:#F7F2EA;font-size:20px;line-height:1;cursor:pointer;user-select:none;box-shadow:0 8px 24px -8px rgba(20,16,10,0.5)">↑</span>
+  </sc-if>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  state = { vw: 1200, scrolled: false, menuOpen: false };
+
+  componentDidMount() {
+    this._sync = () => this.setState({ vw: window.innerWidth, scrolled: ((document.scrollingElement || document.documentElement).scrollTop || window.scrollY || 0) > 420 });
+    window.addEventListener('resize', this._sync);
+    window.addEventListener('scroll', this._sync, { passive: true });
+    this._sync();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this._sync);
+    window.removeEventListener('scroll', this._sync);
+  }
+
+  chrome() {
+    const mob = (this.state.vw || 1200) <= 760;
+    return {
+      isMobile: mob,
+      isDesktop: !mob,
+      menuOpen: mob && !!this.state.menuOpen,
+      menuGlyph: this.state.menuOpen ? '\u2715' : '\u2630',
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      showTop: !!this.state.scrolled,
+      scrollTop: () => {
+        const el = document.scrollingElement || document.documentElement;
+        if (el && el.scrollTo) { el.scrollTo({ top: 0, behavior: 'smooth' }); } else if (el) { el.scrollTop = 0; }
+        if (document.body) { document.body.scrollTop = 0; }
+        const w = document.defaultView;
+        if (w && w.scrollTo) { w.scrollTo(0, 0); }
+      }
+    };
+  }
+
+  renderVals() {
+    return Object.assign({}, this.chrome(), {
+      groupBenefits: [
+        { title: 'A judgement-free room', body: 'Members feel understood, because everyone there has been in some version of the same place.' },
+        { title: 'Stability and people to fall back on', body: 'A standing commitment in the week, and names you can call when a hard day arrives.' },
+        { title: 'Advice and information', body: 'Practical, lived knowledge about what works — from people with no reason to sell you anything.' }
+      ],
+      timeline: [
+        { range: '1–30 days', title: 'Build the scaffolding', steps: [
+          'Develop a recovery plan with goals and how to reach them',
+          'Learn to recognise and handle negative impulses',
+          'Find healthy, supportive living arrangements',
+          'Establish a daily routine and schedule',
+          'Attend at least two support groups to find the best fit',
+          'Find a counsellor or therapist',
+          'Build a support system for when the urge appears',
+          'Bring in regular physical activity — and avoid taking on too much'
+        ] },
+        { range: '30–90 days', title: 'Make it a habit', steps: [
+          'Stay involved in support groups — at least weekly',
+          'Continue counselling or therapy, ideally weekly',
+          'Keep a recovery journal, including triggers and how you got past them',
+          'Discuss professional goals with a career counsellor'
+        ] },
+        { range: '90–180 days', title: 'Repair and plan', steps: [
+          'Begin repairing broken or damaged relationships',
+          'Develop short and long-term goals with a financial planner',
+          'Start focusing more on longer-term goals',
+          'Try new hobbies, then commit to one or two'
+        ] },
+        { range: '180–365 days', title: 'Look outward', steps: [
+          'Celebrate the milestones, especially six months and one year',
+          'Help others who are just beginning the road',
+          'Develop five and ten-year plans — personal, professional, financial',
+          'Seek out new motivation and new ways to occupy your time'
+        ] }
+      ]
+    });
+  }
+}
+
+</script>
+</body>
+</html>

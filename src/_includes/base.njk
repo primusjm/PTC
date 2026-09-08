@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title }} — {{ site.name }} {{ site.tagline }}</title>
+{% if description %}<meta name="description" content="{{ description }}">{% endif %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body id="top">
+
+{% set onHome = page.url == "/" %}
+{% set homeHref = "/" if not onHome else "" %}
+
+<div class="crisis-bar">
+  <span>{{ site.crisisLine }}</span>
+  <a href="tel:{{ site.phoneHref }}">{{ site.phone }}</a>
+</div>
+
+<input type="checkbox" id="menu-toggle">
+
+<div class="site-header">
+  <a href="/" class="brand">
+    <span class="brand-mark"><img src="/assets/images/logo.jpg" alt="{{ site.name }} {{ site.tagline }} — dove in flight"></span>
+    <span style="display:flex;flex-direction:column;line-height:1.12">
+      <span class="brand-name">{{ site.name }}</span>
+      <span class="brand-sub">{{ site.tagline }}</span>
+    </span>
+  </a>
+
+  <nav class="nav-desktop">
+    <a href="{{ homeHref }}#about"{% if nav == 'about' %} class="active"{% endif %}>About</a>
+    <a href="/treatment/"{% if nav == 'treatment' %} class="active"{% endif %}>Treatment</a>
+    <a href="/addiction-explained/"{% if nav == 'addiction' %} class="active"{% endif %}>Addiction explained</a>
+    <a href="/aftercare/"{% if nav == 'aftercare' %} class="active"{% endif %}>Aftercare</a>
+    <a href="{{ homeHref }}#selfcheck"{% if nav == 'selfcheck' %} class="active"{% endif %}>Self-check</a>
+    <a href="{{ homeHref }}#find-us"{% if nav == 'contact' %} class="active"{% endif %}>Contact</a>
+    <a href="tel:{{ site.phoneHref }}" class="btn-call">Call {{ site.phone }}</a>
+  </nav>
+
+  <div class="nav-mobile-bar">
+    <a href="tel:{{ site.phoneHref }}" aria-label="Call {{ site.name }} {{ site.tagline }}" class="call-pill">Call</a>
+    <label for="menu-toggle" class="hamburger" role="button" aria-label="Menu">
+      <span class="icon-open">&#9776;</span><span class="icon-close">&#10005;</span>
+    </label>
+  </div>
+</div>
+
+<div class="mobile-panel">
+  <a href="/">Home</a>
+  <a href="{{ homeHref }}#about">About</a>
+  <a href="/treatment/">Treatment</a>
+  <a href="/addiction-explained/">Addiction explained</a>
+  <a href="/aftercare/">Aftercare</a>
+  <a href="{{ homeHref }}#selfcheck">Self-check</a>
+  <a href="{{ homeHref }}#find-us">Find us</a>
+  <a href="tel:{{ site.phoneHref }}" class="btn-call-block">Call us now · {{ site.phone }}</a>
+  <span class="mobile-note">Lines open daily. Every conversation stays between us.</span>
+</div>
+
+{{ content | safe }}
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div class="footer-brand">
+        <span class="footer-brand-mark"><img src="/assets/images/logo.jpg" alt="{{ site.name }} {{ site.tagline }} — dove in flight"></span>
+        <span style="display:flex;flex-direction:column;line-height:1.12">
+          <span class="serif" style="font-size:26px;color:#FFFDF9">{{ site.name }}</span>
+          <span class="brand-sub">{{ site.tagline }}</span>
+        </span>
+      </div>
+      <p style="margin:0;font-size:15.5px;line-height:1.65;max-width:40ch">{{ site.footerBlurb }}</p>
+    </div>
+    <div class="footer-col">
+      <span class="footer-col-label">Contact</span>
+      <span>{{ site.phone }}</span>
+      <span>{{ site.phone2 }}</span>
+      <span>{{ site.email }}</span>
+      <span>{{ site.address }}</span>
+    </div>
+    <div class="footer-col">
+      <span class="footer-col-label">Explore</span>
+      <a href="/">Home</a>
+      <a href="/treatment/">Treatment</a>
+      <a href="/addiction-explained/">Addiction explained</a>
+      <a href="/aftercare/">Aftercare</a>
+      <a href="/#find-us">Find us</a>
+      <a href="#top" class="footer-back-top">&#8593; Back to top</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>{{ site.footerRegistered }}</span>
+    <span style="max-width:70ch">{{ site.admissionsNote }}</span>
+  </div>
+</footer>
+
+<script src="/assets/js/main.js"></script>
+</body>
+</html>
