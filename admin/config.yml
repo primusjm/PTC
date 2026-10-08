@@ -41,7 +41,7 @@ collections:
           - { label: "Hero kicker", name: "kicker", widget: "string" }
           - { label: "Hero title", name: "heroTitle", widget: "string" }
           - { label: "Hero body", name: "heroBody", widget: "text" }
-          - { label: "Hero image URL", name: "heroImage", widget: "string" }
+          - { label: "Hero image", name: "heroImage", widget: "image" }
           - { label: "Hero image caption quote", name: "heroQuote", widget: "string" }
           - label: "Trust bar items"
             name: "trust"
@@ -51,7 +51,7 @@ collections:
               - { label: "Body", name: "body", widget: "text" }
           - { label: "About kicker", name: "aboutKicker", widget: "string" }
           - { label: "About title", name: "aboutTitle", widget: "string" }
-          - { label: "About image URL", name: "aboutImage", widget: "string" }
+          - { label: "About image", name: "aboutImage", widget: "image" }
           - label: "About paragraphs"
             name: "aboutParas"
             widget: "list"
@@ -65,7 +65,7 @@ collections:
             field: { label: "Value", name: "value", widget: "string" }
           - { label: "Treatment section title", name: "treatmentTitle", widget: "string" }
           - { label: "Treatment section intro", name: "treatmentIntro", widget: "text" }
-          - { label: "Treatment section image URL", name: "treatmentImage", widget: "string" }
+          - { label: "Treatment section image", name: "treatmentImage", widget: "image" }
           - label: "Services"
             name: "services"
             widget: "list"
@@ -82,7 +82,7 @@ collections:
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Note", name: "note", widget: "string" }
               - { label: "Length", name: "length", widget: "string" }
-          - { label: "Family therapy image URL", name: "familyImage", widget: "string" }
+          - { label: "Family therapy image", name: "familyImage", widget: "image" }
           - { label: "Family therapy title", name: "familyTitle", widget: "string" }
           - { label: "Family therapy body", name: "familyBody", widget: "text" }
           - label: "Family therapy benefits"
@@ -107,7 +107,7 @@ collections:
               - { label: "Hint", name: "hint", widget: "string" }
           - { label: "Quote", name: "quote", widget: "text" }
           - { label: "Quote attribution", name: "quoteAttribution", widget: "string" }
-          - { label: "Quote background image URL", name: "quoteImage", widget: "string" }
+          - { label: "Quote background image", name: "quoteImage", widget: "image" }
           - label: "Testimonials"
             name: "testimonials"
             widget: "list"
@@ -130,7 +130,7 @@ collections:
         fields:
           - { label: "Hero title", name: "heroTitle", widget: "string" }
           - { label: "Hero body", name: "heroBody", widget: "text" }
-          - { label: "Hero image URL", name: "heroImage", widget: "string" }
+          - { label: "Hero image", name: "heroImage", widget: "image" }
           - label: "Jump links"
             name: "jumps"
             widget: "list"
@@ -162,7 +162,7 @@ collections:
               - { label: "Body", name: "body", widget: "text" }
           - { label: "Week section title", name: "weekTitle", widget: "string" }
           - { label: "Week section intro", name: "weekIntro", widget: "text" }
-          - { label: "Week section image URL", name: "weekImage", widget: "string" }
+          - { label: "Week section image", name: "weekImage", widget: "image" }
           - label: "A week here — parts"
             name: "weekParts"
             widget: "list"
@@ -261,7 +261,7 @@ collections:
         fields:
           - { label: "Hero title", name: "heroTitle", widget: "string" }
           - { label: "Hero body", name: "heroBody", widget: "text" }
-          - { label: "Hero image URL", name: "heroImage", widget: "string" }
+          - { label: "Hero image", name: "heroImage", widget: "image" }
           - { label: "Support groups title", name: "groupsTitle", widget: "string" }
           - label: "Support groups paragraphs"
             name: "groupsParas"
@@ -289,4 +289,4 @@ collections:
                 field: { label: "Step", name: "step", widget: "string" }
           - { label: "Relapse section title", name: "relapseTitle", widget: "string" }
           - { label: "Relapse section body", name: "relapseBody", widget: "text" }
-          - { label: "Relapse section image URL", name: "relapseImage", widget: "string" }
+          - { label: "Relapse section image", name: "relapseImage", widget: "image" }
