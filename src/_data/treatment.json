@@ -1,7 +1,7 @@
 {
   "heroTitle": "What treatment actually looks like, day by day.",
   "heroBody": "Nobody arrives knowing what to expect. This page walks through the whole of it — detox, residential care and the shape of an ordinary week — so you can picture it before you commit to anything.",
-  "heroImage": "https://images.unsplash.com/photo-1655720358097-673f2a952cb7?fm=jpg&q=70&w=1600&auto=format&fit=crop",
+  "heroImage": "/assets/images/treatment-hero.jpg",
   "jumps": [
     { "label": "Detox", "href": "#detox" },
     { "label": "Residential care", "href": "#residential" },
@@ -33,7 +33,7 @@
   ],
   "weekTitle": "Therapy, education and time of your own.",
   "weekIntro": "Individual therapy usually one to three times a week; group therapy most days. The routine is deliberate — structure is itself part of the treatment.",
-  "weekImage": "https://images.unsplash.com/photo-1655720359248-eeace8c709c5?fm=jpg&q=70&w=1400&auto=format&fit=crop",
+  "weekImage": "/assets/images/treatment-week.jpg",
   "weekParts": [
     { "title": "Group therapy", "cadence": "Most days", "body": "A space to share experience, feeling and struggle with people who can genuinely relate. Sessions are led and mediated by qualified professionals, and different group types — psychotherapeutic and educational — build different skills." },
     { "title": "Individual therapy", "cadence": "1–3 × weekly", "body": "One-to-one work exploring the root causes of your addiction, commonly using cognitive-behavioural therapy and motivational enhancement therapy to show how your thoughts and actions are driving each other." },

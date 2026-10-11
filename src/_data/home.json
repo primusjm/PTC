@@ -7,7 +7,7 @@
     "Understand the disease, so you can stop fighting the person"
   ],
   "aboutKicker": "Who we are",
-  "heroImage": "https://images.unsplash.com/photo-1655720358097-673f2a952cb7?fm=jpg&q=70&w=1600&auto=format&fit=crop",
+  "heroImage": "/assets/images/home-hero.jpg",
   "belief": "Addiction is a treatable disease and the cycle can be broken — and our clients can be empowered to take responsibility for their own ongoing recovery.",
   "programmesTitle": "How long does it take?",
   "values": [
@@ -18,7 +18,7 @@
   ],
   "heroQuote": "Where hope in life is rekindled.",
   "quoteAttribution": "Alcoholics Anonymous, p. 58",
-  "treatmentImage": "https://images.unsplash.com/photo-1655720358066-2aab2a903ef8?fm=jpg&q=70&w=2000&auto=format&fit=crop",
+  "treatmentImage": "/assets/images/home-treatment.jpg",
   "aboutParas": [
     "We are a fully registered, NACADA-accredited addiction recovery centre, known for breaking the cycle of addiction and restoring health to individuals, families and whole communities.",
     "Every member of staff shares one belief: addiction is a treatable disease, and recovery heals the mind, body and spirit together. So treatment here is medical, psychological, spiritual and holistic — because we are treating a person, not a habit.",
@@ -50,7 +50,7 @@
   "vision": "A healthy society free from addictions.",
   "aboutTitle": "A therapeutic community, not an institution.",
   "mission": "Professional treatment and rehabilitation of persons with substance use disorders.",
-  "aboutImage": "https://images.unsplash.com/photo-1655720359248-eeace8c709c5?fm=jpg&q=70&w=1400&auto=format&fit=crop",
+  "aboutImage": "/assets/images/home-about.jpg",
   "diseaseNote": "Classified as a chronic brain disorder by the American Society of Addiction Medicine and the National Institute on Drug Abuse.",
   "kicker": "Webuye, Kenya · NACADA accredited",
   "treatmentIntro": "Detox alone is not treatment. Each stage hands you to the next, and none of it ends at discharge.",
@@ -124,7 +124,7 @@
       "hint": "Bloodshot or glassy eyes, unusual pupils, slurred speech, poor coordination"
     }
   ],
-  "familyImage": "https://images.unsplash.com/photo-1655720362145-2d8bc6718239?fm=jpg&q=70&w=1600&auto=format&fit=crop",
+  "familyImage": "/assets/images/home-family.jpg",
   "programmes": [
     {
       "title": "Hard drugs & narcotics",
@@ -223,5 +223,5 @@
   ],
   "diseaseBody": "Repeated use floods the brain with dopamine. In time the brain stops making normal amounts on its own, so the substance is prioritised over everything that once mattered — and going without brings real physical pain. This is a chronic, treatable medical condition, not a failure of character.",
   "heroTitle": "You have not lost yourself. You have only lost your way.",
-  "quoteImage": "https://images.unsplash.com/photo-1655721991918-ee80a3291219?fm=jpg&q=70&w=2000&auto=format&fit=crop"
+  "quoteImage": "/assets/images/home-quote.jpg"
 }

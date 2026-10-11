@@ -1,7 +1,7 @@
 {
   "heroTitle": "Rehab is the first step. The years after it are the recovery.",
   "heroBody": "The 90 to 180 days most people spend in a facility is a very short period next to the years that follow. For many, adjusting to life afterwards is the harder part — the routine is gone and the old influences are back.",
-  "heroImage": "https://images.unsplash.com/photo-1655721991918-ee80a3291219?fm=jpg&q=70&w=2000&auto=format&fit=crop",
+  "heroImage": "/assets/images/aftercare-hero.jpg",
   "groupsTitle": "Go, especially early. Keep going.",
   "groupsParas": [
     "We strongly recommend that everyone in recovery attends support groups regularly, particularly in early sobriety. A group is people in recovery — and sometimes their families — meeting to discuss what they share, from how they first realised they needed to get sober to how a particular medication is affecting them.",
@@ -48,5 +48,5 @@
   ],
   "relapseTitle": "It happens to the most dedicated people in recovery. It is not the end of anything.",
   "relapseBody": "Some studies suggest the majority of people in recovery relapse at least briefly. Help is still here. Do not wait for the problem to get worse before you make the call — our relapse programme is two months, and we pick up where we left off.",
-  "relapseImage": "https://images.unsplash.com/photo-1655720362145-2d8bc6718239?fm=jpg&q=70&w=1600&auto=format&fit=crop"
+  "relapseImage": "/assets/images/aftercare-relapse.jpg"
 }
