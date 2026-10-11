@@ -200,7 +200,10 @@ description: "Promises Treatment Centre — residential recovery from alcohol an
       <div class="contact-row"><span class="k">Post</span><span>{{ site.address }}</span></div>
     </div>
   </div>
-  <div class="map-block"><span>map — embed of the Webuye location</span></div>
+  <div class="map-wrap">
+    <iframe class="map-frame" src="{{ site.mapEmbedUrl }}" title="Map showing the location of {{ site.name }} {{ site.tagline }} in Webuye" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    <a href="{{ site.mapLinkUrl }}" class="map-link" target="_blank" rel="noopener">Open in Google Maps &#8599;</a>
+  </div>
 </div>
 
 <div class="section bg-card border-top">

@@ -26,6 +26,8 @@ collections:
           - { label: "Email", name: "email", widget: "string" }
           - { label: "Postal address", name: "address", widget: "string" }
           - { label: "Location description", name: "locationLine", widget: "text" }
+          - { label: "Map embed URL (Google Maps > Share > Embed a map > copy the src address)", name: "mapEmbedUrl", widget: "string" }
+          - { label: "Map link (opens Google Maps)", name: "mapLinkUrl", widget: "string" }
           - { label: "Location heading", name: "locationTitle", widget: "string" }
           - { label: "Footer blurb", name: "footerBlurb", widget: "text" }
           - { label: "Footer registration line", name: "footerRegistered", widget: "string" }
