@@ -9,9 +9,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/style.css">
+<script src="/assets/js/a11y.js"></script>
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body id="top">
+<a class="skip-link" href="#main">Skip to main content</a>
 
 {% set onHome = page.url == "/" %}
 {% set homeHref = "/" if not onHome else "" %}
@@ -62,7 +64,9 @@
   <span class="mobile-note">Lines open daily. Every conversation stays between us.</span>
 </div>
 
+<main id="main" tabindex="-1">
 {{ content | safe }}
+</main>
 
 <footer class="footer">
   <div class="footer-grid">
@@ -91,6 +95,20 @@
       <a href="/aftercare/">Aftercare</a>
       <a href="/#find-us">Find us</a>
       <a href="#top" class="footer-back-top">&#8593; Back to top</a>
+    </div>
+  </div>
+  <div class="a11y-bar" role="group" aria-labelledby="a11y-title">
+    <span class="a11y-title" id="a11y-title">{% icon "eye" %} Accessibility</span>
+    <div class="a11y-controls">
+      <span class="a11y-size">
+        <button type="button" data-a11y="size-down" aria-label="Decrease text size">A&minus;</button>
+        <span data-a11y-size aria-live="polite">100%</span>
+        <button type="button" data-a11y="size-up" aria-label="Increase text size">A+</button>
+      </span>
+      <button type="button" data-a11y="hc" aria-pressed="false">High contrast</button>
+      <button type="button" data-a11y="readable" aria-pressed="false">Readable font</button>
+      <button type="button" data-a11y="links" aria-pressed="false">Underline links</button>
+      <button type="button" data-a11y="reset">Reset</button>
     </div>
   </div>
   <div class="footer-bottom">
