@@ -54,7 +54,7 @@ description: "What addiction is, the difference between dependency and addiction
     <div style="display:flex;flex-direction:column;gap:18px">
       <div style="display:flex;flex-direction:column;gap:8px;padding-bottom:6px;border-bottom:2px solid var(--accent)">
         <span style="font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent)">Category one</span>
-        <h3 class="h3" style="font-size:25px">Substance use disorders</h3>
+        <h3 class="h3" style="font-size:25px">{% icon "droplet" %} Substance use disorders</h3>
       </div>
       <p style="margin:0;font-size:16px;line-height:1.64;color:var(--ink-soft)">{{ addictionExplained.substancesIntro }}</p>
       <div style="display:flex;flex-direction:column">
@@ -69,7 +69,7 @@ description: "What addiction is, the difference between dependency and addiction
     <div style="display:flex;flex-direction:column;gap:18px">
       <div style="display:flex;flex-direction:column;gap:8px;padding-bottom:6px;border-bottom:2px solid #A89880">
         <span style="font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent)">Category two</span>
-        <h3 class="h3" style="font-size:25px">Behavioural addictions</h3>
+        <h3 class="h3" style="font-size:25px">{% icon "refresh-cw" %} Behavioural addictions</h3>
       </div>
       <p style="margin:0;font-size:16px;line-height:1.64;color:var(--ink-soft)">{{ addictionExplained.behavioursIntro }}</p>
       <div style="display:flex;flex-direction:column">
@@ -119,8 +119,10 @@ description: "What addiction is, the difference between dependency and addiction
     <p class="p-body" style="margin:0">{{ addictionExplained.causesIntro }}</p>
   </div>
   <div class="grid-2-tight" style="display:grid">
+    {% set causeIcons = ["activity", "users", "zap"] %}
     {% for c in addictionExplained.causes %}
     <div style="display:flex;flex-direction:column;gap:16px;padding-top:20px;border-top:3px solid var(--accent)">
+      <span class="icon-tile" style="align-self:flex-start">{% icon causeIcons[loop.index0] %}</span>
       <h3 class="h3">{{ c.title }}</h3>
       <div style="display:flex;flex-direction:column;gap:14px">
         {% for i in c.items %}

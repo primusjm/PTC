@@ -49,7 +49,7 @@ description: "What treatment actually looks like at Promises Treatment Centre â€
     {% endfor %}
   </div>
   <div class="callout-dark">
-    <span class="tag">Important</span>
+    <span class="tag">{% icon "info" %} Important</span>
     <p>{{ treatment.detoxWarning }}</p>
   </div>
 </div>
@@ -61,8 +61,10 @@ description: "What treatment actually looks like at Promises Treatment Centre â€
     <p class="p-body" style="margin:0">{{ treatment.residentialBody }}</p>
   </div>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:1px;background:var(--border);border:1px solid var(--border)">
+    {% set featureIcons = ["home", "calendar", "message-circle", "activity", "users", "sun"] %}
     {% for f in treatment.features %}
     <div style="background:var(--bg-card);padding:26px 26px;display:flex;flex-direction:column;gap:9px">
+      <span class="icon-tile" style="align-self:flex-start">{% icon featureIcons[loop.index0] %}</span>
       <h3 class="h3" style="font-size:21px;line-height:1.22">{{ f.title }}</h3>
       <p style="margin:0;font-size:15.5px;line-height:1.6;color:var(--ink-soft)">{{ f.body }}</p>
     </div>
@@ -81,10 +83,11 @@ description: "What treatment actually looks like at Promises Treatment Centre â€
       </div>
     </div>
     <div style="display:flex;flex-direction:column">
+      {% set weekIcons = ["users", "message-circle", "heart", "book-open"] %}
       {% for w in treatment.weekParts %}
       <div style="display:flex;flex-direction:column;gap:6px;padding:22px 0;border-bottom:1px solid #DFD4C2">
         <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap">
-          <span class="serif" style="font-size:23px;color:var(--ink)">{{ w.title }}</span>
+          <span class="icon-tile icon-tile-light" style="width:36px;height:36px;align-self:center">{% icon weekIcons[loop.index0] %}</span><span class="serif" style="font-size:23px;color:var(--ink)">{{ w.title }}</span>
           <span style="font-family:ui-monospace,Menlo,monospace;font-size:11.5px;letter-spacing:0.08em;color:var(--accent)">{{ w.cadence }}</span>
         </div>
         <p style="margin:0;font-size:15.5px;line-height:1.62;color:var(--ink-soft)">{{ w.body }}</p>
@@ -100,11 +103,12 @@ description: "What treatment actually looks like at Promises Treatment Centre â€
     <h2 class="h2" style="color:#FFFDF9;font-size:clamp(28px,3.5vw,38px)">{{ treatment.benefitsTitle }}</h2>
   </div>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:26px 34px">
+    {% set benefitIcons = ["shield-check", "calendar", "message-circle", "clock", "users", "leaf"] %}
     {% for b in treatment.benefits %}
     <div style="display:flex;gap:16px;align-items:flex-start">
       <span style="font-family:ui-monospace,Menlo,monospace;font-size:11.5px;color:var(--accent-light);padding-top:6px;flex:0 0 auto">{{ b.num }}</span>
       <div style="display:flex;flex-direction:column;gap:6px">
-        <span class="serif" style="font-size:21px;color:#FFFDF9">{{ b.title }}</span>
+        <span class="serif" style="font-size:21px;color:#FFFDF9"><span style="color:var(--accent-light)">{% icon benefitIcons[loop.index0] %}</span>&nbsp; {{ b.title }}</span>
         <span style="font-size:15.5px;line-height:1.6;color:var(--dark-text-soft)">{{ b.body }}</span>
       </div>
     </div>

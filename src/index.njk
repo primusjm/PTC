@@ -10,8 +10,8 @@ description: "Promises Treatment Centre — residential recovery from alcohol an
     <h1 class="h1">{{ home.heroTitle }}</h1>
     <p class="p-lead">{{ home.heroBody }}</p>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:14px;padding-top:4px;max-width:600px">
-      <a href="tel:{{ site.phoneHref }}" class="btn btn-primary">Call us now · {{ site.phone }}</a>
-      <a href="#family" class="btn btn-outline">Worried about someone I love</a>
+      <a href="tel:{{ site.phoneHref }}" class="btn btn-primary">{% icon "phone" %}Call us now · {{ site.phone }}</a>
+      <a href="#family" class="btn btn-outline">{% icon "heart" %}Worried about someone I love</a>
     </div>
     <div style="display:flex;align-items:center;gap:10px;font-size:14.5px;color:var(--muted)">
       <span style="width:7px;height:7px;border-radius:50%;background:#5C6B57;display:inline-block;flex:0 0 auto"></span>
@@ -25,8 +25,10 @@ description: "Promises Treatment Centre — residential recovery from alcohol an
 </div>
 
 <div class="grid-trust">
-  {% for t in home.trust %}
+  {% set trustIcons = ["shield-check", "clock", "users", "refresh-cw"] %}
+{% for t in home.trust %}
   <div class="trust-item">
+    <span class="icon-tile" style="align-self:flex-start;margin-bottom:6px">{% icon trustIcons[loop.index0] %}</span>
     <div class="title">{{ t.title }}</div>
     <div class="body">{{ t.body }}</div>
   </div>
@@ -63,8 +65,10 @@ description: "Promises Treatment Centre — residential recovery from alcohol an
     <p style="margin:0;font-size:16px;line-height:1.6;color:#5A554B;max-width:34ch">{{ home.treatmentIntro }}</p>
   </div>
   <div class="grid-cards">
+    {% set serviceIcons = ["activity", "home", "users", "refresh-cw"] %}
     {% for s in home.services %}
     <div class="service-card">
+      <span class="icon-tile" style="align-self:flex-start">{% icon serviceIcons[loop.index0] %}</span>
       <div style="display:flex;align-items:baseline;gap:12px">
         <span class="num">{{ s.num }}</span>
         <h3 class="h3">{{ s.title }}</h3>
@@ -96,7 +100,7 @@ description: "Promises Treatment Centre — residential recovery from alcohol an
         <span class="serif" style="font-size:23px;color:var(--ink)">{{ p.title }}</span>
         <span style="font-size:14.5px;color:var(--muted)">{{ p.note }}</span>
       </div>
-      <span class="programme-length">{{ p.length }}</span>
+      <span class="programme-length">{% icon "clock" %} {{ p.length }}</span>
     </div>
     {% endfor %}
   </div>
@@ -113,11 +117,11 @@ description: "Promises Treatment Centre — residential recovery from alcohol an
     <div style="display:flex;flex-direction:column;gap:10px;padding-top:4px">
       {% for b in home.familyBenefits %}
       <div style="display:flex;gap:12px;align-items:baseline;font-size:16px;color:#3C382F">
-        <span style="color:var(--accent);flex:0 0 auto">&mdash;</span><span>{{ b }}</span>
+        <span class="bullet-check">{% icon "check" %}</span><span>{{ b }}</span>
       </div>
       {% endfor %}
     </div>
-    <a href="tel:{{ site.phoneHref }}" class="btn btn-primary" style="align-self:flex-start;margin-top:6px">Ask about family therapy</a>
+    <a href="tel:{{ site.phoneHref }}" class="btn btn-primary" style="align-self:flex-start;margin-top:6px">{% icon "phone" %}Ask about family therapy</a>
   </div>
 </div>
 
@@ -165,7 +169,7 @@ description: "Promises Treatment Centre — residential recovery from alcohol an
       <span class="serif" data-check-headline style="font-size:24px;line-height:1.25;color:var(--ink)">Nothing ticked yet.</span>
       <span data-check-body style="font-size:15.5px;line-height:1.6;color:var(--ink-soft)">Read through the list slowly. Recognising a pattern is the first honest step, and it is the hardest one.</span>
     </div>
-    <a href="tel:{{ site.phoneHref }}" class="btn btn-primary" style="white-space:nowrap">Call {{ site.phone }}</a>
+    <a href="tel:{{ site.phoneHref }}" class="btn btn-primary" style="white-space:nowrap">{% icon "phone" %}Call {{ site.phone }}</a>
   </div>
 </div>
 
@@ -195,9 +199,9 @@ description: "Promises Treatment Centre — residential recovery from alcohol an
     <h2 class="h2">{{ site.locationTitle }}</h2>
     <p class="p-body" style="margin:0">{{ site.locationLine }}</p>
     <div style="display:flex;flex-direction:column;gap:10px;padding-top:8px;font-size:16px;color:#3C382F">
-      <div class="contact-row"><span class="k">Phone</span><span>{{ site.phone }} &middot; {{ site.phone2 }}</span></div>
-      <div class="contact-row"><span class="k">Email</span><span style="min-width:0;overflow-wrap:anywhere">{{ site.email }}</span></div>
-      <div class="contact-row"><span class="k">Post</span><span>{{ site.address }}</span></div>
+      <div class="contact-row"><span class="k">{% icon "phone" %}<span class="sr-only">Phone</span></span><span>{{ site.phone }} &middot; {{ site.phone2 }}</span></div>
+      <div class="contact-row"><span class="k">{% icon "mail" %}<span class="sr-only">Email</span></span><span style="min-width:0;overflow-wrap:anywhere">{{ site.email }}</span></div>
+      <div class="contact-row"><span class="k">{% icon "inbox" %}<span class="sr-only">Post</span></span><span>{{ site.address }}</span></div>
     </div>
   </div>
   <div class="map-wrap">

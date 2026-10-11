@@ -18,7 +18,7 @@
 
 <div class="crisis-bar">
   <span>{{ site.crisisLine }}</span>
-  <a href="tel:{{ site.phoneHref }}">{{ site.phone }}</a>
+  <a href="tel:{{ site.phoneHref }}">{% icon "phone" %} {{ site.phone }}</a>
 </div>
 
 <input type="checkbox" id="menu-toggle">
@@ -39,11 +39,11 @@
     <a href="/aftercare/"{% if nav == 'aftercare' %} class="active"{% endif %}>Aftercare</a>
     <a href="{{ homeHref }}#selfcheck"{% if nav == 'selfcheck' %} class="active"{% endif %}>Self-check</a>
     <a href="{{ homeHref }}#find-us"{% if nav == 'contact' %} class="active"{% endif %}>Contact</a>
-    <a href="tel:{{ site.phoneHref }}" class="btn-call">Call {{ site.phone }}</a>
+    <a href="tel:{{ site.phoneHref }}" class="btn-call">{% icon "phone" %}Call {{ site.phone }}</a>
   </nav>
 
   <div class="nav-mobile-bar">
-    <a href="tel:{{ site.phoneHref }}" aria-label="Call {{ site.name }} {{ site.tagline }}" class="call-pill">Call</a>
+    <a href="tel:{{ site.phoneHref }}" aria-label="Call {{ site.name }} {{ site.tagline }}" class="call-pill">{% icon "phone" %}Call</a>
     <label for="menu-toggle" class="hamburger" role="button" aria-label="Menu">
       <span class="icon-open">&#9776;</span><span class="icon-close">&#10005;</span>
     </label>
@@ -58,7 +58,7 @@
   <a href="/aftercare/">Aftercare</a>
   <a href="{{ homeHref }}#selfcheck">Self-check</a>
   <a href="{{ homeHref }}#find-us">Find us</a>
-  <a href="tel:{{ site.phoneHref }}" class="btn-call-block">Call us now · {{ site.phone }}</a>
+  <a href="tel:{{ site.phoneHref }}" class="btn-call-block">{% icon "phone" %}Call us now · {{ site.phone }}</a>
   <span class="mobile-note">Lines open daily. Every conversation stays between us.</span>
 </div>
 
@@ -78,10 +78,10 @@
     </div>
     <div class="footer-col">
       <span class="footer-col-label">Contact</span>
-      <span>{{ site.phone }}</span>
-      <span>{{ site.phone2 }}</span>
-      <span>{{ site.email }}</span>
-      <span>{{ site.address }}</span>
+      <span class="footer-line">{% icon "phone" %}<span>{{ site.phone }}</span></span>
+      <span class="footer-line">{% icon "phone" %}<span>{{ site.phone2 }}</span></span>
+      <span class="footer-line">{% icon "mail" %}<span style="min-width:0;overflow-wrap:anywhere">{{ site.email }}</span></span>
+      <span class="footer-line">{% icon "inbox" %}<span>{{ site.address }}</span></span>
     </div>
     <div class="footer-col">
       <span class="footer-col-label">Explore</span>

@@ -22,13 +22,16 @@ description: "Aftercare and relapse support at Promises Treatment Centre — sup
       {% for p in aftercare.groupsParas %}<p class="p-body" style="margin:0">{{ p }}</p>{% endfor %}
     </div>
     <div style="display:flex;flex-direction:column;gap:1px;background:#DFD4C2;border:1px solid #DFD4C2">
+      {% set groupIcons = ["heart", "users", "book-open"] %}
       {% for g in aftercare.groupBenefits %}
       <div style="background:var(--bg-card);padding:24px 26px;display:flex;flex-direction:column;gap:7px">
+        <span class="icon-tile" style="align-self:flex-start">{% icon groupIcons[loop.index0] %}</span>
         <span class="serif" style="font-size:21px;line-height:1.22;color:var(--ink)">{{ g.title }}</span>
         <span style="font-size:15.5px;line-height:1.6;color:var(--ink-soft)">{{ g.body }}</span>
       </div>
       {% endfor %}
       <div style="background:var(--dark-bg);padding:24px 26px;display:flex;flex-direction:column;gap:7px">
+        <span class="icon-tile icon-tile-dark" style="align-self:flex-start">{% icon "refresh-cw" %}</span>
         <span class="serif" style="font-size:21px;line-height:1.22;color:#FFFDF9">{{ aftercare.ourAftercareTitle }}</span>
         <span style="font-size:15.5px;line-height:1.6;color:var(--dark-text-soft)">{{ aftercare.ourAftercareBody }}</span>
       </div>
@@ -67,7 +70,7 @@ description: "Aftercare and relapse support at Promises Treatment Centre — sup
       <h2 class="h2" style="color:#FFFDF9;font-size:clamp(28px,3.5vw,38px)">{{ aftercare.relapseTitle }}</h2>
       <p style="margin:0;font-size:17px;line-height:1.68;color:var(--dark-text-soft);text-wrap:pretty">{{ aftercare.relapseBody }}</p>
       <div style="display:flex;gap:12px;flex-wrap:wrap;padding-top:4px">
-        <a href="tel:{{ site.phoneHref }}" class="btn btn-primary">Call us now &middot; {{ site.phone }}</a>
+        <a href="tel:{{ site.phoneHref }}" class="btn btn-primary">{% icon "phone" %}Call us now &middot; {{ site.phone }}</a>
         <a href="/treatment/" class="btn btn-outline-dark">How treatment works</a>
       </div>
     </div>
