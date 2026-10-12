@@ -50,7 +50,9 @@
   "vision": "A healthy society free from addictions.",
   "aboutTitle": "A therapeutic community, not an institution.",
   "mission": "Professional treatment and rehabilitation of persons with substance use disorders.",
-  "aboutImage": "/assets/images/home-about.jpg",
+  "aboutSlides": [
+    { "image": "/assets/images/home-about.jpg", "alt": "A group of hands holding one another" }
+  ],
   "diseaseNote": "Classified as a chronic brain disorder by the American Society of Addiction Medicine and the National Institute on Drug Abuse.",
   "kicker": "Webuye, Kenya · NACADA accredited",
   "treatmentIntro": "Detox alone is not treatment. Each stage hands you to the next, and none of it ends at discharge.",
