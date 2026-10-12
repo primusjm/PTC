@@ -1,3 +1,6 @@
+const path = require("path");
+const Image = require("@11ty/eleventy-img");
+
 const ICONS = {
   phone: '<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>',
   mail: '<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/>',
@@ -25,7 +28,16 @@ const ICONS = {
 };
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
+  // Images are not copied as-is: the `image` shortcode below resizes them
+  // and writes AVIF/WebP/JPEG versions to assets/img.
+  eleventyConfig.addPassthroughCopy({ "src/assets/css": "assets/css" });
+  eleventyConfig.addPassthroughCopy({ "src/assets/js": "assets/js" });
+  eleventyConfig.addPassthroughCopy({ "src/assets/static": "." });
+  eleventyConfig.addPassthroughCopy({
+    "node_modules/@fontsource-variable/newsreader/files/newsreader-latin-wght-normal.woff2": "assets/fonts/newsreader-normal.woff2",
+    "node_modules/@fontsource-variable/newsreader/files/newsreader-latin-wght-italic.woff2": "assets/fonts/newsreader-italic.woff2",
+    "node_modules/@fontsource-variable/karla/files/karla-latin-wght-normal.woff2": "assets/fonts/karla-normal.woff2",
+  });
   eleventyConfig.addPassthroughCopy({ admin: "admin" });
 
   eleventyConfig.addShortcode("icon", function (name, extraClass) {
@@ -33,6 +45,33 @@ module.exports = function (eleventyConfig) {
     if (!body) return "";
     const cls = extraClass ? `icon ${extraClass}` : "icon";
     return `<svg class="${cls}" viewBox="0 0 24 24" aria-hidden="true" focusable="false">${body}</svg>`;
+  });
+
+  // {% image "/assets/images/x.jpg", "alt text", "sizes", "class", "style", "eager" %}
+  // Works with any image the CMS uploads, however large the original is.
+  eleventyConfig.addShortcode("image", function (src, alt, sizes, cls, style, priority) {
+    const file = path.join("src", src);
+    const opts = {
+      widths: [480, 800, 1200, 1600],
+      formats: ["avif", "webp", "jpeg"],
+      urlPath: "/assets/img/",
+      outputDir: "_site/assets/img/",
+      sharpAvifOptions: { quality: 55 },
+      sharpWebpOptions: { quality: 72 },
+      sharpJpegOptions: { quality: 76 },
+    };
+    Image(file, opts);
+    const metadata = Image.statsSync(file, opts);
+    const attrs = {
+      alt: alt || "",
+      sizes: sizes || "100vw",
+      decoding: "async",
+      loading: priority === "eager" || priority === "now" ? "eager" : "lazy",
+    };
+    if (priority === "eager") attrs.fetchpriority = "high";
+    if (cls) attrs.class = cls;
+    if (style) attrs.style = style;
+    return Image.generateHTML(metadata, attrs);
   });
 
   return {
