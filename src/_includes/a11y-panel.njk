@@ -1,0 +1,37 @@
+<dialog id="a11y-panel" class="a11y-panel" aria-labelledby="a11y-panel-title">
+  <div class="a11y-head">
+    <div>
+      <div class="kicker">Accessibility</div>
+      <h2 class="a11y-title" id="a11y-panel-title">Make this site easier to use</h2>
+    </div>
+    <button type="button" class="a11y-close" data-a11y-close aria-label="Close accessibility settings">{% icon "x" %}</button>
+  </div>
+  <p class="a11y-intro">Adjust how this site looks and moves. Your choices are saved on this device.</p>
+
+  <div class="a11y-group" role="group" aria-labelledby="a11y-g-text">
+    <span class="kicker a11y-group-label" id="a11y-g-text">Text size</span>
+    <div class="a11y-row">
+      <button type="button" class="a11y-opt" data-a11y-size="down" aria-label="Decrease text size">A&minus;</button>
+      <button type="button" class="a11y-opt" data-a11y-size="reset" aria-label="Reset text size">A</button>
+      <button type="button" class="a11y-opt" data-a11y-size="up" aria-label="Increase text size">A+</button>
+      <span class="a11y-status" data-a11y-status aria-live="polite">Text size 100%</span>
+    </div>
+  </div>
+
+  <div class="a11y-group" role="group" aria-labelledby="a11y-g-display">
+    <span class="kicker a11y-group-label" id="a11y-g-display">Display</span>
+    <div class="a11y-toggles">
+      <button type="button" class="a11y-opt" data-a11y-toggle="contrast" aria-pressed="false">High contrast</button>
+      <button type="button" class="a11y-opt" data-a11y-toggle="underline" aria-pressed="false">Underline links</button>
+      <button type="button" class="a11y-opt" data-a11y-toggle="spacing" aria-pressed="false">Increase spacing</button>
+      <button type="button" class="a11y-opt" data-a11y-toggle="bold" aria-pressed="false">Bold text</button>
+      <button type="button" class="a11y-opt" data-a11y-toggle="font" aria-pressed="false">Plain font</button>
+      <button type="button" class="a11y-opt" data-a11y-toggle="still" aria-pressed="false">Reduce motion</button>
+    </div>
+  </div>
+
+  <div class="a11y-actions">
+    <button type="button" class="btn btn-outline" data-a11y-reset>Reset all</button>
+    <button type="button" class="btn btn-primary" data-a11y-close>Done</button>
+  </div>
+</dialog>

@@ -9,7 +9,19 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/style.css">
-<script src="/assets/js/a11y.js"></script>
+<script>
+  // Apply saved accessibility choices before first paint to avoid a flash.
+  (function () {
+    try {
+      var s = JSON.parse(localStorage.getItem("site-a11y") || "{}"), r = document.documentElement;
+      if (s.text > 0 && s.text < 4) r.setAttribute("data-text", s.text);
+      ["contrast", "underline", "spacing", "bold", "font", "still"].forEach(function (k) {
+        if (s[k]) r.classList.add("a11y-" + k);
+      });
+    } catch (e) {}
+  })();
+</script>
+<script src="/assets/js/a11y.js" defer></script>
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body id="top">
@@ -74,11 +86,11 @@
       <div class="footer-brand">
         <span class="footer-brand-mark"><img src="/assets/images/logo.jpg" alt="{{ site.name }} {{ site.tagline }} — dove in flight"></span>
         <span style="display:flex;flex-direction:column;line-height:1.12">
-          <span class="serif" style="font-size:26px;color:#FFFDF9">{{ site.name }}</span>
+          <span class="serif" style="font-size:1.625rem;color:#FFFDF9">{{ site.name }}</span>
           <span class="brand-sub">{{ site.tagline }}</span>
         </span>
       </div>
-      <p style="margin:0;font-size:15.5px;line-height:1.65;max-width:40ch">{{ site.footerBlurb }}</p>
+      <p style="margin:0;font-size:0.9688rem;line-height:1.65;max-width:40ch">{{ site.footerBlurb }}</p>
     </div>
     <div class="footer-col">
       <span class="footer-col-label">Contact</span>
@@ -94,22 +106,11 @@
       <a href="/addiction-explained/">Addiction explained</a>
       <a href="/aftercare/">Aftercare</a>
       <a href="/#find-us">Find us</a>
-      <a href="#top" class="footer-back-top">&#8593; Back to top</a>
     </div>
   </div>
-  <div class="a11y-bar" role="group" aria-labelledby="a11y-title">
-    <span class="a11y-title" id="a11y-title">{% icon "eye" %} Accessibility</span>
-    <div class="a11y-controls">
-      <span class="a11y-size">
-        <button type="button" data-a11y="size-down" aria-label="Decrease text size">A&minus;</button>
-        <span data-a11y-size aria-live="polite">100%</span>
-        <button type="button" data-a11y="size-up" aria-label="Increase text size">A+</button>
-      </span>
-      <button type="button" data-a11y="hc" aria-pressed="false">High contrast</button>
-      <button type="button" data-a11y="readable" aria-pressed="false">Readable font</button>
-      <button type="button" data-a11y="links" aria-pressed="false">Underline links</button>
-      <button type="button" data-a11y="reset">Reset</button>
-    </div>
+  <div class="footer-utility">
+    <a href="#top" class="footer-back-top">&#8593; Back to top</a>
+    <button type="button" class="a11y-trigger" data-a11y-open aria-haspopup="dialog" aria-expanded="false" aria-controls="a11y-panel">{% icon "accessibility" %} Accessibility</button>
   </div>
   <div class="footer-bottom">
     <span>{{ site.footerRegistered }}</span>
@@ -117,6 +118,7 @@
   </div>
 </footer>
 
+{% include "a11y-panel.njk" %}
 <script src="/assets/js/main.js"></script>
 <script>
   // Invite / password-recovery / email-confirmation links land on this page
