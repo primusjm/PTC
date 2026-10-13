@@ -45,4 +45,20 @@
     window.addEventListener('load', function () { root.scrollIntoView(); });
   }
   window.addEventListener('hashchange', function () { fromHash(true); });
+
+  // Clicking Contact while already on the page (even twice in a row, or after
+  // switching tabs by hand) always opens the right tab and scrolls to it.
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('a[href]') : null;
+    if (!a || e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey || a.target === '_blank') return;
+    var u;
+    try { u = new URL(a.href, location.href); } catch (err) { return; }
+    if (u.origin !== location.origin || u.pathname !== location.pathname || !u.hash) return;
+    var i = panels.findIndex(function (p) { return p && '#' + p.id === u.hash; });
+    if (i < 0) return;
+    e.preventDefault();
+    select(i, false);
+    if (history.replaceState) history.replaceState(null, '', u.hash);
+    root.scrollIntoView();
+  });
 })();

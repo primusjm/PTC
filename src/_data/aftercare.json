@@ -8,45 +8,73 @@
     "The vast majority are 12-step programmes, which break recovery into steps all members follow. They are modelled on Alcoholics Anonymous — by research, the best known and most widely attended substance abuse group in the world."
   ],
   "groupBenefits": [
-    { "title": "A judgement-free room", "body": "Members feel understood, because everyone there has been in some version of the same place." },
-    { "title": "Stability and people to fall back on", "body": "A standing commitment in the week, and names you can call when a hard day arrives." },
-    { "title": "Advice and information", "body": "Practical, lived knowledge about what works — from people with no reason to sell you anything." }
+    {
+      "title": "A judgement-free room",
+      "body": "Members feel understood, because everyone there has been in some version of the same place."
+    },
+    {
+      "title": "Stability and people to fall back on",
+      "body": "A standing commitment in the week, and names you can call when a hard day arrives."
+    },
+    {
+      "title": "Advice and information",
+      "body": "Practical, lived knowledge about what works — from people with no reason to sell you anything."
+    }
   ],
   "ourAftercareTitle": "Aftercare from us",
   "ourAftercareBody": "We follow up on discharged clients, place people in the right support group and continue therapy where it is needed — plus practical strategies for managing cravings and stress.",
   "timelineTitle": "A continuous chain of small decisions.",
   "timelineIntro": "Sobriety is hardest to hold early on, and grows easier as new habits, relationships and routines form. This is roughly when to do what.",
   "timeline": [
-    { "range": "1–30 days", "title": "Build the scaffolding", "steps": [
-      "Develop a recovery plan with goals and how to reach them",
-      "Learn to recognise and handle negative impulses",
-      "Find healthy, supportive living arrangements",
-      "Establish a daily routine and schedule",
-      "Attend at least two support groups to find the best fit",
-      "Find a counsellor or therapist",
-      "Build a support system for when the urge appears",
-      "Bring in regular physical activity — and avoid taking on too much"
-    ] },
-    { "range": "30–90 days", "title": "Make it a habit", "steps": [
-      "Stay involved in support groups — at least weekly",
-      "Continue counselling or therapy, ideally weekly",
-      "Keep a recovery journal, including triggers and how you got past them",
-      "Discuss professional goals with a career counsellor"
-    ] },
-    { "range": "90–180 days", "title": "Repair and plan", "steps": [
-      "Begin repairing broken or damaged relationships",
-      "Develop short and long-term goals with a financial planner",
-      "Start focusing more on longer-term goals",
-      "Try new hobbies, then commit to one or two"
-    ] },
-    { "range": "180–365 days", "title": "Look outward", "steps": [
-      "Celebrate the milestones, especially six months and one year",
-      "Help others who are just beginning the road",
-      "Develop five and ten-year plans — personal, professional, financial",
-      "Seek out new motivation and new ways to occupy your time"
-    ] }
+    {
+      "range": "1–30 days",
+      "title": "Build the scaffolding",
+      "steps": [
+        "Develop a recovery plan with goals and how to reach them",
+        "Learn to recognise and handle negative impulses",
+        "Find healthy, supportive living arrangements",
+        "Establish a daily routine and schedule",
+        "Attend at least two support groups to find the best fit",
+        "Find a counsellor or therapist",
+        "Build a support system for when the urge appears",
+        "Bring in regular physical activity — and avoid taking on too much"
+      ]
+    },
+    {
+      "range": "30–90 days",
+      "title": "Make it a habit",
+      "steps": [
+        "Stay involved in support groups — at least weekly",
+        "Continue counselling or therapy, ideally weekly",
+        "Keep a recovery journal, including triggers and how you got past them",
+        "Discuss professional goals with a career counsellor"
+      ]
+    },
+    {
+      "range": "90–180 days",
+      "title": "Repair and plan",
+      "steps": [
+        "Begin repairing broken or damaged relationships",
+        "Develop short and long-term goals with a financial planner",
+        "Start focusing more on longer-term goals",
+        "Try new hobbies, then commit to one or two"
+      ]
+    },
+    {
+      "range": "180–365 days",
+      "title": "Look outward",
+      "steps": [
+        "Celebrate the milestones, especially six months and one year",
+        "Help others who are just beginning the road",
+        "Develop five and ten-year plans — personal, professional, financial",
+        "Seek out new motivation and new ways to occupy your time"
+      ]
+    }
   ],
   "relapseTitle": "It happens to the most dedicated people in recovery. It is not the end of anything.",
   "relapseBody": "Some studies suggest the majority of people in recovery relapse at least briefly. Help is still here. Do not wait for the problem to get worse before you make the call — our relapse programme is two months, and we pick up where we left off.",
-  "relapseImage": "/assets/images/aftercare-relapse.jpg"
+  "relapseImage": "/assets/images/aftercare-relapse.jpg",
+  "groupsImage": "/assets/images/aftercare-support.webp",
+  "groupsImageAlt": "Clients gathered around a pool table under a shelter, with a \"Recover works\" mural in the foreground",
+  "groupsImagePosition": "50% 37%"
 }

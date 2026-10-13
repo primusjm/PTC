@@ -15,11 +15,12 @@ description: "Aftercare and relapse support at Promises Treatment Centre — sup
 </div>
 
 <div class="section-tight bg-alt">
-  <div class="grid grid-2" style="align-items:start">
+  <div class="grid grid-2 tab-grid">
     <div style="display:flex;flex-direction:column;gap:16px">
       <div class="kicker">{% icon "users" %}Support groups</div>
       <h2 class="h2">{{ aftercare.groupsTitle }}</h2>
       {% for p in aftercare.groupsParas %}<p class="p-body" style="margin:0">{{ p }}</p>{% endfor %}
+      {% if aftercare.groupsImage %}<div class="tab-photo">{% image aftercare.groupsImage, aftercare.groupsImageAlt, "(min-width: 900px) 45vw, 100vw", "", "object-position:" + (aftercare.groupsImagePosition or "center") %}</div>{% endif %}
     </div>
     <div style="display:flex;flex-direction:column;gap:1px;background:#DFD4C2;border:1px solid #DFD4C2">
       {% set groupIcons = ["heart", "users", "book-open"] %}
