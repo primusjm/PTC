@@ -282,6 +282,9 @@ collections:
           - { label: "Hero body", name: "heroBody", widget: "text" }
           - { label: "Hero image", name: "heroImage", widget: "image" }
           - { label: "Support groups title", name: "groupsTitle", widget: "string" }
+          - { label: "Support groups photo (leave empty for none)", name: "groupsImage", widget: "image", required: false }
+          - { label: "Support groups photo description (for screen readers)", name: "groupsImageAlt", widget: "string", required: false }
+          - { label: "Support groups photo focus (which part stays in view, e.g. 50% 50% is the centre)", name: "groupsImagePosition", widget: "string", required: false }
           - label: "Support groups paragraphs"
             name: "groupsParas"
             widget: "list"

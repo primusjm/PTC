@@ -59,6 +59,7 @@
 
 {% set onHome = page.url == "/" %}
 {% set homeHref = "/" if not onHome else "" %}
+{% set contactTab = "#callback" if site.formEndpoint else "#find-us" %}
 
 <div class="crisis-bar">
   <span>{{ site.crisisLine }}</span>
@@ -83,7 +84,7 @@
     <a href="/addiction-explained/"{% if nav == 'addiction' %} class="active" aria-current="page"{% endif %}>Addiction explained</a>
     <a href="/aftercare/"{% if nav == 'aftercare' %} class="active" aria-current="page"{% endif %}>Aftercare</a>
     <a href="{{ homeHref }}#selfcheck">Self-check</a>
-    <a href="{{ homeHref }}#find-us">Contact</a>
+    <a href="{{ homeHref }}{{ contactTab }}">Contact</a>
     <a href="tel:{{ site.phoneHref }}" class="btn-call">{% icon "phone" %}Call {{ site.phone }}</a>
   </nav>
 
@@ -102,7 +103,7 @@
   <a href="/addiction-explained/"{% if nav == 'addiction' %} aria-current="page"{% endif %}>Addiction explained</a>
   <a href="/aftercare/"{% if nav == 'aftercare' %} aria-current="page"{% endif %}>Aftercare</a>
   <a href="{{ homeHref }}#selfcheck">Self-check</a>
-  <a href="{{ homeHref }}#find-us">Contact</a>
+  <a href="{{ homeHref }}{{ contactTab }}">Contact</a>
   <a href="tel:{{ site.phoneHref }}" class="btn-call-block">{% icon "phone" %}Call us now · {{ site.phone }}</a>
   <a href="https://wa.me/{{ site.whatsapp }}?text={{ site.whatsappMessage | urlencode }}" class="btn-wa-block" rel="noopener">{% icon "message-circle" %}Message us on WhatsApp</a>
   <span class="mobile-note">Lines open daily. Every conversation stays between us.</span>
@@ -138,7 +139,7 @@
       <a href="/treatment/">Treatment</a>
       <a href="/addiction-explained/">Addiction explained</a>
       <a href="/aftercare/">Aftercare</a>
-      <a href="/#find-us">Find us</a>
+      <a href="/{{ contactTab }}">Contact</a>
     </div>
   </div>
   <div class="footer-utility">
