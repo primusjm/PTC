@@ -52,6 +52,7 @@
     var r = resultFor(count);
     resultHeadline.textContent = r.headline;
     resultBody.textContent = r.body;
+    [resultHeadline, resultBody].forEach(function (el) { el.classList.remove('fade-swap'); void el.offsetWidth; el.classList.add('fade-swap'); });
     if (result) result.classList.toggle('urgent', count >= 3);
     if (actions && waLink) {
       var intro = actions.getAttribute('data-wa-intro') || '';

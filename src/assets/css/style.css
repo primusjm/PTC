@@ -465,3 +465,77 @@ html.a11y-contrast .a11y-trigger, html.a11y-contrast .footer-utility .footer-bac
 .photo-bg > .bg-img, .photo-bg > picture > .bg-img { position: absolute; inset: 0; z-index: -1; width: 100%; height: 100%; object-fit: cover; opacity: 0.12; }
 
 .callback ::placeholder { color: var(--muted2); opacity: 1; }
+
+/* ---- Self-check buttons: same width, always legible on hover ---- */
+.check-buttons { display: flex; flex-direction: column; gap: 12px; width: 280px; max-width: 100%; }
+.check-buttons .btn, .check-buttons .check-actions { width: 100%; }
+.check-buttons .btn { justify-content: center; }
+
+.btn-primary:hover, .btn-call-block:hover, .mobile-panel .btn-call-block:hover { color: #FFF8F1; background: var(--accent-dark); }
+.btn-call:hover, .call-pill:hover { color: var(--bg); background: var(--accent-dark); }
+.btn-wa:hover, .btn-wa-block:hover, .mobile-panel .btn-wa-block:hover { color: #FFFFFF; background: #17552E; }
+.btn-outline:hover { color: var(--ink); background: var(--bg-alt); border-color: var(--accent); }
+
+/* ==== Gentle motion: calm, slow, never in the way ==== */
+@keyframes fade-up { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes pop { 0% { transform: scale(0.6); } 60% { transform: scale(1.18); } 100% { transform: scale(1); } }
+@keyframes veil-out { 0% { opacity: 1; visibility: visible; } 100% { opacity: 0; visibility: hidden; } }
+@keyframes veil-in { from { opacity: 0; visibility: visible; } to { opacity: 1; visibility: visible; } }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Page load / exit: a soft veil with the dove */
+.page-veil { position: fixed; inset: 0; z-index: 300; display: grid; place-items: center; background: var(--bg); opacity: 0; visibility: hidden; pointer-events: none; animation: veil-out 0.5s ease 0.18s both; }
+.veil-spinner { width: 46px; height: 46px; border-radius: 50%; border: 3px solid var(--border); border-top-color: var(--accent); animation: spin 0.8s linear infinite; }
+.leaving .page-veil { animation: veil-in 0.26s ease forwards; pointer-events: auto; }
+
+/* Hero fades in after the veil lifts */
+.grid-hero .hero-copy > * { animation: fade-up 0.8s ease both; }
+.grid-hero .hero-copy > :nth-child(1) { animation-delay: 0.3s; }
+.grid-hero .hero-copy > :nth-child(2) { animation-delay: 0.4s; }
+.grid-hero .hero-copy > :nth-child(3) { animation-delay: 0.5s; }
+.grid-hero .hero-copy > :nth-child(4) { animation-delay: 0.6s; }
+.grid-hero .hero-copy > :nth-child(5) { animation-delay: 0.7s; }
+.grid-hero .hero-media { animation: fade-in 1s ease 0.25s both; }
+
+/* Scroll reveal (only when the script is running) */
+.js-motion .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.7s ease, transform 0.7s ease; transition-delay: calc(var(--i, 0) * 80ms); }
+.js-motion .reveal.in { opacity: 1; transform: none; }
+
+/* Buttons */
+.btn, .btn-call, .call-pill, .btn-call-block, .btn-wa-block, .sticky-cta a { transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, translate 0.2s ease, box-shadow 0.2s ease; }
+.btn:hover, .btn-call:hover, .call-pill:hover { translate: 0 -2px; box-shadow: 0 8px 18px rgba(35, 35, 31, 0.14); }
+.btn:active, .btn-call:active, .call-pill:active, .sticky-cta a:active { translate: 0 0; box-shadow: none; scale: 0.98; }
+
+/* Cards and tiles */
+.service-card, .testimonial-card { transition: translate 0.25s ease, box-shadow 0.25s ease; }
+.service-card:hover, .testimonial-card:hover { translate: 0 -4px; box-shadow: 0 12px 26px rgba(35, 35, 31, 0.09); }
+.feature-cell, .trust-item, .programme-row { transition: background-color 0.25s ease; }
+.feature-cell:hover, .trust-item:hover { background-color: #FBF7F0; }
+.icon-tile { transition: transform 0.3s ease; }
+.service-card:hover .icon-tile, .feature-cell:hover .icon-tile, .trust-item:hover .icon-tile, .testimonial-card:hover .icon-tile, .stat-row:hover .icon-tile { transform: scale(1.08) rotate(-4deg); }
+
+/* Navigation and links */
+.nav-desktop a:not(.btn-call) { background: linear-gradient(var(--accent), var(--accent)) left bottom / 0 2px no-repeat; transition: background-size 0.3s ease, color 0.2s ease; padding-bottom: 2px; }
+.nav-desktop a:not(.btn-call):hover { background-size: 100% 2px; }
+.brand-mark { transition: transform 0.4s ease; }
+.brand:hover .brand-mark { transform: rotate(-4deg) scale(1.05); }
+.map-link, .footer-col a { transition: color 0.2s ease, border-color 0.2s ease; }
+.map-link:hover { border-bottom-color: var(--accent); }
+.footer-col a:hover { color: #FFFDF9; }
+.mobile-panel.open { animation: fade-up 0.25s ease; }
+
+/* Tabs, questions, self-check */
+.tabs-js .tab-panel:not([hidden]) { animation: fade-up 0.4s ease; }
+.faq-item[open] p { animation: fade-up 0.3s ease; }
+.faq-item summary::after { transition: transform 0.25s ease; }
+.faq-item summary:hover::after { transform: scale(1.25); }
+.sign-box { transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, translate 0.2s ease; }
+.sign-box:hover { translate: 0 -2px; border-color: var(--accent); }
+.sign-box.checked .sign-tick { animation: pop 0.3s ease; }
+.fade-swap { animation: fade-in 0.45s ease; }
+.slide-btn, .slide-pause, .slide-dot::after { transition: background-color 0.2s ease, transform 0.2s ease; }
+.slide-btn:hover { transform: translateY(-50%) scale(1.08); }
+.sticky-cta { animation: fade-up 0.5s ease 0.9s both; }
+
+@media print { .page-veil { display: none; } .js-motion .reveal { opacity: 1; transform: none; } }
