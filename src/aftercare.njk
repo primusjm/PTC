@@ -6,7 +6,7 @@ permalink: /aftercare/
 description: "Aftercare and relapse support at Promises Treatment Centre — support groups, the first year timeline, and what to do if you relapse."
 ---
 <div class="quote-band" style="min-height:clamp(320px,42vw,480px)">
-  <img class="bg-img" style="opacity:0.4" src="{{ aftercare.heroImage }}" alt="A group of people standing together in the open air">
+  {% image aftercare.heroImage, "A group of people standing together in the open air", "100vw", "bg-img", "opacity:0.4", "eager" %}
   <div class="content">
     <div class="breadcrumb" style="color:var(--accent-light)"><a href="/" style="color:var(--accent-light)">Home</a><span class="sep" style="color:var(--dark-muted)">/</span><span style="color:var(--dark-text-soft)">Aftercare</span></div>
     <h1 class="h1" style="font-style:normal;font-weight:400;font-size:clamp(2.125rem,4.6vw,3.375rem);color:#FFFDF9">{{ aftercare.heroTitle }}</h1>
@@ -75,7 +75,7 @@ description: "Aftercare and relapse support at Promises Treatment Centre — sup
       </div>
     </div>
     <div style="min-height:clamp(260px,32vw,380px);overflow:hidden;background:#2A2723">
-      <img src="{{ aftercare.relapseImage }}" alt="A father carrying his child on his back" style="width:100%;height:100%;object-fit:cover">
+      {% image aftercare.relapseImage, "A father carrying his child on his back", "(min-width: 900px) 50vw, 100vw", "", "width:100%;height:100%;object-fit:cover" %}
     </div>
   </div>
 </div>

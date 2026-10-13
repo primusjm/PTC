@@ -1,0 +1,20 @@
+---
+layout: base.njk
+title: Thank you
+nav: none
+permalink: /thanks/
+noindex: true
+eleventyExcludeFromCollections: true
+---
+<div class="section">
+  <div class="utility-page">
+    <div class="kicker">Request received</div>
+    <h1 class="h2">Thank you. We will call you back.</h1>
+    <p class="p-body" style="margin:0">Someone from the centre will ring the number you gave us. If it is urgent, please don't wait for us: call <a href="tel:{{ site.phoneHref }}">{{ site.phone }}</a> now, or message us on WhatsApp.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <a href="tel:{{ site.phoneHref }}" class="btn btn-primary">{% icon "phone" %}Call {{ site.phone }}</a>
+      <a href="https://wa.me/{{ site.whatsapp }}?text={{ site.whatsappMessage | urlencode }}" class="btn btn-wa" rel="noopener">{% icon "message-circle" %}WhatsApp</a>
+      <a href="/" class="btn btn-outline">Back to the home page</a>
+    </div>
+  </div>
+</div>

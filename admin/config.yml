@@ -23,6 +23,9 @@ collections:
           - { label: "Phone (display)", name: "phone", widget: "string" }
           - { label: "Second phone (display)", name: "phone2", widget: "string" }
           - { label: "Phone (for tel: links, e.g. +254725871040)", name: "phoneHref", widget: "string" }
+          - { label: "WhatsApp number (digits only, with country code, e.g. 254725871040)", name: "whatsapp", widget: "string" }
+          - { label: "WhatsApp pre-filled message", name: "whatsappMessage", widget: "string" }
+          - { label: "Website address (no trailing slash, used for sharing previews and Google)", name: "url", widget: "string" }
           - { label: "Email", name: "email", widget: "string" }
           - { label: "Postal address", name: "address", widget: "string" }
           - { label: "Location description", name: "locationLine", widget: "text" }
@@ -44,6 +47,10 @@ collections:
           - { label: "Hero title", name: "heroTitle", widget: "string" }
           - { label: "Hero body", name: "heroBody", widget: "text" }
           - { label: "Hero image", name: "heroImage", widget: "image" }
+          - label: "Hero reassurance badges"
+            name: "heroBadges"
+            widget: "list"
+            field: { label: "Badge", name: "badge", widget: "string" }
           - { label: "Hero image caption quote", name: "heroQuote", widget: "string" }
           - label: "Trust bar items"
             name: "trust"

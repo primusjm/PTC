@@ -9,17 +9,19 @@ description: "Promises Treatment Centre — residential recovery from alcohol an
     <div class="kicker">{{ home.kicker }}</div>
     <h1 class="h1">{{ home.heroTitle }}</h1>
     <p class="p-lead">{{ home.heroBody }}</p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:14px;padding-top:4px;max-width:600px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:14px;padding-top:4px;max-width:600px">
       <a href="tel:{{ site.phoneHref }}" class="btn btn-primary">{% icon "phone" %}Call us now · {{ site.phone }}</a>
+      <a href="https://wa.me/{{ site.whatsapp }}?text={{ site.whatsappMessage | urlencode }}" class="btn btn-wa" rel="noopener">{% icon "message-circle" %}Message us on WhatsApp</a>
       <a href="#family" class="btn btn-outline">{% icon "heart" %}Worried about someone I love</a>
     </div>
+    {% if home.heroBadges.length %}<ul class="hero-badges">{% for b in home.heroBadges %}<li>{% icon "shield-check" %}{{ b }}</li>{% endfor %}</ul>{% endif %}
     <div style="display:flex;align-items:center;gap:10px;font-size:0.9062rem;color:var(--muted)">
       <span style="width:7px;height:7px;border-radius:50%;background:#5C6B57;display:inline-block;flex:0 0 auto"></span>
       <span>Lines open daily. Every conversation stays between us.</span>
     </div>
   </div>
   <div class="hero-media">
-    <img src="{{ home.heroImage }}" alt="A close-up of two people holding each other's hands">
+    {% image home.heroImage, "A close-up of two people holding each other's hands", "(min-width: 900px) 50vw, 100vw", "", "", "eager" %}
     <span class="hero-caption">{{ home.heroQuote }}</span>
   </div>
 </div>
@@ -41,9 +43,10 @@ description: "Promises Treatment Centre — residential recovery from alcohol an
     <h2 class="h2">{{ home.aboutTitle }}</h2>
     <div class="slideshow" data-slideshow role="group" aria-roledescription="carousel" aria-label="Photos of the centre">
       <div class="slides" aria-live="off">
-        {% for s in home.aboutSlides %}<img class="slide{% if loop.first %} active{% endif %}" src="{{ s.image }}" alt="{{ s.alt }}"{% if not loop.first %} loading="lazy"{% endif %}>{% endfor %}
+        {% for s in home.aboutSlides %}{% image s.image, s.alt, "(min-width: 900px) 45vw, 100vw", ("slide active" if loop.first else "slide"), "", ("eager" if loop.first else "lazy") %}{% endfor %}
       </div>
       {% if home.aboutSlides.length > 1 %}
+      <button type="button" class="slide-pause" aria-label="Pause slideshow">Pause</button>
       <button type="button" class="slide-btn slide-prev" aria-label="Previous photo">&#8249;</button>
       <button type="button" class="slide-btn slide-next" aria-label="Next photo">&#8250;</button>
       <div class="slide-dots">{% for s in home.aboutSlides %}<button type="button" class="slide-dot{% if loop.first %} active{% endif %}" aria-label="Photo {{ loop.index }} of {{ home.aboutSlides.length }}"></button>{% endfor %}</div>
@@ -89,7 +92,7 @@ description: "Promises Treatment Centre — residential recovery from alcohol an
     <a href="/aftercare/" class="btn btn-outline">Aftercare &amp; support</a>
   </div>
   <div style="margin-top:20px;height:clamp(340px,40vw,520px);overflow:hidden">
-    <img src="{{ home.treatmentImage }}" alt="A group of people holding hands together" style="width:100%;height:100%;object-fit:cover;object-position:center 35%">
+    {% image home.treatmentImage, "A group of people holding hands together", "100vw", "", "width:100%;height:100%;object-fit:cover;object-position:center 35%" %}
   </div>
 </div>
 
@@ -115,7 +118,7 @@ description: "Promises Treatment Centre — residential recovery from alcohol an
 
 <div id="family" class="grid grid-2 bg-card border-top border-bottom" style="gap:0">
   <div style="min-height:clamp(260px,50vw,380px);overflow:hidden;background:#E4DACB">
-    <img src="{{ home.familyImage }}" alt="A father carrying his child on his back" style="width:100%;height:100%;object-fit:cover">
+    {% image home.familyImage, "A father carrying his child on his back", "(min-width: 900px) 50vw, 100vw", "", "width:100%;height:100%;object-fit:cover" %}
   </div>
   <div class="hero-copy">
     <div class="kicker">Family therapy</div>
@@ -158,7 +161,7 @@ description: "Promises Treatment Centre — residential recovery from alcohol an
   <div style="display:flex;flex-direction:column;gap:14px;padding-bottom:34px;max-width:62ch">
     <div class="kicker">A quiet self-check</div>
     <h2 class="h2">Tick anything that feels familiar — for you, or for someone you love.</h2>
-    <p class="p-body" style="margin:0">Nothing is recorded and nothing is sent. This is only for you to see clearly.</p>
+    <p class="p-body" style="margin:0">Nothing is recorded, and nothing is sent unless you choose to share it. This is only for you to see clearly.</p>
   </div>
   <div class="signs-grid">
     {% for s in home.signs %}
@@ -176,12 +179,19 @@ description: "Promises Treatment Centre — residential recovery from alcohol an
       <span class="serif" data-check-headline style="font-size:1.5rem;line-height:1.25;color:var(--ink)">Nothing ticked yet.</span>
       <span data-check-body style="font-size:0.9688rem;line-height:1.6;color:var(--ink-soft)">Read through the list slowly. Recognising a pattern is the first honest step, and it is the hardest one.</span>
     </div>
-    <a href="tel:{{ site.phoneHref }}" class="btn btn-primary" style="white-space:nowrap">{% icon "phone" %}Call {{ site.phone }}</a>
+    <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start">
+      <a href="tel:{{ site.phoneHref }}" class="btn btn-primary" style="white-space:nowrap">{% icon "phone" %}Call {{ site.phone }}</a>
+      <div class="check-actions" data-check-actions data-wa-base="https://wa.me/{{ site.whatsapp }}" data-wa-intro="{{ site.whatsappMessage }}">
+        <a href="https://wa.me/{{ site.whatsapp }}" class="btn btn-wa" rel="noopener" data-check-wa>{% icon "message-circle" %}Send my list on WhatsApp</a>
+        <button type="button" class="btn btn-outline" data-check-share>Share or copy my list</button>
+        <span class="check-status" data-check-status role="status"></span>
+      </div>
+    </div>
   </div>
 </div>
 
 <div class="quote-band">
-  <img class="bg-img" src="{{ home.quoteImage }}" alt="A group of people standing together in the open air">
+  {% image home.quoteImage, "A group of people standing together in the open air", "100vw", "bg-img" %}
   <div class="content">
     <p>&#8220;{{ home.quote }}&#8221;</p>
     <span class="attribution">{{ home.quoteAttribution }}</span>
@@ -200,6 +210,40 @@ description: "Promises Treatment Centre — residential recovery from alcohol an
   </div>
 </div>
 
+<div id="callback" class="section bg-alt">
+  <div class="grid grid-2" style="align-items:start">
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div class="kicker">Not ready to phone?</div>
+      <h2 class="h2" style="font-size:clamp(1.75rem,3.4vw,2.25rem)">Leave your number. We will call you.</h2>
+      <p class="p-body" style="margin:0">Tell us a good time and we will ring you back. You can ask about fees, programmes or how to bring someone in. Nothing you share obliges you to anything, and it stays between us.</p>
+      <p style="margin:0;font-size:1rem;line-height:1.6;color:var(--ink-soft)">Prefer to type? <a href="https://wa.me/{{ site.whatsapp }}?text={{ site.whatsappMessage | urlencode }}" rel="noopener" style="font-weight:600">Message us on WhatsApp</a>.</p>
+    </div>
+    <form class="callback" name="callback" method="POST" action="/thanks/" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="callback">
+      <p class="form-hp" aria-hidden="true"><label>Leave this empty: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+      <label>Your name
+        <input type="text" name="name" autocomplete="name" required>
+      </label>
+      <label>Phone number
+        <input type="tel" name="phone" autocomplete="tel" inputmode="tel" required>
+      </label>
+      <label>Best time to call
+        <select name="best-time">
+          <option>Any time</option>
+          <option>Morning</option>
+          <option>Afternoon</option>
+          <option>Evening</option>
+        </select>
+      </label>
+      <label>Anything you would like us to know <span style="font-weight:400;color:var(--muted2)">(optional)</span>
+        <textarea name="message" rows="3"></textarea>
+      </label>
+      <p class="hint">We only use your number to call you back. We will not share it.</p>
+      <button type="submit" class="btn btn-primary" style="align-self:flex-start">{% icon "phone" %}Request a call back</button>
+    </form>
+  </div>
+</div>
+
 <div id="find-us" class="section grid grid-2" style="align-items:start">
   <div style="display:flex;flex-direction:column;gap:18px">
     <div class="kicker">Find us</div>
@@ -207,6 +251,7 @@ description: "Promises Treatment Centre — residential recovery from alcohol an
     <p class="p-body" style="margin:0">{{ site.locationLine }}</p>
     <div style="display:flex;flex-direction:column;gap:10px;padding-top:8px;font-size:1rem;color:#3C382F">
       <div class="contact-row"><span class="k">{% icon "phone" %}<span class="sr-only">Phone</span></span><span>{{ site.phone }} &middot; {{ site.phone2 }}</span></div>
+      <div class="contact-row"><span class="k">{% icon "message-circle" %}<span class="sr-only">WhatsApp</span></span><a href="https://wa.me/{{ site.whatsapp }}?text={{ site.whatsappMessage | urlencode }}" rel="noopener">Message us on WhatsApp</a></div>
       <div class="contact-row"><span class="k">{% icon "mail" %}<span class="sr-only">Email</span></span><span style="min-width:0;overflow-wrap:anywhere">{{ site.email }}</span></div>
       <div class="contact-row"><span class="k">{% icon "inbox" %}<span class="sr-only">Post</span></span><span>{{ site.address }}</span></div>
     </div>
@@ -234,3 +279,7 @@ description: "Promises Treatment Centre — residential recovery from alcohol an
     </div>
   </div>
 </div>
+
+<script type="application/ld+json">
+{{ { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faqLd } | dump | safe }}
+</script>

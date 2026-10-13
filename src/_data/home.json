@@ -51,7 +51,10 @@
   "aboutTitle": "A therapeutic community, not an institution.",
   "mission": "Professional treatment and rehabilitation of persons with substance use disorders.",
   "aboutSlides": [
-    { "image": "/assets/images/home-about.jpg", "alt": "A group of hands holding one another" }
+    {
+      "image": "/assets/images/home-about.jpg",
+      "alt": "A group of hands holding one another"
+    }
   ],
   "diseaseNote": "Classified as a chronic brain disorder by the American Society of Addiction Medicine and the National Institute on Drug Abuse.",
   "kicker": "Webuye, Kenya · NACADA accredited",
@@ -225,5 +228,11 @@
   ],
   "diseaseBody": "Repeated use floods the brain with dopamine. In time the brain stops making normal amounts on its own, so the substance is prioritised over everything that once mattered — and going without brings real physical pain. This is a chronic, treatable medical condition, not a failure of character.",
   "heroTitle": "You have not lost yourself. You have only lost your way.",
-  "quoteImage": "/assets/images/home-quote.jpg"
+  "quoteImage": "/assets/images/home-quote.jpg",
+  "heroBadges": [
+    "NACADA accredited",
+    "Staff who have walked this road",
+    "Confidential",
+    "Affordable — ask us for fees"
+  ]
 }

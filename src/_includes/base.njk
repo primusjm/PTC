@@ -4,10 +4,24 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ title }} — {{ site.name }} {{ site.tagline }}</title>
-{% if description %}<meta name="description" content="{{ description }}">{% endif %}
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+{% set pageDescription = description or site.footerBlurb %}
+<meta name="description" content="{{ pageDescription }}">
+{% if noindex %}<meta name="robots" content="noindex">{% else %}<link rel="canonical" href="{{ site.url }}{{ page.url }}">{% endif %}
+<meta name="theme-color" content="#8C4A32">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ site.name }} {{ site.tagline }}">
+<meta property="og:title" content="{{ title }} — {{ site.name }} {{ site.tagline }}">
+<meta property="og:description" content="{{ pageDescription }}">
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+<meta property="og:image" content="{{ site.url }}/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="/assets/fonts/karla-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/newsreader-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/style.css">
 <script>
   // Apply saved accessibility choices before first paint to avoid a flash.
@@ -22,6 +36,23 @@
   })();
 </script>
 <script src="/assets/js/a11y.js" defer></script>
+<script type="application/ld+json">
+{{ {
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "name": site.name + " " + site.tagline,
+  "description": site.footerBlurb,
+  "url": site.url,
+  "image": site.url + "/og-image.jpg",
+  "logo": site.url + "/icon-192.png",
+  "telephone": [site.phone, site.phone2],
+  "email": site.email,
+  "address": { "@type": "PostalAddress", "streetAddress": site.address, "addressLocality": "Webuye", "addressCountry": "KE" },
+  "geo": { "@type": "GeoCoordinates", "latitude": 0.5988777, "longitude": 34.7599585 },
+  "hasMap": site.mapLinkUrl,
+  "medicalSpecialty": "Psychiatric"
+} | dump | safe }}
+</script>
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body id="top">
@@ -35,46 +66,48 @@
   <a href="tel:{{ site.phoneHref }}">{% icon "phone" %} {{ site.phone }}</a>
 </div>
 
-<input type="checkbox" id="menu-toggle">
+<noscript><style>.mobile-panel { display: flex; } .hamburger { display: none; }</style></noscript>
 
 <div class="site-header">
   <a href="/" class="brand">
-    <span class="brand-mark"><img src="/assets/images/logo.jpg" alt="{{ site.name }} {{ site.tagline }} — dove in flight"></span>
+    <span class="brand-mark">{% image "/assets/images/logo.jpg", site.name + " " + site.tagline + " — dove in flight", "46px", "", "", "now" %}</span>
     <span style="display:flex;flex-direction:column;line-height:1.12">
       <span class="brand-name">{{ site.name }}</span>
       <span class="brand-sub">{{ site.tagline }}</span>
     </span>
   </a>
 
-  <nav class="nav-desktop">
-    <a href="{{ homeHref }}#about"{% if nav == 'about' %} class="active"{% endif %}>About</a>
-    <a href="/treatment/"{% if nav == 'treatment' %} class="active"{% endif %}>Treatment</a>
-    <a href="/addiction-explained/"{% if nav == 'addiction' %} class="active"{% endif %}>Addiction explained</a>
-    <a href="/aftercare/"{% if nav == 'aftercare' %} class="active"{% endif %}>Aftercare</a>
-    <a href="{{ homeHref }}#selfcheck"{% if nav == 'selfcheck' %} class="active"{% endif %}>Self-check</a>
-    <a href="{{ homeHref }}#find-us"{% if nav == 'contact' %} class="active"{% endif %}>Contact</a>
+  <nav class="nav-desktop" aria-label="Main">
+    <a href="/"{% if nav == 'home' %} class="active" aria-current="page"{% endif %}>Home</a>
+    <a href="{{ homeHref }}#about"{% if nav == 'about' %} class="active" aria-current="page"{% endif %}>About</a>
+    <a href="/treatment/"{% if nav == 'treatment' %} class="active" aria-current="page"{% endif %}>Treatment</a>
+    <a href="/addiction-explained/"{% if nav == 'addiction' %} class="active" aria-current="page"{% endif %}>Addiction explained</a>
+    <a href="/aftercare/"{% if nav == 'aftercare' %} class="active" aria-current="page"{% endif %}>Aftercare</a>
+    <a href="{{ homeHref }}#selfcheck">Self-check</a>
+    <a href="{{ homeHref }}#find-us">Contact</a>
     <a href="tel:{{ site.phoneHref }}" class="btn-call">{% icon "phone" %}Call {{ site.phone }}</a>
   </nav>
 
   <div class="nav-mobile-bar">
     <a href="tel:{{ site.phoneHref }}" aria-label="Call {{ site.name }} {{ site.tagline }}" class="call-pill">{% icon "phone" %}Call</a>
-    <label for="menu-toggle" class="hamburger" role="button" aria-label="Menu">
-      <span class="icon-open">&#9776;</span><span class="icon-close">&#10005;</span>
-    </label>
+    <button type="button" class="hamburger" id="menu-btn" aria-expanded="false" aria-controls="mobile-panel" aria-label="Menu">
+      <span class="icon-open" aria-hidden="true">&#9776;</span><span class="icon-close" aria-hidden="true">&#10005;</span>
+    </button>
   </div>
 </div>
 
-<div class="mobile-panel">
-  <a href="/">Home</a>
+<nav class="mobile-panel" id="mobile-panel" aria-label="Mobile">
+  <a href="/"{% if nav == 'home' %} aria-current="page"{% endif %}>Home</a>
   <a href="{{ homeHref }}#about">About</a>
-  <a href="/treatment/">Treatment</a>
-  <a href="/addiction-explained/">Addiction explained</a>
-  <a href="/aftercare/">Aftercare</a>
+  <a href="/treatment/"{% if nav == 'treatment' %} aria-current="page"{% endif %}>Treatment</a>
+  <a href="/addiction-explained/"{% if nav == 'addiction' %} aria-current="page"{% endif %}>Addiction explained</a>
+  <a href="/aftercare/"{% if nav == 'aftercare' %} aria-current="page"{% endif %}>Aftercare</a>
   <a href="{{ homeHref }}#selfcheck">Self-check</a>
-  <a href="{{ homeHref }}#find-us">Find us</a>
+  <a href="{{ homeHref }}#find-us">Contact</a>
   <a href="tel:{{ site.phoneHref }}" class="btn-call-block">{% icon "phone" %}Call us now · {{ site.phone }}</a>
+  <a href="https://wa.me/{{ site.whatsapp }}?text={{ site.whatsappMessage | urlencode }}" class="btn-wa-block" rel="noopener">{% icon "message-circle" %}Message us on WhatsApp</a>
   <span class="mobile-note">Lines open daily. Every conversation stays between us.</span>
-</div>
+</nav>
 
 <main id="main" tabindex="-1">
 {{ content | safe }}
@@ -84,7 +117,7 @@
   <div class="footer-grid">
     <div style="display:flex;flex-direction:column;gap:16px">
       <div class="footer-brand">
-        <span class="footer-brand-mark"><img src="/assets/images/logo.jpg" alt="{{ site.name }} {{ site.tagline }} — dove in flight"></span>
+        <span class="footer-brand-mark">{% image "/assets/images/logo.jpg", site.name + " " + site.tagline + " — dove in flight", "46px" %}</span>
         <span style="display:flex;flex-direction:column;line-height:1.12">
           <span class="serif" style="font-size:1.625rem;color:#FFFDF9">{{ site.name }}</span>
           <span class="brand-sub">{{ site.tagline }}</span>
@@ -94,9 +127,10 @@
     </div>
     <div class="footer-col">
       <span class="footer-col-label">Contact</span>
-      <span class="footer-line">{% icon "phone" %}<span>{{ site.phone }}</span></span>
-      <span class="footer-line">{% icon "phone" %}<span>{{ site.phone2 }}</span></span>
-      <span class="footer-line">{% icon "mail" %}<span style="min-width:0;overflow-wrap:anywhere">{{ site.email }}</span></span>
+      <a class="footer-line" href="tel:{{ site.phoneHref }}">{% icon "phone" %}<span>{{ site.phone }}</span></a>
+      <a class="footer-line" href="tel:{{ site.phone2 | replace(" ", "") }}">{% icon "phone" %}<span>{{ site.phone2 }}</span></a>
+      <a class="footer-line" href="https://wa.me/{{ site.whatsapp }}?text={{ site.whatsappMessage | urlencode }}" rel="noopener">{% icon "message-circle" %}<span>WhatsApp us</span></a>
+      <a class="footer-line" href="mailto:{{ site.email }}">{% icon "mail" %}<span style="min-width:0;overflow-wrap:anywhere">{{ site.email }}</span></a>
       <span class="footer-line">{% icon "inbox" %}<span>{{ site.address }}</span></span>
     </div>
     <div class="footer-col">
@@ -118,7 +152,13 @@
   </div>
 </footer>
 
+<div class="sticky-cta" role="region" aria-label="Contact us">
+  <a href="tel:{{ site.phoneHref }}" class="sticky-call">{% icon "phone" %}Call now</a>
+  <a href="https://wa.me/{{ site.whatsapp }}?text={{ site.whatsappMessage | urlencode }}" class="sticky-wa" rel="noopener">{% icon "message-circle" %}WhatsApp</a>
+</div>
+
 {% include "a11y-panel.njk" %}
+<script src="/assets/js/nav.js"></script>
 <script src="/assets/js/main.js"></script>
 <script src="/assets/js/slideshow.js"></script>
 <script>

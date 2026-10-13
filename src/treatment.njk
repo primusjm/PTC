@@ -15,7 +15,7 @@ description: "What treatment actually looks like at Promises Treatment Centre â€
     </div>
   </div>
   <div class="hero-media">
-    <img src="{{ treatment.heroImage }}" alt="Two people holding each other's hands">
+    {% image treatment.heroImage, "Two people holding each other's hands", "(min-width: 900px) 50vw, 100vw", "", "", "eager" %}
   </div>
 </div>
 
@@ -79,7 +79,7 @@ description: "What treatment actually looks like at Promises Treatment Centre â€
       <h2 class="h2" style="font-size:clamp(1.75rem,3.4vw,2.25rem)">{{ treatment.weekTitle }}</h2>
       <p class="p-body" style="margin:0">{{ treatment.weekIntro }}</p>
       <div style="height:clamp(220px,26vw,300px);overflow:hidden;background:#E4DACB;margin-top:6px">
-        <img src="{{ treatment.weekImage }}" alt="A group of hands holding one another" style="width:100%;height:100%;object-fit:cover">
+        {% image treatment.weekImage, "A group of hands holding one another", "(min-width: 900px) 50vw, 100vw", "", "width:100%;height:100%;object-fit:cover" %}
       </div>
     </div>
     <div style="display:flex;flex-direction:column">
