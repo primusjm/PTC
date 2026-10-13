@@ -48,15 +48,25 @@
     }
   ],
   "vision": "A healthy society free from addictions.",
+  "heroBadges": [
+    "NACADA accredited",
+    "Staff who have walked this road",
+    "Confidential",
+    "Affordable — ask us for fees"
+  ],
   "aboutTitle": "A therapeutic community, not an institution.",
   "mission": "Professional treatment and rehabilitation of persons with substance use disorders.",
+  "diseaseNote": "Classified as a chronic brain disorder by the American Society of Addiction Medicine and the National Institute on Drug Abuse.",
   "aboutSlides": [
     {
       "image": "/assets/images/home-about.jpg",
       "alt": "A group of hands holding one another"
+    },
+    {
+      "image": "/assets/images/20260216_104446.webp",
+      "alt": "The Director"
     }
   ],
-  "diseaseNote": "Classified as a chronic brain disorder by the American Society of Addiction Medicine and the National Institute on Drug Abuse.",
   "kicker": "Webuye, Kenya · NACADA accredited",
   "treatmentIntro": "Detox alone is not treatment. Each stage hands you to the next, and none of it ends at discharge.",
   "familyTitle": "The disease affects the whole family. So does the healing.",
@@ -228,11 +238,5 @@
   ],
   "diseaseBody": "Repeated use floods the brain with dopamine. In time the brain stops making normal amounts on its own, so the substance is prioritised over everything that once mattered — and going without brings real physical pain. This is a chronic, treatable medical condition, not a failure of character.",
   "heroTitle": "You have not lost yourself. You have only lost your way.",
-  "quoteImage": "/assets/images/home-quote.jpg",
-  "heroBadges": [
-    "NACADA accredited",
-    "Staff who have walked this road",
-    "Confidential",
-    "Affordable — ask us for fees"
-  ]
+  "quoteImage": "/assets/images/aftercare-hero.jpg"
 }
