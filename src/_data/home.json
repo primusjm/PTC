@@ -5,9 +5,8 @@
   "heroImage": "/assets/images/home-hero.jpg",
   "heroBadges": [
     "NACADA accredited",
-    "Staff who have walked this road",
     "Confidential",
-    "Affordable — ask us for fees"
+    "Affordable"
   ],
   "heroQuote": "Where hope in life is rekindled.",
   "trust": [
@@ -16,12 +15,16 @@
       "body": "A fully registered residential treatment and rehabilitation facility."
     },
     {
-      "title": "Confidential",
-      "body": "Every conversation stays between us."
+      "title": "Residential, 24/7",
+      "body": "Away from triggers, with medical staff and support at every hour."
     },
     {
-      "title": "Affordable",
-      "body": "Costs are deliberately reasonable. Call us and we will be straight with you about fees."
+      "title": "Family therapy included",
+      "body": "A three-day programme for the people who love you."
+    },
+    {
+      "title": "Aftercare that follows up",
+      "body": "We stay in touch after discharge — recovery does not end at the gate."
     }
   ],
   "aboutKicker": "Who we are",
