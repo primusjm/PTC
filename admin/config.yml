@@ -1,6 +1,10 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: primusjm/PTC
   branch: main
+  # Login goes through Netlify's built-in GitHub OAuth provider.
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
 
 publish_mode: editorial_workflow
 
