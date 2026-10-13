@@ -134,8 +134,10 @@ collections:
               - { label: "Answer", name: "a", widget: "text" }
           - { label: "Call-back tab photo (leave empty for none)", name: "callbackImage", widget: "image", required: false }
           - { label: "Call-back tab photo description (for screen readers)", name: "callbackImageAlt", widget: "string", required: false }
+          - { label: "Call-back tab photo focus (which part stays in view, e.g. 50% 50% is the centre)", name: "callbackImagePosition", widget: "string", required: false }
           - { label: "Questions tab photo (leave empty for none)", name: "faqImage", widget: "image", required: false }
           - { label: "Questions tab photo description (for screen readers)", name: "faqImageAlt", widget: "string", required: false }
+          - { label: "Questions tab photo focus (which part stays in view, e.g. 50% 50% is the centre)", name: "faqImagePosition", widget: "string", required: false }
 
   - name: "treatment"
     label: "Treatment Page"

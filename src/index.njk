@@ -218,13 +218,13 @@ description: "Promises Treatment Centre — residential recovery from alcohol an
 
   {% if site.formEndpoint %}
   <div id="callback" class="tab-panel" role="tabpanel" aria-labelledby="tab-callback">
-  <div class="grid grid-2" style="align-items:start">
+  <div class="grid grid-2 tab-grid">
     <div style="display:flex;flex-direction:column;gap:16px">
       <div class="kicker">{% icon "phone" %}Not ready to phone?</div>
       <h2 class="h2" style="font-size:clamp(1.75rem,3.4vw,2.25rem)">Leave your number. We will call you.</h2>
       <p class="p-body" style="margin:0">Tell us a good time and we will ring you back. You can ask about fees, programmes or how to bring someone in. Nothing you share obliges you to anything, and it stays between us.</p>
       <p style="margin:0;font-size:1rem;line-height:1.6;color:var(--ink-soft)">Prefer to type? <a href="https://wa.me/{{ site.whatsapp }}?text={{ site.whatsappMessage | urlencode }}" rel="noopener" style="font-weight:600">Message us on WhatsApp</a>.</p>
-      {% if home.callbackImage %}<div class="tab-photo">{% image home.callbackImage, home.callbackImageAlt, "(min-width: 900px) 40vw, 90vw" %}</div>{% endif %}
+      {% if home.callbackImage %}<div class="tab-photo">{% image home.callbackImage, home.callbackImageAlt, "(min-width: 900px) 40vw, 90vw", "", "object-position:" + (home.callbackImagePosition or "center") %}</div>{% endif %}
     </div>
     <form class="callback" id="callback-form" method="POST" action="{{ site.formEndpoint }}" data-next="/thanks/">
       <p class="form-hp" aria-hidden="true"><label>Leave this empty: <input name="_gotcha" tabindex="-1" autocomplete="off"></label></p>
@@ -275,12 +275,12 @@ description: "Promises Treatment Centre — residential recovery from alcohol an
   </div>
 
   <div id="faq" class="tab-panel" role="tabpanel" aria-labelledby="tab-faq">
-  <div class="grid grid-2" style="align-items:start">
+  <div class="grid grid-2 tab-grid">
     <div style="display:flex;flex-direction:column;gap:16px">
       <div class="kicker">{% icon "info" %}Questions families ask</div>
       <h2 class="h2" style="font-size:clamp(1.75rem,3.4vw,2.25rem)">Before you call.</h2>
       <p style="margin:0;font-size:1rem;line-height:1.65;color:var(--ink-soft)">If your question isn't here, ask it on the phone. Nothing you say obliges you to anything.</p>
-      {% if home.faqImage %}<div class="tab-photo">{% image home.faqImage, home.faqImageAlt, "(min-width: 900px) 40vw, 90vw" %}</div>{% endif %}
+      {% if home.faqImage %}<div class="tab-photo">{% image home.faqImage, home.faqImageAlt, "(min-width: 900px) 40vw, 90vw", "", "object-position:" + (home.faqImagePosition or "center") %}</div>{% endif %}
     </div>
     <div style="display:flex;flex-direction:column">
       {% for f in home.faqs %}
