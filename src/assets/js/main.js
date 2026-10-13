@@ -31,8 +31,7 @@
 
   var actions = document.querySelector('[data-check-actions]');
   var waLink = document.querySelector('[data-check-wa]');
-  var shareBtn = document.querySelector('[data-check-share]');
-  var status = document.querySelector('[data-check-status]');
+  var waLabel = document.querySelector('[data-check-wa-label]');
   var result = document.querySelector('.check-result');
 
   function ticked() {
@@ -53,32 +52,13 @@
     var r = resultFor(count);
     resultHeadline.textContent = r.headline;
     resultBody.textContent = r.body;
-    if (status) status.textContent = '';
     if (result) result.classList.toggle('urgent', count >= 3);
-    if (actions) {
-      actions.classList.toggle('show', count > 0);
-      if (waLink) {
-        var intro = actions.getAttribute('data-wa-intro') || '';
-        waLink.href = actions.getAttribute('data-wa-base') + '?text=' + encodeURIComponent(intro + '\n\n' + listText());
-      }
+    if (actions && waLink) {
+      var intro = actions.getAttribute('data-wa-intro') || '';
+      var list = listText();
+      waLink.href = actions.getAttribute('data-wa-base') + '?text=' + encodeURIComponent(list ? intro + '\n\n' + list : intro);
+      if (waLabel) waLabel.textContent = list ? 'Send my list on WhatsApp' : 'WhatsApp us';
     }
-  }
-
-  if (shareBtn) {
-    shareBtn.addEventListener('click', function () {
-      var text = listText();
-      if (!text) return;
-      if (navigator.share) {
-        navigator.share({ title: 'My self-check', text: text }).catch(function () {});
-      } else if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text).then(
-          function () { status.textContent = 'Copied. You can paste it into a message.'; },
-          function () { status.textContent = 'Could not copy. Please select and copy the ticked items.'; }
-        );
-      } else {
-        status.textContent = 'Sharing is not available on this device.';
-      }
-    });
   }
 
   boxes.forEach(function (box) {

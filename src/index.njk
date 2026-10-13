@@ -180,9 +180,7 @@ description: "Promises Treatment Centre — residential recovery from alcohol an
     <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start">
       <a href="tel:{{ site.phoneHref }}" class="btn btn-primary" style="white-space:nowrap">{% icon "phone" %}Call {{ site.phone }}</a>
       <div class="check-actions" data-check-actions data-wa-base="https://wa.me/{{ site.whatsapp }}" data-wa-intro="{{ site.whatsappMessage }}">
-        <a href="https://wa.me/{{ site.whatsapp }}" class="btn btn-wa" rel="noopener" data-check-wa>{% icon "message-circle" %}Send my list on WhatsApp</a>
-        <button type="button" class="btn btn-outline" data-check-share>Share or copy my list</button>
-        <span class="check-status" data-check-status role="status"></span>
+        <a href="https://wa.me/{{ site.whatsapp }}" class="btn btn-wa" rel="noopener" data-check-wa>{% icon "message-circle" %}<span data-check-wa-label>WhatsApp us</span></a>
       </div>
     </div>
   </div>
@@ -200,22 +198,32 @@ description: "Promises Treatment Centre — residential recovery from alcohol an
   <div class="kicker" style="padding-bottom:30px">{% icon "message-circle" %}In our clients' words</div>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px">
     {% for t in home.testimonials %}
-    <div class="testimonial-card">
-      <p>{{ t.quote }}</p>
-      <span class="who">{{ t.who }}</span>
-    </div>
+    <figure class="testimonial-card">
+      <span class="icon-tile">{% icon "quote" %}</span>
+      <blockquote><p>&#8220;{{ t.quote }}&#8221;</p></blockquote>
+      <figcaption class="who">{{ t.who }}</figcaption>
+    </figure>
     {% endfor %}
   </div>
 </div>
 
-{% if site.formEndpoint %}
-<div id="callback" class="section bg-alt">
-  <div class="grid grid-2" style="align-items:start">
+<div id="contact" class="contact-tabs" data-tabs>
+<div class="tabs-frame">
+  <div class="tabs-list" role="tablist" aria-label="Contact us and common questions">
+    {% if site.formEndpoint %}<button type="button" class="tab" role="tab" id="tab-callback" aria-controls="callback">{% icon "phone" %}Call-back request</button>{% endif %}
+    <button type="button" class="tab" role="tab" id="tab-find-us" aria-controls="find-us">{% icon "map-pin" %}Find us</button>
+    <button type="button" class="tab" role="tab" id="tab-faq" aria-controls="faq">{% icon "info" %}Questions</button>
+  </div>
+
+  {% if site.formEndpoint %}
+  <div id="callback" class="tab-panel" role="tabpanel" aria-labelledby="tab-callback">
+  <div class="grid grid-2 tab-grid">
     <div style="display:flex;flex-direction:column;gap:16px">
       <div class="kicker">{% icon "phone" %}Not ready to phone?</div>
       <h2 class="h2" style="font-size:clamp(1.75rem,3.4vw,2.25rem)">Leave your number. We will call you.</h2>
       <p class="p-body" style="margin:0">Tell us a good time and we will ring you back. You can ask about fees, programmes or how to bring someone in. Nothing you share obliges you to anything, and it stays between us.</p>
       <p style="margin:0;font-size:1rem;line-height:1.6;color:var(--ink-soft)">Prefer to type? <a href="https://wa.me/{{ site.whatsapp }}?text={{ site.whatsappMessage | urlencode }}" rel="noopener" style="font-weight:600">Message us on WhatsApp</a>.</p>
+      {% if home.callbackImage %}<div class="tab-photo">{% image home.callbackImage, home.callbackImageAlt, "(min-width: 900px) 40vw, 90vw", "", "object-position:" + (home.callbackImagePosition or "center"), "now" %}</div>{% endif %}
     </div>
     <form class="callback" id="callback-form" method="POST" action="{{ site.formEndpoint }}" data-next="/thanks/">
       <p class="form-hp" aria-hidden="true"><label>Leave this empty: <input name="_gotcha" tabindex="-1" autocomplete="off"></label></p>
@@ -242,10 +250,11 @@ description: "Promises Treatment Centre — residential recovery from alcohol an
       <button type="submit" class="btn btn-primary" style="align-self:flex-start">{% icon "phone" %}Request a call back</button>
     </form>
   </div>
-</div>
-{% endif %}
+  </div>
+  {% endif %}
 
-<div id="find-us" class="section grid grid-2" style="align-items:start">
+  <div id="find-us" class="tab-panel" role="tabpanel" aria-labelledby="tab-find-us">
+    <div class="grid grid-2" style="align-items:start">
   <div style="display:flex;flex-direction:column;gap:18px">
     <div class="kicker">{% icon "map-pin" %}Find us</div>
     <h2 class="h2">{{ site.locationTitle }}</h2>
@@ -261,14 +270,16 @@ description: "Promises Treatment Centre — residential recovery from alcohol an
     <iframe class="map-frame" src="{{ site.mapEmbedUrl }}" title="Map showing the location of {{ site.name }} {{ site.tagline }} in Webuye" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
     <a href="{{ site.mapLinkUrl }}" class="map-link" target="_blank" rel="noopener">Open in Google Maps &#8599;</a>
   </div>
-</div>
+    </div>
+  </div>
 
-<div class="section bg-card border-top">
-  <div class="grid grid-2" style="align-items:start">
+  <div id="faq" class="tab-panel" role="tabpanel" aria-labelledby="tab-faq">
+  <div class="grid grid-2 tab-grid">
     <div style="display:flex;flex-direction:column;gap:16px">
       <div class="kicker">{% icon "info" %}Questions families ask</div>
       <h2 class="h2" style="font-size:clamp(1.75rem,3.4vw,2.25rem)">Before you call.</h2>
       <p style="margin:0;font-size:1rem;line-height:1.65;color:var(--ink-soft)">If your question isn't here, ask it on the phone. Nothing you say obliges you to anything.</p>
+      {% if home.faqImage %}<div class="tab-photo">{% image home.faqImage, home.faqImageAlt, "(min-width: 900px) 40vw, 90vw", "", "object-position:" + (home.faqImagePosition or "center"), "now" %}</div>{% endif %}
     </div>
     <div style="display:flex;flex-direction:column">
       {% for f in home.faqs %}
@@ -279,6 +290,8 @@ description: "Promises Treatment Centre — residential recovery from alcohol an
       {% endfor %}
     </div>
   </div>
+  </div>
+</div>
 </div>
 
 <script type="application/ld+json">
