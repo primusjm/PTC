@@ -180,9 +180,7 @@ description: "Promises Treatment Centre — residential recovery from alcohol an
     <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start">
       <a href="tel:{{ site.phoneHref }}" class="btn btn-primary" style="white-space:nowrap">{% icon "phone" %}Call {{ site.phone }}</a>
       <div class="check-actions" data-check-actions data-wa-base="https://wa.me/{{ site.whatsapp }}" data-wa-intro="{{ site.whatsappMessage }}">
-        <a href="https://wa.me/{{ site.whatsapp }}" class="btn btn-wa" rel="noopener" data-check-wa>{% icon "message-circle" %}Send my list on WhatsApp</a>
-        <button type="button" class="btn btn-outline" data-check-share>Share or copy my list</button>
-        <span class="check-status" data-check-status role="status"></span>
+        <a href="https://wa.me/{{ site.whatsapp }}" class="btn btn-wa" rel="noopener" data-check-wa>{% icon "message-circle" %}<span data-check-wa-label>WhatsApp us</span></a>
       </div>
     </div>
   </div>
@@ -200,10 +198,11 @@ description: "Promises Treatment Centre — residential recovery from alcohol an
   <div class="kicker" style="padding-bottom:30px">{% icon "message-circle" %}In our clients' words</div>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px">
     {% for t in home.testimonials %}
-    <div class="testimonial-card">
-      <p>{{ t.quote }}</p>
-      <span class="who">{{ t.who }}</span>
-    </div>
+    <figure class="testimonial-card">
+      <span class="icon-tile">{% icon "quote" %}</span>
+      <blockquote><p>&#8220;{{ t.quote }}&#8221;</p></blockquote>
+      <figcaption class="who">{{ t.who }}</figcaption>
+    </figure>
     {% endfor %}
   </div>
 </div>
