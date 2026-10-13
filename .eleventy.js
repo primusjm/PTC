@@ -28,8 +28,10 @@ const ICONS = {
 };
 
 module.exports = function (eleventyConfig) {
-  // Images are not copied as-is: the `image` shortcode below resizes them
-  // and writes AVIF/WebP/JPEG versions to assets/img.
+  // Pages use the `image` shortcode below, which resizes images and writes
+  // AVIF/WebP/JPEG versions to assets/img. The originals are still copied so
+  // the CMS can show thumbnails and previews from /assets/images/.
+  eleventyConfig.addPassthroughCopy({ "src/assets/images": "assets/images" });
   eleventyConfig.addPassthroughCopy({ "src/assets/css": "assets/css" });
   eleventyConfig.addPassthroughCopy({ "src/assets/js": "assets/js" });
   eleventyConfig.addPassthroughCopy({ "src/assets/static": "." });
