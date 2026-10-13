@@ -244,5 +244,9 @@
       "q": "What if I relapse?",
       "a": "Relapse happens, even to the most dedicated people in recovery, and it is not the end of anything. Do not wait for it to get worse — contact us immediately and we will pick up where we left off."
     }
-  ]
+  ],
+  "callbackImage": "/assets/images/home-family.jpg",
+  "callbackImageAlt": "A paved path and flower beds between the buildings at the centre",
+  "faqImage": "/assets/images/home-quote.jpg",
+  "faqImageAlt": "The courtyard and buildings at the centre"
 }
