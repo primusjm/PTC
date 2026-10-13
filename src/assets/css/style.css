@@ -60,7 +60,7 @@ h1, h2, h3 { font-family: Newsreader, Georgia, serif; font-weight: 400; margin: 
 .brand-name { font-family: Newsreader, Georgia, serif; font-size: 1.5rem; font-weight: 500; letter-spacing: -0.012em; }
 .brand-sub { font-family: ui-monospace, Menlo, monospace; font-size: 0.5938rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
 
-.nav-desktop { display: flex; align-items: center; gap: clamp(12px, 2vw, 26px); flex-wrap: wrap; font-size: 0.9375rem; color: #3C382F; }
+.nav-desktop { display: flex; align-items: center; gap: clamp(10px, 1.6vw, 26px); flex-wrap: nowrap; white-space: nowrap; font-size: 0.9375rem; color: #3C382F; }
 .nav-desktop a.active { color: var(--ink); font-weight: 700; border-bottom: 2px solid var(--accent); padding-bottom: 2px; }
 .btn-call {
   display: inline-flex; align-items: center; padding: 12px 20px;
@@ -108,7 +108,7 @@ h1, h2, h3 { font-family: Newsreader, Georgia, serif; font-weight: 400; margin: 
   font-family: Karla, system-ui, sans-serif; font-weight: 700; font-size: 1rem; border-bottom: none;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 1120px) {
   .nav-desktop { display: none; }
   .nav-mobile-bar { display: flex; }
 }

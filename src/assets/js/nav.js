@@ -13,5 +13,5 @@
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') { set(false); btn.focus(); }
   });
-  window.matchMedia('(min-width: 761px)').addEventListener('change', function (e) { if (e.matches) set(false); });
+  window.matchMedia('(min-width: 1121px)').addEventListener('change', function (e) { if (e.matches) set(false); });
 })();
