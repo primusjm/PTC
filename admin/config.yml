@@ -2,13 +2,8 @@ backend:
   name: github
   repo: primusjm/PTC
   branch: main
-  # Login goes through Netlify's built-in GitHub OAuth provider.
-  base_url: https://api.netlify.com
-  auth_endpoint: auth
 
 publish_mode: simple
-
-local_backend: true
 
 media_folder: "src/assets/images"
 public_folder: "/assets/images"
@@ -30,6 +25,7 @@ collections:
           - { label: "WhatsApp number (digits only, with country code, e.g. 254725871040)", name: "whatsapp", widget: "string" }
           - { label: "WhatsApp pre-filled message", name: "whatsappMessage", widget: "string" }
           - { label: "Website address (no trailing slash, used for sharing previews and Google)", name: "url", widget: "string" }
+          - { label: "Call-back form address (from Formspree, looks like https://formspree.io/f/abcdwxyz). Leave empty to hide the form.", name: "formEndpoint", widget: "string", required: false }
           - { label: "Email", name: "email", widget: "string" }
           - { label: "Postal address", name: "address", widget: "string" }
           - { label: "Location description", name: "locationLine", widget: "text" }
