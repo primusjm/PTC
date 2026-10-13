@@ -216,9 +216,10 @@ h1, h2, h3 { font-family: Newsreader, Georgia, serif; font-weight: 400; margin: 
 .jump-row .n { font-family: ui-monospace, Menlo, monospace; font-size: 0.6875rem; color: #A89880; flex: 0 0 auto; }
 .jump-row .label { font-family: Newsreader, Georgia, serif; font-size: 1.25rem; }
 
-.callout-dark { margin-top: 20px; padding: 26px 30px; background: var(--dark-bg); color: var(--dark-text); display: flex; gap: 18px; align-items: flex-start; flex-wrap: wrap; }
-.callout-dark .tag { font-family: ui-monospace, Menlo, monospace; font-size: 0.6875rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-light); padding-top: 5px; flex: 0 0 auto; }
-.callout-dark p { margin: 0; font-size: 1.0312rem; line-height: 1.62; color: #E4DBCD; max-width: 70ch; text-wrap: pretty; }
+.callout-dark { margin-top: 20px; padding: 28px 32px; background: var(--dark-bg); color: var(--dark-text); display: grid; grid-template-columns: auto 1fr; gap: 12px 28px; align-items: start; }
+.callout-dark .tag { display: inline-flex; align-items: center; gap: 8px; font-family: ui-monospace, Menlo, monospace; font-size: 0.6875rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-light); padding-top: 6px; white-space: nowrap; }
+.callout-dark p { margin: 0; font-size: 1.0625rem; line-height: 1.65; color: #E4DBCD; text-wrap: pretty; }
+@media (max-width: 700px) { .callout-dark { grid-template-columns: 1fr; padding: 24px 22px; } .callout-dark .tag { padding-top: 0; } }
 
 .timeline-col { display: flex; flex-direction: column; gap: 0; padding-right: clamp(0px, 2vw, 26px); }
 .timeline-dot-row { position: relative; height: 26px; display: flex; align-items: center; }
@@ -461,3 +462,13 @@ html.a11y-contrast .a11y-trigger, html.a11y-contrast .footer-utility .footer-bac
   .tab-grid { grid-template-columns: minmax(0, 1fr); }
   .tab-photo { flex: none; height: 240px; margin-top: 4px; }
 }
+
+/* ---- Treatment: stage two features, exactly 3 columns on desktop ---- */
+.feature-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); }
+.feature-cell { background: var(--bg-card); padding: 26px; display: flex; flex-direction: column; gap: 9px; }
+@media (max-width: 960px) { .feature-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .feature-grid { grid-template-columns: minmax(0, 1fr); } }
+
+/* ---- Section with a faint photo behind the content ---- */
+.photo-bg { position: relative; isolation: isolate; overflow: hidden; }
+.photo-bg > .bg-img, .photo-bg > picture > .bg-img { position: absolute; inset: 0; z-index: -1; width: 100%; height: 100%; object-fit: cover; opacity: 0.12; }
