@@ -17,7 +17,7 @@ description: "Aftercare and relapse support at Promises Treatment Centre — sup
 <div class="section-tight bg-alt">
   <div class="grid grid-2" style="align-items:start">
     <div style="display:flex;flex-direction:column;gap:16px">
-      <div class="kicker">Support groups</div>
+      <div class="kicker">{% icon "users" %}Support groups</div>
       <h2 class="h2">{{ aftercare.groupsTitle }}</h2>
       {% for p in aftercare.groupsParas %}<p class="p-body" style="margin:0">{{ p }}</p>{% endfor %}
     </div>
@@ -42,7 +42,7 @@ description: "Aftercare and relapse support at Promises Treatment Centre — sup
 <div id="timeline" class="section-tight">
   <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:32px;flex-wrap:wrap;padding-bottom:40px">
     <div style="display:flex;flex-direction:column;gap:14px">
-      <div class="kicker">The first year</div>
+      <div class="kicker">{% icon "calendar" %}The first year</div>
       <h2 class="h2">{{ aftercare.timelineTitle }}</h2>
     </div>
     <p style="margin:0;font-size:1rem;line-height:1.6;color:#5A554B;max-width:36ch">{{ aftercare.timelineIntro }}</p>
@@ -66,7 +66,7 @@ description: "Aftercare and relapse support at Promises Treatment Centre — sup
 <div id="relapse" class="section-tight bg-dark">
   <div class="grid grid-2" style="align-items:center">
     <div style="display:flex;flex-direction:column;gap:20px">
-      <div class="kicker" style="color:var(--accent-light)">If you relapse</div>
+      <div class="kicker" style="color:var(--accent-light)">{% icon "heart" %}If you relapse</div>
       <h2 class="h2" style="color:#FFFDF9;font-size:clamp(1.75rem,3.5vw,2.375rem)">{{ aftercare.relapseTitle }}</h2>
       <p style="margin:0;font-size:1.0625rem;line-height:1.68;color:var(--dark-text-soft);text-wrap:pretty">{{ aftercare.relapseBody }}</p>
       <div style="display:flex;gap:12px;flex-wrap:wrap;padding-top:4px">

@@ -24,7 +24,7 @@ description: "What addiction is, the difference between dependency and addiction
 <div id="definition" class="section-tight bg-alt">
   <div class="grid grid-2" style="align-items:start">
     <div style="display:flex;flex-direction:column;gap:16px">
-      <div class="kicker">What addiction is</div>
+      <div class="kicker">{% icon "info" %}What addiction is</div>
       <h2 class="h2" style="font-size:clamp(1.75rem,3.4vw,2.25rem)">{{ addictionExplained.definitionTitle }}</h2>
       <p style="margin:0;font-size:0.9375rem;line-height:1.6;color:var(--muted2);max-width:38ch">{{ addictionExplained.definitionNote }}</p>
     </div>
@@ -46,7 +46,7 @@ description: "What addiction is, the difference between dependency and addiction
 
 <div id="types" class="section-tight">
   <div style="display:flex;flex-direction:column;gap:14px;max-width:62ch;padding-bottom:36px">
-    <div class="kicker">Two categories</div>
+    <div class="kicker">{% icon "activity" %}Two categories</div>
     <h2 class="h2">{{ addictionExplained.typesTitle }}</h2>
     <p class="p-body" style="margin:0">{{ addictionExplained.typesIntro }}</p>
   </div>
@@ -87,7 +87,7 @@ description: "What addiction is, the difference between dependency and addiction
 <div id="dependency" class="section-tight bg-dark">
   <div class="grid grid-2" style="align-items:start">
     <div style="display:flex;flex-direction:column;gap:18px">
-      <div class="kicker" style="color:var(--accent-light)">Dependency vs addiction</div>
+      <div class="kicker" style="color:var(--accent-light)">{% icon "refresh-cw" %}Dependency vs addiction</div>
       <h2 class="h2" style="color:#FFFDF9;font-size:clamp(1.75rem,3.5vw,2.375rem)">{{ addictionExplained.dependencyTitle }}</h2>
       {% for p in addictionExplained.dependencyParas %}<p style="margin:0;font-size:1.0312rem;line-height:1.66;color:var(--dark-text-soft)">{{ p }}</p>{% endfor %}
       <div style="display:flex;flex-direction:column;gap:8px;padding:20px 22px;background:var(--dark-chip);margin-top:6px">
@@ -114,7 +114,7 @@ description: "What addiction is, the difference between dependency and addiction
 
 <div id="causes" class="section-tight bg-card border-bottom">
   <div style="display:flex;flex-direction:column;gap:14px;max-width:64ch;padding-bottom:36px">
-    <div class="kicker">Causes</div>
+    <div class="kicker">{% icon "zap" %}Causes</div>
     <h2 class="h2">{{ addictionExplained.causesTitle }}</h2>
     <p class="p-body" style="margin:0">{{ addictionExplained.causesIntro }}</p>
   </div>
@@ -138,7 +138,7 @@ description: "What addiction is, the difference between dependency and addiction
 </div>
 
 <div class="section" style="display:flex;flex-direction:column;gap:22px;align-items:flex-start;max-width:70ch">
-  <div class="kicker">Next</div>
+  <div class="kicker">{% icon "arrow-right" %}Next</div>
   <h2 class="h2" style="font-size:clamp(1.625rem,3.2vw,2.125rem)">It is treatable, and the cycle can be broken. Here is how we do it.</h2>
   <div style="display:flex;gap:12px;flex-wrap:wrap;padding-top:2px">
     <a href="/treatment/" class="btn btn-primary">See how treatment works &#8594;</a>

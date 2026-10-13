@@ -6,14 +6,13 @@ description: "Promises Treatment Centre — residential recovery from alcohol an
 ---
 <div class="grid-hero">
   <div class="hero-copy">
-    <div class="kicker">{{ home.kicker }}</div>
+    <div class="kicker">{% icon "map-pin" %}{{ home.kicker }}</div>
     <h1 class="h1">{{ home.heroTitle }}</h1>
     <p class="p-lead">{{ home.heroBody }}</p>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:14px;padding-top:4px;max-width:600px">
       <a href="tel:{{ site.phoneHref }}" class="btn btn-primary">{% icon "phone" %}Call us now</a>
       <a href="https://wa.me/{{ site.whatsapp }}?text={{ site.whatsappMessage | urlencode }}" class="btn btn-wa" rel="noopener">{% icon "message-circle" %}WhatsApp Us</a>
     </div>
-    {% if home.heroBadges.length %}<ul class="hero-badges">{% for b in home.heroBadges %}<li>{% icon "shield-check" %}{{ b }}</li>{% endfor %}</ul>{% endif %}
     <div style="display:flex;align-items:center;gap:10px;font-size:0.9062rem;color:var(--muted)">
       <span style="width:7px;height:7px;border-radius:50%;background:#5C6B57;display:inline-block;flex:0 0 auto"></span>
       <span>Lines open daily. Every conversation stays between us.</span>
@@ -38,7 +37,7 @@ description: "Promises Treatment Centre — residential recovery from alcohol an
 
 <div id="about" class="section grid grid-2">
   <div style="display:flex;flex-direction:column;gap:24px">
-    <div class="kicker">{{ home.aboutKicker }}</div>
+    <div class="kicker">{% icon "home" %}{{ home.aboutKicker }}</div>
     <h2 class="h2">{{ home.aboutTitle }}</h2>
     <div class="slideshow" data-slideshow role="group" aria-roledescription="carousel" aria-label="Photos of the centre">
       <div class="slides" aria-live="off">
@@ -55,9 +54,9 @@ description: "Promises Treatment Centre — residential recovery from alcohol an
   <div style="display:flex;flex-direction:column;gap:20px">
     {% for p in home.aboutParas %}<p class="p-body" style="margin:0">{{ p }}</p>{% endfor %}
     <div style="display:flex;flex-direction:column;gap:18px;padding-top:8px">
-      <div class="stat-block"><span class="stat-label">Our vision</span><span class="stat-value">{{ home.vision }}</span></div>
-      <div class="stat-block"><span class="stat-label">Our mission</span><span class="stat-value">{{ home.mission }}</span></div>
-      <div class="stat-block"><span class="stat-label">What we believe</span><span class="stat-value">{{ home.belief }}</span></div>
+      <div class="stat-row"><span class="icon-tile">{% icon "eye" %}</span><div class="stat-block"><span class="stat-label">Our vision</span><span class="stat-value">{{ home.vision }}</span></div></div>
+      <div class="stat-row"><span class="icon-tile">{% icon "target" %}</span><div class="stat-block"><span class="stat-label">Our mission</span><span class="stat-value">{{ home.mission }}</span></div></div>
+      <div class="stat-row"><span class="icon-tile">{% icon "heart" %}</span><div class="stat-block"><span class="stat-label">What we believe</span><span class="stat-value">{{ home.belief }}</span></div></div>
       <div style="display:flex;gap:10px;flex-wrap:wrap;padding-top:2px">
         {% for v in home.values %}<span class="value-chip">{{ v }}</span>{% endfor %}
       </div>
@@ -68,7 +67,7 @@ description: "Promises Treatment Centre — residential recovery from alcohol an
 <div id="treatment" class="section-tight bg-alt">
   <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:32px;flex-wrap:wrap;padding-bottom:38px">
     <div style="display:flex;flex-direction:column;gap:16px">
-      <div class="kicker">Treatment services</div>
+      <div class="kicker">{% icon "activity" %}Treatment services</div>
       <h2 class="h2">{{ home.treatmentTitle }}</h2>
     </div>
     <p style="margin:0;font-size:1rem;line-height:1.6;color:#5A554B;max-width:34ch">{{ home.treatmentIntro }}</p>
@@ -97,7 +96,7 @@ description: "Promises Treatment Centre — residential recovery from alcohol an
 
 <div id="programmes" class="section grid grid-2" style="align-items:start">
   <div style="display:flex;flex-direction:column;gap:18px">
-    <div class="kicker">Programmes</div>
+    <div class="kicker">{% icon "clock" %}Programmes</div>
     <h2 class="h2">{{ home.programmesTitle }}</h2>
     <p class="p-body" style="margin:0">{{ home.programmesIntro }}</p>
     <a href="tel:{{ site.phoneHref }}" style="font-weight:600;font-size:1rem;border-bottom:1px solid #C9A08C;align-self:flex-start;padding-bottom:2px">Ask which programme fits &#8594;</a>
@@ -120,7 +119,7 @@ description: "Promises Treatment Centre — residential recovery from alcohol an
     {% image home.familyImage, "A father carrying his child on his back", "(min-width: 900px) 50vw, 100vw", "", "width:100%;height:100%;object-fit:cover" %}
   </div>
   <div class="hero-copy">
-    <div class="kicker">Family therapy</div>
+    <div class="kicker">{% icon "heart" %}Family therapy</div>
     <h2 class="h2" style="font-size:clamp(1.75rem,3.4vw,2.25rem)">{{ home.familyTitle }}</h2>
     <p class="p-body" style="margin:0">{{ home.familyBody }}</p>
     <div style="display:flex;flex-direction:column;gap:10px;padding-top:4px">
@@ -136,7 +135,7 @@ description: "Promises Treatment Centre — residential recovery from alcohol an
 
 <div class="grid grid-2 bg-dark" style="gap:0">
   <div class="hero-copy">
-    <div class="kicker" style="color:var(--accent-light)">Is addiction a disease?</div>
+    <div class="kicker" style="color:var(--accent-light)">{% icon "info" %}Is addiction a disease?</div>
     <h2 class="h2" style="color:#FFFDF9;font-size:clamp(1.75rem,3.5vw,2.375rem)">{{ home.diseaseTitle }}</h2>
     <p style="margin:0;font-size:1.0625rem;line-height:1.68;color:var(--dark-text-soft);text-wrap:pretty">{{ home.diseaseBody }}</p>
     <p style="margin:0;font-size:0.9375rem;line-height:1.6;color:var(--dark-muted)">{{ home.diseaseNote }}</p>
@@ -158,7 +157,7 @@ description: "Promises Treatment Centre — residential recovery from alcohol an
 
 <div id="selfcheck" class="section">
   <div style="display:flex;flex-direction:column;gap:14px;padding-bottom:34px;max-width:62ch">
-    <div class="kicker">A quiet self-check</div>
+    <div class="kicker">{% icon "check" %}A quiet self-check</div>
     <h2 class="h2">Tick anything that feels familiar — for you, or for someone you love.</h2>
     <p class="p-body" style="margin:0">Nothing is recorded, and nothing is sent unless you choose to share it. This is only for you to see clearly.</p>
   </div>
@@ -198,7 +197,7 @@ description: "Promises Treatment Centre — residential recovery from alcohol an
 </div>
 
 <div class="section bg-alt">
-  <div class="kicker" style="padding-bottom:30px">In our clients' words</div>
+  <div class="kicker" style="padding-bottom:30px">{% icon "message-circle" %}In our clients' words</div>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px">
     {% for t in home.testimonials %}
     <div class="testimonial-card">
@@ -213,7 +212,7 @@ description: "Promises Treatment Centre — residential recovery from alcohol an
 <div id="callback" class="section bg-alt">
   <div class="grid grid-2" style="align-items:start">
     <div style="display:flex;flex-direction:column;gap:16px">
-      <div class="kicker">Not ready to phone?</div>
+      <div class="kicker">{% icon "phone" %}Not ready to phone?</div>
       <h2 class="h2" style="font-size:clamp(1.75rem,3.4vw,2.25rem)">Leave your number. We will call you.</h2>
       <p class="p-body" style="margin:0">Tell us a good time and we will ring you back. You can ask about fees, programmes or how to bring someone in. Nothing you share obliges you to anything, and it stays between us.</p>
       <p style="margin:0;font-size:1rem;line-height:1.6;color:var(--ink-soft)">Prefer to type? <a href="https://wa.me/{{ site.whatsapp }}?text={{ site.whatsappMessage | urlencode }}" rel="noopener" style="font-weight:600">Message us on WhatsApp</a>.</p>
@@ -248,7 +247,7 @@ description: "Promises Treatment Centre — residential recovery from alcohol an
 
 <div id="find-us" class="section grid grid-2" style="align-items:start">
   <div style="display:flex;flex-direction:column;gap:18px">
-    <div class="kicker">Find us</div>
+    <div class="kicker">{% icon "map-pin" %}Find us</div>
     <h2 class="h2">{{ site.locationTitle }}</h2>
     <p class="p-body" style="margin:0">{{ site.locationLine }}</p>
     <div style="display:flex;flex-direction:column;gap:10px;padding-top:8px;font-size:1rem;color:#3C382F">
@@ -267,7 +266,7 @@ description: "Promises Treatment Centre — residential recovery from alcohol an
 <div class="section bg-card border-top">
   <div class="grid grid-2" style="align-items:start">
     <div style="display:flex;flex-direction:column;gap:16px">
-      <div class="kicker">Questions families ask</div>
+      <div class="kicker">{% icon "info" %}Questions families ask</div>
       <h2 class="h2" style="font-size:clamp(1.75rem,3.4vw,2.25rem)">Before you call.</h2>
       <p style="margin:0;font-size:1rem;line-height:1.65;color:var(--ink-soft)">If your question isn't here, ask it on the phone. Nothing you say obliges you to anything.</p>
     </div>

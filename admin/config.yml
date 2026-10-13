@@ -47,10 +47,6 @@ collections:
           - { label: "Hero title", name: "heroTitle", widget: "string" }
           - { label: "Hero body", name: "heroBody", widget: "text" }
           - { label: "Hero image", name: "heroImage", widget: "image" }
-          - label: "Hero reassurance badges"
-            name: "heroBadges"
-            widget: "list"
-            field: { label: "Badge", name: "badge", widget: "string" }
           - { label: "Hero image caption quote", name: "heroQuote", widget: "string" }
           - label: "Trust bar items"
             name: "trust"

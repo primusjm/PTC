@@ -21,6 +21,8 @@ const ICONS = {
   zap: '<path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/>',
   droplet: '<path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/>',
   info: '<circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/>',
+  target: '<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>',
+  "arrow-right": '<path d="M5 12h14M12 5l7 7-7 7"/>',
   check: '<path d="M20 6 9 17l-5-5"/>',
   x: '<path d="M18 6 6 18M6 6l12 12"/>',
   accessibility: '<circle cx="12" cy="12" r="10"/><circle cx="12" cy="7.5" r="1"/><path d="M7 10.5c3 1 7 1 10 0M12 11v3.5m0 0-2.5 4.5m2.5-4.5 2.5 4.5"/>',
