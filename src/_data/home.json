@@ -1,30 +1,137 @@
 {
-  "treatmentTitle": "Four stages of care, one continuous hand.",
-  "familyBenefits": [
-    "Restore relationships addiction has broken",
-    "Replace negative interactions with positive ones",
-    "Improve communication and set healthy boundaries",
-    "Understand the disease, so you can stop fighting the person"
+  "kicker": "Webuye, Kenya · NACADA accredited",
+  "heroTitle": "You have not lost yourself. You have only lost your way.",
+  "heroBody": "Promises Treatment Centre is a residential home for recovery from alcohol and drug addiction. Safe, confidential and affordable — and many of the people who will care for you have walked this road themselves.",
+  "heroImage": "/assets/images/home-hero.jpg",
+  "heroBadges": [
+    "NACADA accredited",
+    "Staff who have walked this road",
+    "Confidential",
+    "Affordable — ask us for fees"
+  ],
+  "heroQuote": "Where hope in life is rekindled.",
+  "trust": [
+    {
+      "title": "NACADA accredited",
+      "body": "A fully registered residential treatment and rehabilitation facility."
+    },
+    {
+      "title": "Residential, 24/7",
+      "body": "Away from triggers, with medical staff and support at every hour."
+    },
+    {
+      "title": "Family therapy included",
+      "body": "A three-day programme for the people who love you."
+    },
+    {
+      "title": "Aftercare that follows up",
+      "body": "We stay in touch after discharge — recovery does not end at the gate."
+    }
   ],
   "aboutKicker": "Who we are",
-  "heroImage": "/assets/images/home-hero.jpg",
+  "aboutTitle": "A therapeutic community, not an institution.",
+  "aboutSlides": [
+    {
+      "image": "/assets/images/20260216_104446.webp",
+      "alt": "The Director"
+    },
+    {
+      "image": "/assets/images/20260216_121321.jpg",
+      "alt": "PTC"
+    },
+    {
+      "image": "/assets/images/home-about.jpg",
+      "alt": "A group of hands holding one another"
+    },
+    {
+      "image": "/assets/images/photo-2026-10-07-16-39-05-2.webp",
+      "alt": "PTC"
+    },
+    {
+      "image": "/assets/images/photo-2026-10-07-16-39-06-2.webp",
+      "alt": "PTC"
+    }
+  ],
+  "aboutParas": [
+    "We are a fully registered, NACADA-accredited addiction recovery centre, known for breaking the cycle of addiction and restoring health to individuals, families and whole communities.",
+    "Every member of staff shares one belief: addiction is a treatable disease, and recovery heals the mind, body and spirit together. So treatment here is medical, psychological, spiritual and holistic — because we are treating a person, not a habit.",
+    "Your culture, your family and your values sit at the centre of your recovery. Our whole structure — the facility, the wholesome food, the loving staff — exists to make it safe for you to speak honestly."
+  ],
+  "vision": "A healthy society free from addictions.",
+  "mission": "Professional treatment and rehabilitation of persons with substance use disorders.",
   "belief": "Addiction is a treatable disease and the cycle can be broken — and our clients can be empowered to take responsibility for their own ongoing recovery.",
-  "programmesTitle": "How long does it take?",
   "values": [
     "Confidentiality",
     "Accountability",
     "Empowerment",
     "Participation"
   ],
-  "heroQuote": "Where hope in life is rekindled.",
-  "quoteAttribution": "Alcoholics Anonymous, p. 58",
+  "treatmentTitle": "Four stages of care, one continuous hand.",
+  "treatmentIntro": "Detox alone is not treatment. Each stage hands you to the next, and none of it ends at discharge.",
   "treatmentImage": "/assets/images/home-treatment.jpg",
-  "aboutParas": [
-    "We are a fully registered, NACADA-accredited addiction recovery centre, known for breaking the cycle of addiction and restoring health to individuals, families and whole communities.",
-    "Every member of staff shares one belief: addiction is a treatable disease, and recovery heals the mind, body and spirit together. So treatment here is medical, psychological, spiritual and holistic — because we are treating a person, not a habit.",
-    "Your culture, your family and your values sit at the centre of your recovery. Our whole structure — the facility, the wholesome food, the loving staff — exists to make it safe for you to speak honestly."
+  "services": [
+    {
+      "num": "01",
+      "title": "Detoxification",
+      "body": "A medically supervised process to clear the substance while withdrawal is managed. Days to a few weeks, depending on the substance and the severity of dependence."
+    },
+    {
+      "num": "02",
+      "title": "Alcohol & drug treatment",
+      "body": "Residential care combining medication-assisted treatment, daily group therapy, one-to-one counselling and a structured routine that rebuilds healthy habits."
+    },
+    {
+      "num": "03",
+      "title": "Family therapy",
+      "body": "A three-day programme for family and friends. It replaces negative patterns with positive ones, sets healthy boundaries and repairs what addiction damaged."
+    },
+    {
+      "num": "04",
+      "title": "Aftercare & outreach",
+      "body": "Follow-up on discharged clients, support-group placement and continued therapy to prevent relapse — plus community outreach on substance misuse."
+    }
   ],
+  "programmesTitle": "How long does it take?",
+  "programmesIntro": "Long enough to build a life that holds. Every case is assessed on admission and the plan is tailored — these are the programmes we run.",
+  "programmes": [
+    {
+      "title": "Hard drugs & narcotics",
+      "note": "Full residential programme with detox",
+      "length": "6 months"
+    },
+    {
+      "title": "Alcohol dependence",
+      "note": "Residential recovery programme",
+      "length": "3 months"
+    },
+    {
+      "title": "Relapse",
+      "note": "For clients returning to treatment",
+      "length": "2 months"
+    },
+    {
+      "title": "Expelled students",
+      "note": "Structured intervention and counselling",
+      "length": "1 month"
+    },
+    {
+      "title": "Suspended students",
+      "note": "Short intensive intervention",
+      "length": "2 weeks"
+    }
+  ],
+  "familyImage": "/assets/images/20260216_121321.jpg",
+  "familyTitle": "The disease affects the whole family. So does the healing.",
   "familyBody": "We run a comprehensive three-day programme for family and friends. It teaches you how to stop taking part in unhealthy patterns, how to set boundaries that hold, and how to support recovery without losing yourself.",
+  "familyBenefits": [
+    "Restore relationships addiction has broken",
+    "Replace negative interactions with positive ones",
+    "Improve communication and set healthy boundaries",
+    "Understand the disease, so you can stop fighting the person"
+  ],
+  "diseaseTitle": "Yes. And that changes everything about how we treat you.",
+  "diseaseBody": "Repeated use floods the brain with dopamine. In time the brain stops making normal amounts on its own, so the substance is prioritised over everything that once mattered — and going without brings real physical pain. This is a chronic, treatable medical condition, not a failure of character.",
+  "diseaseNote": "Classified as a chronic brain disorder by the American Society of Addiction Medicine and the National Institute on Drug Abuse.",
   "marks": [
     {
       "num": "01",
@@ -47,56 +154,6 @@
       "body": "Using in hazardous situations, ignoring a high risk of personal harm."
     }
   ],
-  "vision": "A healthy society free from addictions.",
-  "heroBadges": [
-    "NACADA accredited",
-    "Staff who have walked this road",
-    "Confidential",
-    "Affordable — ask us for fees"
-  ],
-  "aboutTitle": "A therapeutic community, not an institution.",
-  "mission": "Professional treatment and rehabilitation of persons with substance use disorders.",
-  "diseaseNote": "Classified as a chronic brain disorder by the American Society of Addiction Medicine and the National Institute on Drug Abuse.",
-  "aboutSlides": [
-    {
-      "image": "/assets/images/home-about.jpg",
-      "alt": "A group of hands holding one another"
-    },
-    {
-      "image": "/assets/images/20260216_104446.webp",
-      "alt": "The Director"
-    },
-    {
-      "image": "/assets/images/photo-2026-10-07-16-39-05-2.webp",
-      "alt": "PTC"
-    },
-    {
-      "image": "/assets/images/20260216_121321.jpg",
-      "alt": "PTC"
-    },
-    {
-      "image": "/assets/images/photo-2026-10-07-16-39-06-2.webp",
-      "alt": "PTC"
-    }
-  ],
-  "kicker": "Webuye, Kenya · NACADA accredited",
-  "treatmentIntro": "Detox alone is not treatment. Each stage hands you to the next, and none of it ends at discharge.",
-  "familyTitle": "The disease affects the whole family. So does the healing.",
-  "testimonials": [
-    {
-      "quote": "The attitude of the staff is warm and welcoming. I can share openly here, and everyone is willing to give me feedback.",
-      "who": "Client, residential programme"
-    },
-    {
-      "quote": "The programme has saved my life. My sessions brought out things I truly believed I would never tell a soul.",
-      "who": "Client, alcohol programme"
-    },
-    {
-      "quote": "I was very happy with the openness and honesty I felt in the group. It made it safe to talk about our struggles.",
-      "who": "Client, group therapy"
-    }
-  ],
-  "programmesIntro": "Long enough to build a life that holds. Every case is assessed on admission and the plan is tailored — these are the programmes we run.",
   "signs": [
     {
       "label": "Loss of control",
@@ -151,55 +208,23 @@
       "hint": "Bloodshot or glassy eyes, unusual pupils, slurred speech, poor coordination"
     }
   ],
-  "familyImage": "/assets/images/20260216_121321.jpg",
-  "programmes": [
-    {
-      "title": "Hard drugs & narcotics",
-      "note": "Full residential programme with detox",
-      "length": "6 months"
-    },
-    {
-      "title": "Alcohol dependence",
-      "note": "Residential recovery programme",
-      "length": "3 months"
-    },
-    {
-      "title": "Relapse",
-      "note": "For clients returning to treatment",
-      "length": "2 months"
-    },
-    {
-      "title": "Expelled students",
-      "note": "Structured intervention and counselling",
-      "length": "1 month"
-    },
-    {
-      "title": "Suspended students",
-      "note": "Short intensive intervention",
-      "length": "2 weeks"
-    }
-  ],
-  "trust": [
-    {
-      "title": "NACADA accredited",
-      "body": "A fully registered residential treatment and rehabilitation facility."
-    },
-    {
-      "title": "Residential, 24/7",
-      "body": "Away from triggers, with medical staff and support at every hour."
-    },
-    {
-      "title": "Family therapy included",
-      "body": "A three-day programme for the people who love you."
-    },
-    {
-      "title": "Aftercare that follows up",
-      "body": "We stay in touch after discharge — recovery does not end at the gate."
-    }
-  ],
-  "heroBody": "Promises Treatment Centre is a residential home for recovery from alcohol and drug addiction. Safe, confidential and affordable — and many of the people who will care for you have walked this road themselves.",
-  "diseaseTitle": "Yes. And that changes everything about how we treat you.",
   "quote": "Rarely have we seen a person fail who has thoroughly followed our path.",
+  "quoteAttribution": "Alcoholics Anonymous, p. 58",
+  "quoteImage": "/assets/images/aftercare-hero.jpg",
+  "testimonials": [
+    {
+      "quote": "The attitude of the staff is warm and welcoming. I can share openly here, and everyone is willing to give me feedback.",
+      "who": "Client, residential programme"
+    },
+    {
+      "quote": "The programme has saved my life. My sessions brought out things I truly believed I would never tell a soul.",
+      "who": "Client, alcohol programme"
+    },
+    {
+      "quote": "I was very happy with the openness and honesty I felt in the group. It made it safe to talk about our struggles.",
+      "who": "Client, group therapy"
+    }
+  ],
   "faqs": [
     {
       "q": "How long will treatment take?",
@@ -225,30 +250,5 @@
       "q": "What if I relapse?",
       "a": "Relapse happens, even to the most dedicated people in recovery, and it is not the end of anything. Do not wait for it to get worse — contact us immediately and we will pick up where we left off."
     }
-  ],
-  "services": [
-    {
-      "num": "01",
-      "title": "Detoxification",
-      "body": "A medically supervised process to clear the substance while withdrawal is managed. Days to a few weeks, depending on the substance and the severity of dependence."
-    },
-    {
-      "num": "02",
-      "title": "Alcohol & drug treatment",
-      "body": "Residential care combining medication-assisted treatment, daily group therapy, one-to-one counselling and a structured routine that rebuilds healthy habits."
-    },
-    {
-      "num": "03",
-      "title": "Family therapy",
-      "body": "A three-day programme for family and friends. It replaces negative patterns with positive ones, sets healthy boundaries and repairs what addiction damaged."
-    },
-    {
-      "num": "04",
-      "title": "Aftercare & outreach",
-      "body": "Follow-up on discharged clients, support-group placement and continued therapy to prevent relapse — plus community outreach on substance misuse."
-    }
-  ],
-  "diseaseBody": "Repeated use floods the brain with dopamine. In time the brain stops making normal amounts on its own, so the substance is prioritised over everything that once mattered — and going without brings real physical pain. This is a chronic, treatable medical condition, not a failure of character.",
-  "heroTitle": "You have not lost yourself. You have only lost your way.",
-  "quoteImage": "/assets/images/aftercare-hero.jpg"
+  ]
 }
