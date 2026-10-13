@@ -482,12 +482,11 @@ html.a11y-contrast .a11y-trigger, html.a11y-contrast .footer-utility .footer-bac
 @keyframes pop { 0% { transform: scale(0.6); } 60% { transform: scale(1.18); } 100% { transform: scale(1); } }
 @keyframes veil-out { 0% { opacity: 1; visibility: visible; } 100% { opacity: 0; visibility: hidden; } }
 @keyframes veil-in { from { opacity: 0; visibility: visible; } to { opacity: 1; visibility: visible; } }
-@keyframes breathe { from { transform: scale(1); opacity: 0.85; } to { transform: scale(1.08); opacity: 1; } }
+@keyframes spin { to { transform: rotate(360deg); } }
 
 /* Page load / exit: a soft veil with the dove */
 .page-veil { position: fixed; inset: 0; z-index: 300; display: grid; place-items: center; background: var(--bg); opacity: 0; visibility: hidden; pointer-events: none; animation: veil-out 0.5s ease 0.18s both; }
-.veil-mark { width: 64px; height: 64px; overflow: hidden; background: #1A1A17; animation: breathe 0.9s ease-in-out infinite alternate; }
-.veil-mark img { width: 100%; height: 100%; object-fit: cover; object-position: 52% 42%; }
+.veil-spinner { width: 46px; height: 46px; border-radius: 50%; border: 3px solid var(--border); border-top-color: var(--accent); animation: spin 0.8s linear infinite; }
 .leaving .page-veil { animation: veil-in 0.26s ease forwards; pointer-events: auto; }
 
 /* Hero fades in after the veil lifts */
