@@ -10,9 +10,8 @@ description: "Promises Treatment Centre — residential recovery from alcohol an
     <h1 class="h1">{{ home.heroTitle }}</h1>
     <p class="p-lead">{{ home.heroBody }}</p>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:14px;padding-top:4px;max-width:600px">
-      <a href="tel:{{ site.phoneHref }}" class="btn btn-primary">{% icon "phone" %}Call us now · {{ site.phone }}</a>
-      <a href="https://wa.me/{{ site.whatsapp }}?text={{ site.whatsappMessage | urlencode }}" class="btn btn-wa" rel="noopener">{% icon "message-circle" %}Message us on WhatsApp</a>
-      <a href="#family" class="btn btn-outline">{% icon "heart" %}Worried about someone I love</a>
+      <a href="tel:{{ site.phoneHref }}" class="btn btn-primary">{% icon "phone" %}Call us now</a>
+      <a href="https://wa.me/{{ site.whatsapp }}?text={{ site.whatsappMessage | urlencode }}" class="btn btn-wa" rel="noopener">{% icon "message-circle" %}WhatsApp Us</a>
     </div>
     {% if home.heroBadges.length %}<ul class="hero-badges">{% for b in home.heroBadges %}<li>{% icon "shield-check" %}{{ b }}</li>{% endfor %}</ul>{% endif %}
     <div style="display:flex;align-items:center;gap:10px;font-size:0.9062rem;color:var(--muted)">
@@ -27,7 +26,7 @@ description: "Promises Treatment Centre — residential recovery from alcohol an
 </div>
 
 <div class="grid-trust">
-  {% set trustIcons = ["shield-check", "clock", "users", "refresh-cw"] %}
+  {% set trustIcons = ["shield-check", "lock", "tag"] %}
 {% for t in home.trust %}
   <div class="trust-item">
     <span class="icon-tile" style="align-self:flex-start;margin-bottom:6px">{% icon trustIcons[loop.index0] %}</span>
