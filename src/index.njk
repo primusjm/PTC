@@ -208,8 +208,15 @@ description: "Promises Treatment Centre — residential recovery from alcohol an
   </div>
 </div>
 
-{% if site.formEndpoint %}
-<div id="callback" class="section bg-alt">
+<div id="contact" class="section bg-alt" data-tabs>
+  <div class="tabs-list" role="tablist" aria-label="Contact us and common questions">
+    {% if site.formEndpoint %}<button type="button" class="tab" role="tab" id="tab-callback" aria-controls="callback">{% icon "phone" %}Call-back request</button>{% endif %}
+    <button type="button" class="tab" role="tab" id="tab-find-us" aria-controls="find-us">{% icon "map-pin" %}Find us</button>
+    <button type="button" class="tab" role="tab" id="tab-faq" aria-controls="faq">{% icon "info" %}Questions</button>
+  </div>
+
+  {% if site.formEndpoint %}
+  <div id="callback" class="tab-panel" role="tabpanel" aria-labelledby="tab-callback">
   <div class="grid grid-2" style="align-items:start">
     <div style="display:flex;flex-direction:column;gap:16px">
       <div class="kicker">{% icon "phone" %}Not ready to phone?</div>
@@ -242,10 +249,11 @@ description: "Promises Treatment Centre — residential recovery from alcohol an
       <button type="submit" class="btn btn-primary" style="align-self:flex-start">{% icon "phone" %}Request a call back</button>
     </form>
   </div>
-</div>
-{% endif %}
+  </div>
+  {% endif %}
 
-<div id="find-us" class="section grid grid-2" style="align-items:start">
+  <div id="find-us" class="tab-panel" role="tabpanel" aria-labelledby="tab-find-us">
+    <div class="grid grid-2" style="align-items:start">
   <div style="display:flex;flex-direction:column;gap:18px">
     <div class="kicker">{% icon "map-pin" %}Find us</div>
     <h2 class="h2">{{ site.locationTitle }}</h2>
@@ -261,9 +269,10 @@ description: "Promises Treatment Centre — residential recovery from alcohol an
     <iframe class="map-frame" src="{{ site.mapEmbedUrl }}" title="Map showing the location of {{ site.name }} {{ site.tagline }} in Webuye" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
     <a href="{{ site.mapLinkUrl }}" class="map-link" target="_blank" rel="noopener">Open in Google Maps &#8599;</a>
   </div>
-</div>
+    </div>
+  </div>
 
-<div class="section bg-card border-top">
+  <div id="faq" class="tab-panel" role="tabpanel" aria-labelledby="tab-faq">
   <div class="grid grid-2" style="align-items:start">
     <div style="display:flex;flex-direction:column;gap:16px">
       <div class="kicker">{% icon "info" %}Questions families ask</div>
@@ -278,6 +287,7 @@ description: "Promises Treatment Centre — residential recovery from alcohol an
       </details>
       {% endfor %}
     </div>
+  </div>
   </div>
 </div>
 
