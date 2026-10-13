@@ -13,10 +13,10 @@ A static site built with [Eleventy](https://www.11ty.dev/) and edited through [D
 
 1. **Push this repo to GitHub** (already done if you're reading this from the repo).
 2. **Create a Netlify site**: go to [app.netlify.com](https://app.netlify.com), "Add new site" → "Import an existing project" → pick this GitHub repo. Build command `npm run build`, publish directory `_site` (already set in `netlify.toml`, so Netlify should detect this automatically).
-3. **Turn on Identity**: in the Netlify site dashboard, go to *Site configuration → Identity* → **Enable Identity**.
-4. **Turn on Git Gateway**: still under Identity, scroll to *Services* → **Enable Git Gateway**. This is what lets the CMS save changes back to GitHub without you needing a GitHub account for editing.
-5. **Invite yourself as an editor**: *Identity → Invite users* → enter your email. You'll get an email to set a password.
-6. Visit `https://<your-site>.netlify.app/admin/`, log in, and start editing. Every save creates a commit and Netlify rebuilds the site automatically (usually live within a minute).
+3. **Create a GitHub OAuth app** (this is what lets editors log in to the CMS): GitHub → *Settings → Developer settings → OAuth Apps → New OAuth App*. Homepage URL: your site address. Authorization callback URL: `https://api.netlify.com/auth/done`. Create it, then generate a client secret.
+4. **Give Netlify the keys**: Netlify → *Site configuration → Access & security → OAuth → Install provider* → choose **GitHub** and paste the client ID and secret.
+5. **Add editors on GitHub**: everyone who edits needs a GitHub account with write access to this repo (*Settings → Collaborators*).
+6. Visit `https://<your-site>.netlify.app/admin/`, choose **Login with GitHub**, and start editing. Every save creates a commit and Netlify rebuilds the site automatically (usually live within a minute).
 
 ## Editing day-to-day
 
