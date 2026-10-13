@@ -210,6 +210,7 @@ description: "Promises Treatment Centre — residential recovery from alcohol an
   </div>
 </div>
 
+{% if site.formEndpoint %}
 <div id="callback" class="section bg-alt">
   <div class="grid grid-2" style="align-items:start">
     <div style="display:flex;flex-direction:column;gap:16px">
@@ -218,9 +219,9 @@ description: "Promises Treatment Centre — residential recovery from alcohol an
       <p class="p-body" style="margin:0">Tell us a good time and we will ring you back. You can ask about fees, programmes or how to bring someone in. Nothing you share obliges you to anything, and it stays between us.</p>
       <p style="margin:0;font-size:1rem;line-height:1.6;color:var(--ink-soft)">Prefer to type? <a href="https://wa.me/{{ site.whatsapp }}?text={{ site.whatsappMessage | urlencode }}" rel="noopener" style="font-weight:600">Message us on WhatsApp</a>.</p>
     </div>
-    <form class="callback" name="callback" method="POST" action="/thanks/" data-netlify="true" netlify-honeypot="bot-field">
-      <input type="hidden" name="form-name" value="callback">
-      <p class="form-hp" aria-hidden="true"><label>Leave this empty: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+    <form class="callback" id="callback-form" method="POST" action="{{ site.formEndpoint }}" data-next="/thanks/">
+      <p class="form-hp" aria-hidden="true"><label>Leave this empty: <input name="_gotcha" tabindex="-1" autocomplete="off"></label></p>
+      <input type="hidden" name="_subject" value="Call-back request from the website">
       <label>Your name
         <input type="text" name="name" autocomplete="name" required>
       </label>
@@ -239,10 +240,12 @@ description: "Promises Treatment Centre — residential recovery from alcohol an
         <textarea name="message" rows="3"></textarea>
       </label>
       <p class="hint">We only use your number to call you back. We will not share it.</p>
+      <p class="hint form-error" role="alert" hidden>Sorry, that didn't send. Please call {{ site.phone }} or message us on WhatsApp.</p>
       <button type="submit" class="btn btn-primary" style="align-self:flex-start">{% icon "phone" %}Request a call back</button>
     </form>
   </div>
 </div>
+{% endif %}
 
 <div id="find-us" class="section grid grid-2" style="align-items:start">
   <div style="display:flex;flex-direction:column;gap:18px">

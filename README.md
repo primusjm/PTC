@@ -1,44 +1,52 @@
 # Promises Treatment Centre — website
 
-A static site built with [Eleventy](https://www.11ty.dev/) and edited through [Decap CMS](https://decapcms.org/) (a free, form-based content editor). Hosted for free on [Netlify](https://www.netlify.com/).
+A static site built with [Eleventy](https://www.11ty.dev/), edited with [Sveltia CMS](https://github.com/sveltia/sveltia-cms) (a form-based content editor) and hosted free on [GitHub Pages](https://pages.github.com/).
 
 ## Structure
 
 - `src/` — the site. Pages are in `src/*.njk`, the shared header/footer is `src/_includes/base.njk`, and CSS/JS/images are in `src/assets/`.
-- `src/_data/*.json` — the editable content (text, images, phone numbers). These are the files Decap CMS writes to.
-- `admin/` — the Decap CMS admin panel (`/admin` on the live site).
-- `design/` — the original design mockups (`*.dc.html`, `support.js`), the source copy (`ptc-content.txt`) and uploads this site was built from. Not part of the live site; kept for reference.
+- `src/_data/*.json` — the editable content (text, images, phone numbers). These are the files the CMS writes to.
+- `admin/` — the CMS (`/admin/` on the site).
+- `.github/workflows/pages.yml` — builds the site and publishes it to GitHub Pages every time `main` changes.
+- `design/` — the original design mockups, source copy and uploads this site was built from. Not part of the live site.
 
-## One-time setup (do this once, in the browser)
+## Editing content on your computer (recommended)
 
-1. **Push this repo to GitHub** (already done if you're reading this from the repo).
-2. **Create a Netlify site**: go to [app.netlify.com](https://app.netlify.com), "Add new site" → "Import an existing project" → pick this GitHub repo. Build command `npm run build`, publish directory `_site` (already set in `netlify.toml`, so Netlify should detect this automatically).
-3. **Create a GitHub OAuth app** (this is what lets editors log in to the CMS): GitHub → *Settings → Developer settings → OAuth Apps → New OAuth App*. Homepage URL: your site address. Authorization callback URL: `https://api.netlify.com/auth/done`. Create it, then generate a client secret.
-4. **Give Netlify the keys**: Netlify → *Site configuration → Access & security → OAuth → Install provider* → choose **GitHub** and paste the client ID and secret.
-5. **Add editors on GitHub**: everyone who edits needs a GitHub account with write access to this repo (*Settings → Collaborators*).
-6. Visit `https://<your-site>.netlify.app/admin/`, choose **Login with GitHub**, and start editing. Every save is published straight to the live site: it creates a commit and Netlify rebuilds the site automatically (usually live within a minute).
+One-time setup: install [Node.js](https://nodejs.org/) (LTS) and [GitHub Desktop](https://desktop.github.com/), then clone this repo with GitHub Desktop and run `npm install` once in the folder.
 
-## Editing day-to-day
+Each time you want to edit:
 
-Go to `/admin` on the live site, log in, and edit through the forms — no code required. Changes to text, phone numbers, FAQs, testimonials etc. all go through **Site Settings**, **Home Page**, **Treatment Page**, **Addiction Explained Page**, and **Aftercare Page** in the CMS sidebar.
+1. In the repo folder run `npm start`. The site opens at `http://localhost:8080`.
+2. Open `http://localhost:8080/admin/` in **Chrome or Edge**.
+3. Click **Work with Local Repository** and choose the repo folder (the first time only).
+4. Edit in the forms. Every Save writes straight to the files, and the site on port 8080 refreshes so you can check it.
+5. When you're happy, open GitHub Desktop, write a short summary, **Commit to main** and **Push origin**. The site goes live about a minute later.
 
-## Images
+Nothing goes live until you push.
 
-Upload photos of any size through the CMS. At build time each one is resized and converted to AVIF/WebP/JPEG (`assets/img/`), so pages stay fast on mobile data. The originals in `src/assets/images/` are not served.
+## Editing on the live site
+
+Go to `https://promisestreatmentcentre.org/admin/` and choose **Sign in with token**. You need a GitHub account with write access to this repo and a personal access token:
+
+GitHub → Settings → Developer settings → Personal access tokens → Fine-grained tokens → Generate new token. Repository access: only `primusjm/PTC`. Permissions: **Contents: Read and write**. Paste the token into the CMS. Each Save publishes to the live site.
+
+## One-time setup: GitHub Pages
+
+1. In the repo go to *Settings → Pages* and set **Source** to **GitHub Actions**.
+2. Under **Custom domain** enter `promisestreatmentcentre.org` and tick **Enforce HTTPS** once it's available.
+3. At your domain registrar, point the domain to GitHub Pages (see GitHub's guide "Managing a custom domain for your GitHub Pages site"). For a bare domain, add four `A` records: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`. For `www`, add a `CNAME` record to `primusjm.github.io`.
+4. Push to `main` (or run the *Deploy site* workflow from the Actions tab). The first deploy takes a couple of minutes.
+
+The site must be served from the root of a domain, so use the custom domain rather than `primusjm.github.io/PTC/`.
 
 ## Call-back form
 
-The "Leave your number" form on the home page uses Netlify Forms. After the first deploy, go to *Site configuration → Forms → Form notifications* and add an email notification so requests reach you. Submissions also appear in the Netlify dashboard under *Forms*.
+The "Leave your number" form sends through [Formspree](https://formspree.io/) (free plan). Create a form there, copy its address (`https://formspree.io/f/…`) and paste it into **Site Settings → Call-back form address**. Requests are emailed to the address on your Formspree account. While that setting is empty, the form is hidden and visitors use the phone and WhatsApp buttons instead.
+
+## Images
+
+Upload photos of any size. At build time each one is resized and converted to AVIF/WebP/JPEG (`assets/img/`), so pages stay fast on mobile data.
 
 ## Contact settings
 
 WhatsApp number, website address (used for Google and link previews) and phone numbers are all in **Site Settings** in the CMS.
-
-## Local development
-
-```bash
-npm install
-npm start
-```
-
-Opens the site at `http://localhost:8080` with live reload.
