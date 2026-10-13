@@ -22,7 +22,7 @@ description: "What treatment actually looks like at Promises Treatment Centre â€
 <div class="section-tight bg-alt">
   <div class="grid grid-2" style="align-items:start">
     <div style="display:flex;flex-direction:column;gap:16px">
-      <div class="kicker">Our philosophy</div>
+      <div class="kicker">{% icon "leaf" %}Our philosophy</div>
       <h2 class="h2">{{ treatment.philosophyTitle }}</h2>
     </div>
     <div style="display:flex;flex-direction:column;gap:18px">
@@ -34,7 +34,7 @@ description: "What treatment actually looks like at Promises Treatment Centre â€
 <div id="detox" class="section-tight">
   <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:32px;flex-wrap:wrap;padding-bottom:34px">
     <div style="display:flex;flex-direction:column;gap:14px">
-      <div class="kicker">Stage one &middot; Detoxification</div>
+      <div class="kicker">{% icon "droplet" %}Stage one &middot; Detoxification</div>
       <h2 class="h2">{{ treatment.detoxTitle }}</h2>
     </div>
     <p style="margin:0;font-size:1rem;line-height:1.6;color:#5A554B;max-width:36ch">{{ treatment.detoxIntro }}</p>
@@ -56,7 +56,7 @@ description: "What treatment actually looks like at Promises Treatment Centre â€
 
 <div id="residential" class="section-tight bg-card border-top border-bottom">
   <div style="display:flex;flex-direction:column;gap:14px;max-width:64ch;padding-bottom:36px">
-    <div class="kicker">Stage two &middot; Residential treatment</div>
+    <div class="kicker">{% icon "home" %}Stage two &middot; Residential treatment</div>
     <h2 class="h2">{{ treatment.residentialTitle }}</h2>
     <p class="p-body" style="margin:0">{{ treatment.residentialBody }}</p>
   </div>
@@ -75,7 +75,7 @@ description: "What treatment actually looks like at Promises Treatment Centre â€
 <div id="week" class="section-tight bg-alt">
   <div class="grid grid-2" style="align-items:start">
     <div style="display:flex;flex-direction:column;gap:16px">
-      <div class="kicker">A week here</div>
+      <div class="kicker">{% icon "calendar" %}A week here</div>
       <h2 class="h2" style="font-size:clamp(1.75rem,3.4vw,2.25rem)">{{ treatment.weekTitle }}</h2>
       <p class="p-body" style="margin:0">{{ treatment.weekIntro }}</p>
       <div style="height:clamp(220px,26vw,300px);overflow:hidden;background:#E4DACB;margin-top:6px">
@@ -99,7 +99,7 @@ description: "What treatment actually looks like at Promises Treatment Centre â€
 
 <div id="benefits" class="section-tight bg-dark">
   <div style="display:flex;flex-direction:column;gap:14px;max-width:60ch;padding-bottom:36px">
-    <div class="kicker" style="color:var(--accent-light)">Why residential, not outpatient</div>
+    <div class="kicker" style="color:var(--accent-light)">{% icon "shield-check" %}Why residential, not outpatient</div>
     <h2 class="h2" style="color:#FFFDF9;font-size:clamp(1.75rem,3.5vw,2.375rem)">{{ treatment.benefitsTitle }}</h2>
   </div>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:26px 34px">
@@ -117,7 +117,7 @@ description: "What treatment actually looks like at Promises Treatment Centre â€
 </div>
 
 <div class="section" style="display:flex;flex-direction:column;gap:22px;align-items:flex-start;max-width:70ch">
-  <div class="kicker">Next</div>
+  <div class="kicker">{% icon "arrow-right" %}Next</div>
   <h2 class="h2" style="font-size:clamp(1.625rem,3.2vw,2.125rem)">Treatment does not end at discharge. Read what happens after.</h2>
   <div style="display:flex;gap:12px;flex-wrap:wrap;padding-top:2px">
     <a href="/aftercare/" class="btn btn-primary">Aftercare &amp; support &#8594;</a>

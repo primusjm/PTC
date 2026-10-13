@@ -383,10 +383,6 @@ html.a11y-contrast .a11y-trigger, html.a11y-contrast .footer-utility .footer-bac
 .slide-pause { position: absolute; top: 10px; right: 10px; min-width: 44px; height: 44px; padding: 0 14px; border: 0; border-radius: 22px; background: rgba(35,35,31,0.6); color: #fff; font: 600 0.8125rem/1 Karla, system-ui, sans-serif; cursor: pointer; }
 .slide-pause:hover, .slide-pause:focus-visible { background: rgba(35,35,31,0.85); }
 
-/* ---- Hero reassurance badges ---- */
-.hero-badges { display: flex; flex-wrap: wrap; gap: 8px 10px; padding: 0; margin: 0; list-style: none; }
-.hero-badges li { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px 6px 9px; border: 1px solid var(--border); background: var(--bg-card); font-size: 0.8438rem; font-weight: 600; color: var(--ink-soft); }
-.hero-badges .icon { width: 15px; height: 15px; color: var(--accent); }
 
 /* ---- WhatsApp button ---- */
 .btn-wa { background: #1F6B3A; color: #FFFFFF; }
@@ -423,3 +419,11 @@ html.a11y-contrast .a11y-trigger, html.a11y-contrast .footer-utility .footer-bac
 
 /* ---- Utility pages (404, thanks) ---- */
 .utility-page { max-width: 62ch; display: flex; flex-direction: column; gap: 20px; align-items: flex-start; }
+
+/* ---- Small icon before section captions ---- */
+.kicker { display: flex; align-items: center; gap: 8px; }
+.kicker .icon { width: 15px; height: 15px; vertical-align: 0; }
+
+/* ---- Who we are: vision / mission / belief rows ---- */
+.stat-row { display: flex; gap: 16px; align-items: flex-start; }
+.stat-row .stat-block { padding-left: 0; border-left: 0; min-width: 0; }
