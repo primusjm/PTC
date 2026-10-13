@@ -61,11 +61,6 @@
 {% set homeHref = "/" if not onHome else "" %}
 {% set contactTab = "#callback" if site.formEndpoint else "#find-us" %}
 
-<div class="crisis-bar">
-  <span>{{ site.crisisLine }}</span>
-  <a href="tel:{{ site.phoneHref }}">{% icon "phone" %} {{ site.phone }}</a>
-</div>
-
 <noscript><style>.mobile-panel { display: flex; } .hamburger { display: none; }</style></noscript>
 
 <div class="site-header">

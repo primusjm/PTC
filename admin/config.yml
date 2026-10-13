@@ -18,7 +18,6 @@ collections:
         fields:
           - { label: "Organisation name", name: "name", widget: "string" }
           - { label: "Tagline", name: "tagline", widget: "string" }
-          - { label: "Crisis bar message", name: "crisisLine", widget: "string" }
           - { label: "Phone (display)", name: "phone", widget: "string" }
           - { label: "Second phone (display)", name: "phone2", widget: "string" }
           - { label: "Phone (for tel: links, e.g. +254725871040)", name: "phoneHref", widget: "string" }
