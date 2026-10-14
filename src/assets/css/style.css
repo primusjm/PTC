@@ -382,17 +382,6 @@ html.a11y-contrast .a11y-trigger, html.a11y-contrast .footer-utility .footer-bac
 .btn-wa { background: #1F6B3A; color: #FFFFFF; }
 .btn-wa:hover { background: #17552E; color: #FFFFFF; }
 
-/* ---- Sticky call bar (mobile only) ---- */
-.sticky-cta { display: none; }
-@media (max-width: 760px) {
-  .sticky-cta { position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border-top: 1px solid var(--border); box-shadow: 0 -4px 14px rgba(35,35,31,0.12); padding-bottom: env(safe-area-inset-bottom); }
-  .sticky-cta a { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 54px; font-weight: 700; font-size: 1rem; color: #FFF8F1; }
-  .sticky-cta .sticky-call { background: var(--accent); }
-  .sticky-cta .sticky-call:hover { color: #FFF8F1; background: var(--accent-dark); }
-  .sticky-cta .sticky-wa { background: #1F6B3A; color: #FFFFFF; }
-  body { padding-bottom: calc(54px + env(safe-area-inset-bottom)); }
-}
-@media print { .sticky-cta { display: none; } }
 
 /* ---- Call-back form ---- */
 .callback { display: grid; gap: 16px; max-width: 520px; }
@@ -503,9 +492,9 @@ html.a11y-contrast .a11y-trigger, html.a11y-contrast .footer-utility .footer-bac
 .js-motion .reveal.in { opacity: 1; transform: none; }
 
 /* Buttons */
-.btn, .btn-call, .call-pill, .btn-call-block, .btn-wa-block, .sticky-cta a { transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, translate 0.2s ease, box-shadow 0.2s ease; }
+.btn, .btn-call, .call-pill, .btn-call-block, .btn-wa-block { transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, translate 0.2s ease, box-shadow 0.2s ease; }
 .btn:hover, .btn-call:hover, .call-pill:hover { translate: 0 -2px; box-shadow: 0 8px 18px rgba(35, 35, 31, 0.14); }
-.btn:active, .btn-call:active, .call-pill:active, .sticky-cta a:active { translate: 0 0; box-shadow: none; scale: 0.98; }
+.btn:active, .btn-call:active, .call-pill:active { translate: 0 0; box-shadow: none; scale: 0.98; }
 
 /* Cards and tiles */
 .service-card, .testimonial-card { transition: translate 0.25s ease, box-shadow 0.25s ease; }
@@ -536,6 +525,5 @@ html.a11y-contrast .a11y-trigger, html.a11y-contrast .footer-utility .footer-bac
 .fade-swap { animation: fade-in 0.45s ease; }
 .slide-btn, .slide-pause, .slide-dot::after { transition: background-color 0.2s ease, transform 0.2s ease; }
 .slide-btn:hover { transform: translateY(-50%) scale(1.08); }
-.sticky-cta { animation: fade-up 0.5s ease 0.9s both; }
 
 @media print { .page-veil { display: none; } .js-motion .reveal { opacity: 1; transform: none; } }
