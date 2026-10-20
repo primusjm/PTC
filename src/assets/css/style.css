@@ -423,7 +423,7 @@ html.a11y-contrast .a11y-trigger, html.a11y-contrast .footer-utility .footer-bac
 .tab-panel + .tab-panel { margin-top: 32px; }
 .tabs-js .tab-panel + .tab-panel { margin-top: 0; }
 .tab-panel:focus { outline: none; }
-.tabs-js .tab-panel { scroll-margin-top: 150px; }
+.tabs-js .tab-panel { scroll-margin-top: 100px; }
 @media (max-width: 600px) {
   .tabs-js .tabs-list { gap: 4px; }
   .tab { flex: 1 1 0; flex-direction: column; gap: 6px; min-height: 80px; padding: 10px 4px; font-size: 1.0625rem; text-align: center; line-height: 1.15; min-width: 0; }
@@ -527,3 +527,10 @@ html.a11y-contrast .a11y-trigger, html.a11y-contrast .footer-utility .footer-bac
 .slide-btn:hover { transform: translateY(-50%) scale(1.08); }
 
 @media print { .page-veil { display: none; } .js-motion .reveal { opacity: 1; transform: none; } }
+
+/* ---- Desktop: navbar pinned to the top of the screen ---- */
+@media (min-width: 1121px) {
+  html { scroll-padding-top: 96px; }
+  .site-header { position: sticky; top: 0; z-index: 50; background: var(--bg); transition: box-shadow 0.25s ease; }
+  .site-header.scrolled { box-shadow: 0 6px 20px rgba(35, 35, 31, 0.09); }
+}
