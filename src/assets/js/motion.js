@@ -3,6 +3,12 @@
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
   function still() { return reduce.matches || root.classList.contains('a11y-still'); }
 
+  // Soft shadow under the pinned header once the page has scrolled.
+  var header = document.querySelector('.site-header');
+  function shadow() { if (header) header.classList.toggle('scrolled', window.scrollY > 8); }
+  window.addEventListener('scroll', shadow, { passive: true });
+  shadow();
+
   // Page exit: fade the veil in, then follow the link.
   document.addEventListener('click', function (e) {
     if (still() || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
